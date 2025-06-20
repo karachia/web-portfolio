@@ -1,5 +1,23 @@
 <script>
-    
+  import { onMount } from 'svelte';
+  import MusicItem from '$lib/components/MusicItem.svelte';
+  import MusicDetailModal from '$lib/components/MusicDetailModal.svelte';
+
+  let music = [];
+  let selectedMusicItem = null;
+
+  onMount(async () => {
+    const response = await fetch('/data/music.json');
+    music = await response.json();
+  });
+
+  function showDetails(event) {
+    selectedMusicItem = event.detail;
+  }
+
+  function closeModal() {
+    selectedMusicItem = null;
+  }
 </script>
 
 <section id="home" class="min-h-[70vh] flex flex-col justify-center items-center px-4 pt-16 fade-in">
@@ -23,12 +41,18 @@
   </p>
 </section>
 
-<section id="music" class="min-h-screen flex flex-col justify-center items-center px-4 py-24 md:py-32 fade-in">
-  <h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900">Music</h2>
-  <p class="max-w-2xl text-lg md:text-xl text-gray-600 text-center mb-2">
-    Music is my passion. Here you'll find some of my latest tracks and projects. (Coming soon)
-  </p>
+<section id="music" class="min-h-screen flex flex-col items-center px-4 py-24 md:py-32 fade-in">
+  <h2 class="text-3xl md:text-5xl font-bold mb-8 text-gray-900">Music</h2>
+  <div class="w-full flex flex-col items-center space-y-8">
+    {#each music as item}
+      <MusicItem {item} on:viewDetails={showDetails} />
+    {/each}
+  </div>
 </section>
+
+{#if selectedMusicItem}
+  <MusicDetailModal item={selectedMusicItem} on:close={closeModal} />
+{/if}
 
 <section id="art" class="min-h-screen flex flex-col justify-center items-center px-4 py-24 md:py-32 fade-in">
   <h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900">Art</h2>

@@ -1,0 +1,41 @@
+
+
+[
+    {
+      "id": "sonata-no-1",
+      "title": "Orison",
+      "for": "String Quartet",
+      "dedication": "",
+      "summary": "A prayer and introspection",
+      "category": "Chamber",
+      "subcategory": "Quartet",
+      "tags": [],
+      "length": {
+        "min": 12,
+        "max": 15,
+        "default": 14
+      },
+      "date": "2025-05-12",
+      "detailed_instrumentation": "",
+      "image": "/assets/album-art-1.png",
+      "soundcloud": "https://soundcloud.com/sinakarachiani/your-track-1",
+      "videos": ["https://youtube.com/your-video-1"],
+      "recordings": ["https://link-to-recording-1"]
+    },
+    {
+      "id": "string-quartet-op-5",
+      "title": "String Quartet, Op. 5",
+      "for": "Two Violins, Viola, Cello",
+      "category": "Chamber",
+      "subcategory": "Quartet",
+      "tags": ["String Quartet"],
+      "length": {
+        "min": 18,
+        "max": 22,
+        "default": 20
+      },
+      "date": "2024-03-20",
+      "image": "/assets/album-art-2.png",
+      "soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+    }
+  ] 
