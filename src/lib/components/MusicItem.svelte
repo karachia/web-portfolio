@@ -35,12 +35,14 @@
 
 <button
 	on:click={handleClick}
-	class="w-full max-w-4xl transform rounded-xl border border-white/20 bg-white/10 p-6 text-left text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-white/20 focus:ring-2 focus:ring-white/50 focus:outline-none"
+	class="w-full max-w-4xl transform rounded-xl border border-white/20 bg-gradient-to-br from-purple-50/80 via-blue-50/80 via-yellow-40/50 to-pink-50/80 p-6 text-left text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:from-purple-100/90 hover:via-blue-100/90 hover:to-pink-100/90 focus:ring-2 focus:ring-white/50 focus:outline-none"
 >
 	<div class="flex items-start justify-between">
 		<div>
 			<h3 class="mb-1 text-2xl font-bold text-gray-800">{item.title}</h3>
+            {#if item.for}
 			<p class="text-lg font-light text-zinc-500 italic">for {item.for}</p>
+            {/if}
 			<!-- Dedication  -->
 			{#if item.dedication}
 				<p class="font-light text-sm italic text-zinc-400">{item.dedication}</p>
@@ -57,7 +59,7 @@
 
 	<!-- Summary -->
 	{#if item.summary}
-		<p class="mt-4 text-sm italic text-zinc-500">{item.summary}</p>
+		<p class="mt-4 text-sm mb-6 text-zinc-400">{item.summary}</p>
 	{/if}
 
 	<p class="mt-4 text-xs text-zinc-400 text-center italic">View details...</p>
