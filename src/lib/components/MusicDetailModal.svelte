@@ -2,11 +2,24 @@
   import { createEventDispatcher } from 'svelte';
   export let item: any;
   const dispatch = createEventDispatcher();
+
+  const close = () => dispatch('close');
+
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape') {
+      close();
+    }
+  }
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <div
   class="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4"
-  on:click={() => dispatch('close')}
+  on:click={close}
+  on:keydown={(e: KeyboardEvent) => e.key === 'Enter' && close()}
+  role="button"
+  tabindex="0"
 >
   <div
     class="bg-white text-zinc-800 rounded-2xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col p-8 border border-zinc-200"
@@ -22,7 +35,7 @@
       </div>
       <button
         class="text-zinc-500 hover:text-zinc-900 transition-colors text-3xl leading-none"
-        on:click={() => dispatch('close')}
+        on:click={close}
         aria-label="Close modal"
       >&times;</button>
     </div>

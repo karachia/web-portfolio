@@ -40,11 +40,11 @@ onMount(() => {
 </script>
 
 <nav class="w-full fixed top-0 left-0 z-50 flex justify-center pointer-events-none">
-  <div class="pointer-events-auto bg-white/60 backdrop-blur-lg shadow-xl rounded-2xl mt-4 mx-2 w-full max-w-2xl md:max-w-3xl lg:max-w-4xl flex items-center justify-between px-6 py-3 border border-white/30 relative">
+  <div class="pointer-events-auto bg-white/60 backdrop-blur-lg shadow-xl rounded-3xl mt-4 mx-2 w-full max-w-2xl md:max-w-3xl lg:max-w-4xl flex items-center justify-between px-6 py-3 border border-white/30 relative">
     <div class="flex items-center space-x-3">
-      <img src="/assets/SK_Brand.png" alt="Sina Karachiani Logo" class="h-8 w-auto rounded" />
-      <a href="#" class="text-xl font-bold tracking-tight text-gray-900 select-none focus:outline-none focus:ring-2 focus:ring-gray-300 hover:text-gray-700 transition-colors duration-200" aria-label="Go to top">
-        SINA
+      <a href="#" class="flex items-center space-x-3 text-xl tracking-tight text-gray-700 select-none focus:outline-none focus:ring-2 focus:ring-gray-300 hover:text-black transition-colors duration-200" aria-label="Go to top">
+        <img src="/assets/SK_Brand.png" alt="Sina Karachiani Logo" class="h-10 w-auto rounded" />
+        <div class="-ml-1">Sina Karachiani</div>
       </a>
     </div>
     <!-- Hamburger Icon (mobile) -->
@@ -60,7 +60,7 @@ onMount(() => {
           <a
             href={item.href}
             on:click={handleNavClick}
-            class="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
+            class="text-gray-700 hover:text-black transition-colors duration-200 font-medium px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
             >{item.name}</a
           >
         </li>
@@ -74,7 +74,7 @@ onMount(() => {
             <a
               href={item.href}
               on:click={handleNavClick}
-              class="block w-full text-center text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
+              class="block w-full text-center text-gray-700 hover:text-black transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
               >{item.name}</a
             >
           </li>

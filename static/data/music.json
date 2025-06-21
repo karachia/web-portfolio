@@ -2,18 +2,18 @@
 
 [
     {
-      "id": "sonata-no-1",
+      "id": "orisonForStringQaurtet",
       "title": "Orison",
       "for": "String Quartet",
       "dedication": "",
-      "summary": "A prayer and introspection",
+      "summary": "",
       "category": "Chamber",
       "subcategory": "Quartet",
       "tags": [],
       "length": {
-        "min": 12,
-        "max": 15,
-        "default": 14
+        "min": 7.5,
+        "max": 10,
+        "default": 7.5
       },
       "date": "2025-05-12",
       "detailed_instrumentation": "",
@@ -23,16 +23,17 @@
       "recordings": ["https://link-to-recording-1"]
     },
     {
-      "id": "string-quartet-op-5",
-      "title": "String Quartet, Op. 5",
-      "for": "Two Violins, Viola, Cello",
-      "category": "Chamber",
-      "subcategory": "Quartet",
-      "tags": ["String Quartet"],
+      "id": "StrangerOfKin",
+      "title": "Stranger of Kin",
+      "for": "Orchestra",
+      "dedication": "Dedicated to my grandmother, Tahereh Moeini",
+      "summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+      "category": "Large Ensemble",
+      "subcategory": "Orchestra",
+      "tags": ["Orchestra"],
       "length": {
-        "min": 18,
-        "max": 22,
-        "default": 20
+        "min": 9.5,
+        "max": 11
       },
       "date": "2024-03-20",
       "image": "/assets/album-art-2.png",

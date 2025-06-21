@@ -2,6 +2,14 @@
   import { onMount } from 'svelte';
   import MusicItem from '$lib/components/MusicItem.svelte';
   import MusicDetailModal from '$lib/components/MusicDetailModal.svelte';
+  import Icon from 'svelte-awesome';
+
+  /// *** Embedded Icons ***
+  // Recommended - import just the icon you need
+  import github from 'svelte-awesome/icons/github';
+  import linkedin from 'svelte-awesome/icons/linkedin';
+  import instagram from 'svelte-awesome/icons/instagram';
+  import soundcloud from 'svelte-awesome/icons/soundcloud';
 
   let music = [];
   let selectedMusicItem = null;
@@ -24,12 +32,26 @@
   <div class="flex items-center justify-center space-x-4">
     <img src="/assets/SK_Brand.png" alt="Sina Karachiani Logo" class="h-44 w-auto rounded drop-shadow-lg -mt-6" />
     <div class="flex flex-col">
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 font-serif drop-shadow-lg">
-        Sina Karachiani
+      <h1 style="font-family: 'Zen Kurenaido', sans-serif;" class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 font-serif drop-shadow-lg">
+        S I N A&nbsp;&nbsp;&nbsp;K A R A C H I A N I
       </h1>
       <h2 class="text-lg md:text-2xl text-gray-600 font-light tracking-wide mt-2 drop-shadow-lg">
-        Composer, Artist, Pianist, Software Engineer
+        Composer, Artist, Pianist, Software Engineer 
       </h2>
+      <div class="flex space-x-6 mt-4">
+        <a href="https://github.com/karachia" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
+          <Icon data={github} scale="1.5"/>
+        </a>
+        <a href="https://www.linkedin.com/in/sina-karachiani-5b9b8593/" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
+          <Icon data={linkedin} scale="1.5"/>
+        </a>
+        <a href="https://www.instagram.com/sina.karachiani.music/ " target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
+          <Icon data={instagram} scale="1.5"/>
+        </a>
+        <a href="https://soundcloud.com/sinakarachiani/ " target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
+          <Icon data={soundcloud} scale="2"/>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -70,18 +92,18 @@
 </section>
 
 <style>
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) forwards;
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: none;
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) forwards;
   }
-}
-html {
-  scroll-behavior: smooth;
-}
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+  }
 </style>
