@@ -12,6 +12,7 @@
 
   let music = [];
   let selectedMusicItem = null;
+  let isModalClosing = false;
 
   onMount(async () => {
     const response = await fetch('/data/music.json');
@@ -20,10 +21,16 @@
 
   function showDetails(event) {
     selectedMusicItem = event.detail;
+    isModalClosing = false;
   }
 
   function closeModal() {
-    selectedMusicItem = null;
+    isModalClosing = true;
+    // Wait for animation to complete before removing from DOM
+    setTimeout(() => {
+      selectedMusicItem = null;
+      isModalClosing = false;
+    }, 300);
   }
 </script>
 
@@ -72,7 +79,7 @@
 </section>
 
 {#if selectedMusicItem}
-  <MusicDetailModal item={selectedMusicItem} on:close={closeModal} />
+  <MusicDetailModal item={selectedMusicItem} isClosing={isModalClosing} on:close={closeModal} />
 {/if}
 
 <section id="art" class="min-h-screen flex flex-col justify-center items-center px-4 py-24 md:py-32 fade-in">

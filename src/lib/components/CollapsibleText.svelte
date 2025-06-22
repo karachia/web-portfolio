@@ -1,5 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
+  import { tick } from 'svelte';
   
   export let text: string;
   export let maxLength: number = 200;
@@ -9,14 +10,72 @@
   let isDragging = false;
   let mouseDownX = 0;
   let mouseDownY = 0;
-  const dispatch = createEventDispatcher();
+  let container: HTMLDivElement;
+  let isAnimating = false;
+  let displayText = '';
+  const dispatch = createEventDispatcher<{
+    toggle: { isExpanded: boolean };
+  }>();
   
   $: shouldTruncate = text.length > maxLength;
-  $: displayText = isExpanded ? text : text.slice(0, maxLength) + '...';
+  $: if (!isAnimating) {
+    displayText = isExpanded ? text : text.slice(0, maxLength) + '...';
+  }
   
-  function toggleExpanded() {
-    if (!isDragging) {
-      isExpanded = !isExpanded;
+  async function toggleExpanded() {
+    if (!isDragging && !isAnimating) {
+      isAnimating = true;
+      
+      if (!isExpanded) {
+        // Expand animation
+        const currentHeight = container.scrollHeight;
+        container.style.height = `${currentHeight}px`;
+        container.style.overflow = 'hidden';
+        
+        await tick();
+        isExpanded = true;
+        displayText = text;
+        await tick();
+        
+        const expandedHeight = container.scrollHeight;
+        container.style.height = `${expandedHeight}px`;
+        
+        setTimeout(() => {
+          container.style.height = 'auto';
+          container.style.overflow = 'visible';
+          isAnimating = false;
+        }, 300);
+      } else {
+        // Collapse animation - measure target height first
+        const currentHeight = container.scrollHeight;
+        
+        // Temporarily change content to measure target height
+        const originalText = displayText;
+        displayText = text.slice(0, maxLength) + '...';
+        await tick();
+        const targetHeight = container.scrollHeight;
+        
+        // Restore original content and start animation
+        displayText = originalText;
+        await tick();
+        
+        container.style.height = `${currentHeight}px`;
+        container.style.overflow = 'hidden';
+        
+        await tick();
+        isExpanded = false;
+        displayText = text.slice(0, maxLength) + '...';
+        await tick();
+        
+        container.style.height = `${targetHeight}px`;
+        
+        setTimeout(() => {
+          container.style.height = 'auto';
+          container.style.overflow = 'visible';
+          isAnimating = false;
+        }, 300);
+      }
+      
       dispatch('toggle', { isExpanded });
     }
   }
@@ -42,13 +101,14 @@
 </script>
 
 <div 
-  class="text-zinc-700 italic transition-all duration-200 {shouldTruncate && showButton ? 'cursor-pointer hover:bg-gray-50 hover:shadow-sm rounded px-2 py-1 -mx-2 -my-1' : ''}"
+  bind:this={container}
+  class="text-zinc-700 italic transition-all duration-300 ease-out {shouldTruncate && showButton ? 'cursor-pointer hover:bg-gray-50 hover:shadow-sm rounded px-2 py-1 -mx-2 -my-1' : ''}"
   on:click={shouldTruncate && showButton ? toggleExpanded : undefined}
   on:mousedown={shouldTruncate && showButton ? handleMouseDown : undefined}
   on:mousemove={shouldTruncate && showButton ? handleMouseMove : undefined}
   on:mouseup={shouldTruncate && showButton ? handleMouseUp : undefined}
   role={shouldTruncate && showButton ? 'button' : undefined}
-  tabindex={shouldTruncate && showButton ? '0' : undefined}
+  tabindex={shouldTruncate && showButton ? 0 : undefined}
   on:keydown={(e: KeyboardEvent) => {
     if (shouldTruncate && showButton && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault();

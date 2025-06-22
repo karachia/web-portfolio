@@ -1,14 +1,30 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
   import { formatDuration, formatDate } from '$lib/utils/formatters';
   import SoundCloudEmbed from './SoundCloudEmbed.svelte';
   import StreamingEmbed from './StreamingEmbed.svelte';
   import YouTubeEmbed from './YouTubeEmbed.svelte';
   import CollapsibleText from './CollapsibleText.svelte';
+  import { onMount } from 'svelte';
+  import { createEventDispatcher } from 'svelte';
+  
   export let item: any;
-  const dispatch = createEventDispatcher();
+  export let isClosing: boolean = false;
+  
+  let isVisible = false;
+  const dispatch = createEventDispatcher<{
+    close: void;
+  }>();
 
-  const close = () => dispatch('close');
+  onMount(() => {
+    // Trigger entrance animation
+    setTimeout(() => {
+      isVisible = true;
+    }, 10);
+  });
+
+  const close = () => {
+    dispatch('close');
+  };
 
   function handleKeydown(e: KeyboardEvent) {
     if (e.key === 'Escape') {
@@ -30,7 +46,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div
-  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4 transition-all duration-300 ease-out {isVisible ? 'opacity-100 backdrop-blur-sm' : 'opacity-0 backdrop-blur-none'}"
   on:click={close}
   on:keydown={(e: KeyboardEvent) => e.key === 'Enter' && close()}
   role="button"
@@ -38,7 +54,7 @@
   aria-label="Close modal backdrop"
 >
   <div
-    class="bg-white text-zinc-800 rounded-4xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col p-8 border border-zinc-200"
+    class="bg-white text-zinc-800 rounded-4xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col p-8 border border-zinc-200 transition-transform duration-300 ease-out {(isVisible && !isClosing) ? 'translate-y-0' : '-translate-y-[100vh]'}"
     on:click|stopPropagation
   >
     <div class="flex-shrink-0 flex justify-between items-start mb-4">
