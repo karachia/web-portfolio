@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { formatDuration, formatDate } from '$lib/utils/formatters';
+	import MediaFeatures from '$lib/components/MediaFeatures.svelte';
 	export let item: any;
 </script>
 
@@ -24,6 +25,9 @@
 		<div class="text-right">
 			<div class="text-sm text-zinc-500">{formatDuration(item.length)}</div>
 			<div class="text-sm text-zinc-500">{formatDate(item.date)}</div>
+			<div class="mt-2 flex justify-end">
+				<MediaFeatures item={item} />
+			</div>
 		</div>
 	</div>
 

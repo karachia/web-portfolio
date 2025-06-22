@@ -1,5 +1,8 @@
 <script lang="ts">
 import { onMount } from 'svelte';
+import { page } from '$app/stores';
+import { goto } from '$app/navigation';
+
 let menuOpen = false;
 let showMenu = false;
 const navItems = [
@@ -22,8 +25,15 @@ function toggleMenu() {
   if (!menuOpen) openMenu();
   else closeMenu();
 }
-function handleNavClick() {
+function handleNavClick(href: string) {
   closeMenu();
+  
+  // If we're not on the main page, navigate to main page with hash
+  if ($page.url.pathname !== '/') {
+    goto('/' + href);
+  }
+  // If we're already on the main page, just scroll to the section
+  // (the hash link will handle this automatically)
 }
 
 // Optional: Close menu on resize to md and up
@@ -59,7 +69,7 @@ onMount(() => {
         <li>
           <a
             href={item.href}
-            on:click={handleNavClick}
+            on:click={() => handleNavClick(item.href)}
             class="text-gray-700 hover:text-black transition-colors duration-200 font-medium px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
             >{item.name}</a
           >
@@ -73,7 +83,7 @@ onMount(() => {
           <li>
             <a
               href={item.href}
-              on:click={handleNavClick}
+              on:click={() => handleNavClick(item.href)}
               class="block w-full text-center text-gray-700 hover:text-black transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
               >{item.name}</a
             >

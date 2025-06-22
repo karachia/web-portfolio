@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import MusicItem from '$lib/components/MusicItem.svelte';
+  import Footer from '$lib/components/Footer.svelte';
   import Icon from 'svelte-awesome';
 
   /// *** Embedded Icons ***
@@ -9,7 +10,7 @@
   import instagram from 'svelte-awesome/icons/instagram';
   import soundcloud from 'svelte-awesome/icons/soundcloud';
 
-  let music = [];
+  let music: any[] = [];
 
   onMount(async () => {
     const response = await fetch('/data/music.json');
@@ -29,16 +30,16 @@
       </h2>
       <div class="flex space-x-6 mt-4">
         <a href="https://github.com/karachia" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
-          <Icon data={github} scale="1.5"/>
+          <Icon data={github} scale={1.5}/>
         </a>
         <a href="https://www.linkedin.com/in/sina-karachiani-5b9b8593/" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
-          <Icon data={linkedin} scale="1.5"/>
+          <Icon data={linkedin} scale={1.5}/>
         </a>
         <a href="https://www.instagram.com/sina.karachiani.music/ " target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
-          <Icon data={instagram} scale="1.5"/>
+          <Icon data={instagram} scale={1.5}/>
         </a>
         <a href="https://soundcloud.com/sinakarachiani/ " target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
-          <Icon data={soundcloud} scale="2"/>
+          <Icon data={soundcloud} scale={2}/>
         </a>
       </div>
     </div>
@@ -75,6 +76,8 @@
   </p>
   <a href="mailto:youremail@example.com" class="inline-block px-6 py-2 bg-gray-900 text-white rounded shadow hover:bg-gray-700 transition-colors duration-200">Email Me</a>
 </section>
+
+<Footer />
 
 <style>
   .fade-in {
