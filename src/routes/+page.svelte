@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import MusicItem from '$lib/components/MusicItem.svelte';
-  import MusicDetailModal from '$lib/components/MusicDetailModal.svelte';
   import Icon from 'svelte-awesome';
 
   /// *** Embedded Icons ***
@@ -11,67 +10,10 @@
   import soundcloud from 'svelte-awesome/icons/soundcloud';
 
   let music = [];
-  let selectedMusicItem = null;
-  let isModalClosing = false;
 
   onMount(async () => {
     const response = await fetch('/data/music.json');
     music = await response.json();
-    
-    // Check for music item in URL after loading data
-    checkUrlForMusicItem();
-  });
-
-  function checkUrlForMusicItem() {
-    // Check URL hash for music item ID
-    const hash = window.location.hash;
-    if (hash && hash.startsWith('#music-')) {
-      const musicId = hash.replace('#music-', '');
-      const musicItem = music.find(item => item.id === musicId);
-      if (musicItem) {
-        selectedMusicItem = musicItem;
-        isModalClosing = false;
-      }
-    }
-  }
-
-  function showDetails(event) {
-    selectedMusicItem = event.detail;
-    isModalClosing = false;
-    
-    // Update URL with music item ID
-    const musicId = event.detail.id;
-    if (musicId) {
-      window.location.hash = `music-${musicId}`;
-    }
-  }
-
-  function closeModal() {
-    isModalClosing = true;
-    // Wait for animation to complete before removing from DOM
-    setTimeout(() => {
-      selectedMusicItem = null;
-      isModalClosing = false;
-      // Remove music item from URL
-      if (window.location.hash.startsWith('#music-')) {
-        window.location.hash = '';
-      }
-    }, 300);
-  }
-
-  // Listen for browser back/forward buttons
-  onMount(() => {
-    const handleHashChange = () => {
-      if (window.location.hash.startsWith('#music-')) {
-        checkUrlForMusicItem();
-      } else if (selectedMusicItem) {
-        // If hash is cleared and modal is open, close it
-        closeModal();
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
   });
 </script>
 
@@ -114,14 +56,10 @@
   <h2 class="text-3xl md:text-5xl font-bold mb-8 text-gray-900">Music</h2>
   <div class="w-full flex flex-col items-center space-y-8">
     {#each music as item}
-      <MusicItem {item} on:viewDetails={showDetails} />
+      <MusicItem {item} />
     {/each}
   </div>
 </section>
-
-{#if selectedMusicItem}
-  <MusicDetailModal item={selectedMusicItem} isClosing={isModalClosing} on:close={closeModal} />
-{/if}
 
 <section id="art" class="min-h-screen flex flex-col justify-center items-center px-4 py-24 md:py-32 fade-in">
   <h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900">Art</h2>
