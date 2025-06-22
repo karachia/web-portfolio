@@ -3,5 +3,6 @@
 @plugin '@tailwindcss/typography';
 
 html, body {
-  font-family: 'Gothic A1', sans-serif;
+  /* font-family: 'Gothic A1', sans-serif; */
+  font-family: 'Manrope', sans-serif;
 }

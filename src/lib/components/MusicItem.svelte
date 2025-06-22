@@ -1,35 +1,11 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import { formatDuration, formatDate } from '$lib/utils/formatters';
 	export let item: any;
 	const dispatch = createEventDispatcher();
 
 	function handleClick() {
 		dispatch('viewDetails', item);
-	}
-
-    function convertNumberToDuration(duration: any): string {
-        if (Number.isInteger(duration)) {
-            return `${duration}'`;
-        } else {
-            const wholeMinutes = Math.floor(duration);
-            const seconds = Math.round((duration - wholeMinutes) * 60);
-            return `${wholeMinutes}' ${seconds.toString().padStart(2, '0')}"`;
-        }
-    }
-
-	function formatDuration(length: any): string {
-		// If there's a default value, use it
-		if (length.default !== undefined) {
-			return convertNumberToDuration(length.default);
-		} 
-		
-		// If no default but min and max exist
-		if (length.min !== undefined && length.max !== undefined) {
-			return `${convertNumberToDuration(length.min)} - ${convertNumberToDuration(length.max)}`;
-		}
-		
-		// Fallback
-		return "_' _\"";
 	}
 </script>
 
@@ -39,7 +15,7 @@
 >
 	<div class="flex items-start justify-between">
 		<div>
-			<h3 class="mb-1 text-2xl font-bold text-gray-800">{item.title}</h3>
+			<h3 class="mb-1 text-2xl font-bold text-zinc-600">{item.title}</h3>
             {#if item.for}
 			<p class="text-lg font-light text-zinc-500 italic">for {item.for}</p>
             {/if}
@@ -53,7 +29,7 @@
         </span> -->
 		<div class="text-right">
 			<div class="text-sm text-zinc-500">{formatDuration(item.length)}</div>
-			<div class="text-sm text-zinc-500">{new Date(item.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</div>
+			<div class="text-sm text-zinc-500">{formatDate(item.date)}</div>
 		</div>
 	</div>
 

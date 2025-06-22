@@ -5,7 +5,6 @@
   import Icon from 'svelte-awesome';
 
   /// *** Embedded Icons ***
-  // Recommended - import just the icon you need
   import github from 'svelte-awesome/icons/github';
   import linkedin from 'svelte-awesome/icons/linkedin';
   import instagram from 'svelte-awesome/icons/instagram';

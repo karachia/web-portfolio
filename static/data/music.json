@@ -1,490 +1,523 @@
 [
-    {
-      "id": "orisonForStringQaurtet",
-      "title": "Orison",
-      "for": "String Quartet",
-      "dedication": "",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Quartet",
-      "tags": [],
-      "length": {
-        "min": 7.5,
-        "max": 10,
-        "default": 7.5
-      },
-      "date": "2025-05-12",
-      "detailed_instrumentation": "",
-      "image": "/assets/album-art-1.png",
-      "soundcloud": "https://soundcloud.com/sinakarachiani/your-track-1",
-      "videos": ["https://youtube.com/your-video-1"],
-      "recordings": ["https://link-to-recording-1"]
+  {
+		"id": "Example",
+		"title": "Example",
+		"for": "String Quartet",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",  
+		"summary": "A piece inspired by the poems of the persian poet, Rumi.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"tags": ["String Quartet", "Chamber"],
+		"length": {
+			"min": 7.5,
+			"max": 10,
+			"default": 7.5
+		},
+		"date": "2025-07-12",
+		"detailed_instrumentation": "2 Violins, Viola, Cello",
+		"image": "/assets/album-art-1.png",
+		"soundcloud": {
+      "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
+      "width": "70%",
+      "height": 320,
+      "link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
+      "title": "Whirling Onward hahaha"
     },
-    {
-      "id": "StrangerOfKinForOrchestra",
-      "title": "Stranger of Kin",
-      "for": "Orchestra",
-      "dedication": "Dedicated to my grandmother, Tahereh Moeini",
-      "summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
-      "category": "Large Ensemble",
-      "subcategory": "Orchestra",
-      "tags": ["Orchestra"],
-      "length": {
-        "min": 9.5,
-        "max": 11
-      },
-      "date": "2025-03-20",
-      "image": "/assets/album-art-2.png",
-      "soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
-    },
-    {
-      "id": "StrangerOfKinForChamberOrchestra",
-      "title": "Stranger of Kin",
-      "for": "Chamber Orchestra",
-      "dedication": "Dedicated to my grandmother, Tahereh Moeini",
-      "summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
-      "category": "Large Ensemble",
-      "subcategory": "Chamber Orchestra",
-      "tags": ["Orchestra", "Chamber Orchestra"],
-      "length": {
-        "min": 9.5,
-        "max": 11
-      },
-      "date": "2024-11-20",
-      "image": "/assets/album-art-2.png",
-      "soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
-    },
-    {
-      "id": "StrangerOfKinForMixedEnsemble",
-      "title": "Stranger of Kin",
-      "for": "9-Piece Mixed Ensemble",
-      "dedication": "Dedicated to my grandmother, Tahereh Moeini",
-      "summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
-      "category": "Large Ensemble",
-      "subcategory": "Chamber Orchestra",
-      "tags": ["Mixed Ensemble"],
-      "length": {
-        "min": 9,
-        "max": 10.5
-      },
-      "date": "2024-09-20",
-      "image": "/assets/album-art-2.png",
-      "soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
-    },     
-    {
-      "id": "StrangerOfKinForMixedQuartet",
-      "title": "Stranger of Kin",
-      "for": "Violin, Horn, Piano, & Percussion",
-      "dedication": "Dedicated to my grandmother, Tahereh Moeini",
-      "summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
-      "category": "Chamber",
-      "subcategory": "Quartet",
-      "tags": [],
-      "length": {
-        "min": 6,
-        "max": 7.5
-      },
-      "date": "2024-11-20",
-      "image": "/assets/album-art-2.png",
-      "soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
-    },
-    {
-      "id": "aulosInWonderland",
-      "title": "Aulos in Wonderland",
-      "for": "Orchestra",
-      "dedication": "",
-      "summary": "Capriccio, a Period Composition for Orchestra",
-      "category": "Large Ensemble",
-      "subcategory": "Orchestra",
-      "tags": ["Orchestra"],
-      "length": {
-        "min": 6,
-        "max": 7
-      },
-      "date": "2024-06-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "coolAndGoodDuo",
-      "title": "Cool & Good (Duo Version)",
-      "for": "Piano and Alto Saxophone",
-      "dedication": "Dedicated to the victims of flight 752",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Duo",
-      "tags": ["Piano", "Saxophone", "Duos"],
-      "length": {
-        "default": 20
-      },
-      "date": "2022-01-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "coolAndGoodEnsemble",
-      "title": "Cool & Good",
-      "for": "Piano, Alto Saxophone, and 11-piece ensemble",
-      "dedication": "Dedicated to the victims of flight 752",
-      "summary": "",
-      "category": "Large Ensemble",
-      "subcategory": "Mixed Ensemble",
-      "tags": ["Piano", "Saxophone", "Mixed Ensemble", "conducted"],
-      "length": {
-        "default": 22
-      },
-      "date": "2020-05-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "whirlingOnward",
-      "title": "Whirling, Onward…",
-      "for": "Orchestra",
-      "dedication": "",
-      "summary": "",
-      "category": "Large Ensemble",
-      "subcategory": "Orchestra",
-      "tags": ["Orchestra"],
-      "length": {
-        "min": 14,
-        "max": 15
-      },
-      "date": "2019-01-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "carolyn",
-      "title": "Carolyn",
-      "for": "Piano Solo",
-      "dedication": "In memory of Dr. Carolyn Bremer",
-      "summary": "",
-      "category": "Solo",
-      "subcategory": "Piano",
-      "tags": ["Piano"],
-      "length": {
-        "default": 5.5
-      },
-      "date": "2018-10-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "longing",
-      "title": "Longing",
-      "for": "SATB choir",
-      "dedication": "",
-      "summary": "",
-      "category": "Vocal",
-      "subcategory": "Choir",
-      "tags": ["Choir", "SATB"],
-      "length": {
-        "default": 7
-      },
-      "date": "2018-04-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "iYou",
-      "title": "I, You",
-      "for": "Guitar & Violin",
-      "dedication": "",
-      "summary": "Read and Recorded by Lina Bahn and Mak Grgic Violin and Guitar duo",
-      "category": "Chamber",
-      "subcategory": "Duo",
-      "tags": ["Guitar", "Violin"],
-      "length": {
-        "default": 5.5
-      },
-      "date": "2018-03-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "miniatureSuite",
-      "title": "Miniature Suite",
-      "for": "Woodwind Quartet",
-      "dedication": "",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Quartet",
-      "tags": ["Woodwind"],
-      "length": {
-        "default": 5
-      },
-      "date": "2017-11-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "evilWitchAwakens",
-      "title": "The Evil Witch Awakens!",
-      "for": "Mixed Ensemble",
-      "dedication": "",
-      "summary": "",
-      "category": "Large Ensemble",
-      "subcategory": "Mixed Ensemble",
-      "tags": ["Mixed Ensemble"],
-      "length": {
-        "default": 3
-      },
-      "date": "2017-10-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "wandererLonelyCityStreets",
-      "title": "Wanderer of Lonely City Streets",
-      "for": "Brass Ensemble",
-      "dedication": "",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Brass",
-      "tags": ["Brass"],
-      "length": {
-        "default": 8
-      },
-      "date": "2017-03-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "persistenceOfMemory",
-      "title": "Persistence of Memory",
-      "for": "Piano Solo",
-      "dedication": "",
-      "summary": "",
-      "category": "Solo",
-      "subcategory": "Piano",
-      "tags": ["Piano"],
-      "length": {
-        "default": 12.5
-      },
-      "date": "2016-11-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "sunRisesAgain",
-      "title": "And the Sun Rises Again",
-      "for": "Brass Ensemble",
-      "dedication": "Commissioned by Mr. Jake Marsh for His Conducting Recital",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Brass",
-      "tags": ["Brass"],
-      "length": {
-        "default": 7
-      },
-      "date": "2016-03-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "groveRunner",
-      "title": "The Grove Runner",
-      "for": "Clarinet in A, 2 Bb Trumpets, Trombone, and Piano",
-      "dedication": "",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Mixed Ensemble",
-      "tags": ["Clarinet", "Trumpet", "Trombone", "Piano"],
-      "length": {
-        "default": 6
-      },
-      "date": "2016-01-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "breathingOfNight",
-      "title": "Breathing of Night",
-      "for": "Wind Symphony",
-      "dedication": "",
-      "summary": "",
-      "category": "Large Ensemble",
-      "subcategory": "Wind Symphony",
-      "tags": ["Wind Symphony"],
-      "length": {
-        "default": 5
-      },
-      "date": "2015-02-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "brassQuintet",
-      "title": "Brass Quintet",
-      "for": "Brass Quintet",
-      "dedication": "",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Quintet",
-      "tags": ["Brass"],
-      "length": {
-        "default": 6
-      },
-      "date": "2015-01-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "greenEggsAndHam",
-      "title": "Green Eggs and Ham",
-      "for": "SATB Choir",
-      "dedication": "",
-      "summary": "",
-      "category": "Vocal",
-      "subcategory": "Choir",
-      "tags": ["Choir", "SATB"],
-      "length": {
-        "default": 2
-      },
-      "date": "2014-11-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "dreamersReveries",
-      "title": "A Dreamer's Reveries",
-      "for": "Wind Symphony",
-      "dedication": "",
-      "summary": "",
-      "category": "Large Ensemble",
-      "subcategory": "Wind Symphony",
-      "tags": ["Wind Symphony"],
-      "length": {
-        "default": 10.5
-      },
-      "date": "2014-10-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "sonataContrabassPiano",
-      "title": "Sonata for Contrabass and Piano",
-      "dedication": "",
-      "summary": "",
-      "category": "Chamber",
-      "subcategory": "Duo",
-      "tags": ["Contrabass", "Piano"],
-      "length": {
-        "default": 20
-      },
-      "date": "2014-04-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "trashcanLives",
-      "title": "Trashcan Lives",
-      "for": "SATB Choir",
-      "dedication": "",
-      "summary": "",
-      "category": "Vocal",
-      "subcategory": "Choir",
-      "tags": ["Choir", "SATB"],
-      "length": {
-        "default": 3
-      },
-      "date": "2013-11-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "orchestralOverture",
-      "title": "Orchestral Overture",
-      "dedication": "",
-      "summary": "",
-      "category": "Large Ensemble",
-      "subcategory": "Orchestra",
-      "tags": ["Orchestra"],
-      "length": {
-        "default": 8
-      },
-      "date": "2013-11-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
-    },
-    {
-      "id": "danceOfBrashWoman",
-      "title": "Dance of the Brash Woman",
-      "for": "Orchestra",
-      "dedication": "",
-      "summary": "",
-      "category": "Large Ensemble",
-      "subcategory": "Orchestra",
-      "tags": ["Orchestra"],
-      "length": {
-        "default": 3
-      },
-      "date": "2013-05-11",
-      "detailed_instrumentation": "",
-      "image": "",
-      "soundcloud": "",
-      "videos": [],
-      "recordings": []
+		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI", "https://www.youtube.com/embed/j8Gl8GBnBWI"],
+		"recordings": {
+      "preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
+      "previewWidth": "70%",
+      "previewHeight": 380,
+      "theme": 0,
+      "appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
+      "spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
+      "youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
+      "amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
+      "soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
     }
-  ] 
+	},
+	{
+		"id": "transients",
+		"title": "Transients",
+		"for": "Piano Solo",
+		"category": "Solo",
+		"subcategory": "Piano Solo",
+    "description": "Transients is a three-movement piece for solo piano that is inspired by the poems of the persian poet, Rumi.",
+		"tags": ["Piano"],
+		"length": {
+			"default": 10
+		},
+		"date": "2025-06-12"
+	},
+	{
+		"id": "orisonForStringQaurtet",
+		"title": "Orison",
+		"for": "String Quartet",
+
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"tags": [],
+		"length": {
+			"min": 7.5,
+			"max": 10,
+			"default": 7.5
+		},
+		"date": "2025-05-12",
+		"detailed_instrumentation": "",
+		"image": "/assets/album-art-1.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-1",
+		"videos": ["https://youtube.com/your-video-1"],
+		"recordings": ["https://link-to-recording-1"]
+	},
+	{
+		"id": "StrangerOfKinForOrchestra",
+		"title": "Stranger of Kin",
+		"for": "Orchestra",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
+		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+		"category": "Large Ensemble",
+		"subcategory": "Orchestra",
+		"tags": ["Orchestra"],
+		"length": {
+			"min": 9.5,
+			"max": 11
+		},
+		"date": "2025-03-20",
+		"image": "/assets/album-art-2.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+	},
+	{
+		"id": "StrangerOfKinForChamberOrchestra",
+		"title": "Stranger of Kin",
+		"for": "Chamber Orchestra",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
+		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+		"category": "Large Ensemble",
+		"subcategory": "Chamber Orchestra",
+		"tags": ["Orchestra", "Chamber Orchestra"],
+		"length": {
+			"min": 9.5,
+			"max": 11
+		},
+		"date": "2024-11-20",
+		"image": "/assets/album-art-2.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+	},
+	{
+		"id": "StrangerOfKinForMixedEnsemble",
+		"title": "Stranger of Kin",
+		"for": "9-Piece Mixed Ensemble",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
+		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+		"category": "Large Ensemble",
+		"subcategory": "Chamber Orchestra",
+		"tags": ["Mixed Ensemble"],
+		"length": {
+			"min": 9,
+			"max": 10.5
+		},
+    "detailed_instrumentation": "Flute, Bb Clarinet (doubling Bass), Alto Saxophone, Violin, Viola, Cello, Piano, 2 Percussions",
+		"date": "2024-09-20",
+		"image": "/assets/album-art-2.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+	},
+	{
+		"id": "StrangerOfKinForMixedQuartet",
+		"title": "Stranger of Kin",
+		"for": "Violin, Horn, Piano, & Percussion",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
+		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"tags": [],
+		"length": {
+			"min": 6,
+			"max": 7.5
+		},
+		"date": "2024-11-20",
+		"image": "/assets/album-art-2.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+	},
+	{
+		"id": "aulosInWonderland",
+		"title": "Aulos in Wonderland",
+		"for": "Orchestra",
+		"summary": "Capriccio, a Period Composition for Orchestra",
+		"category": "Large Ensemble",
+		"subcategory": "Orchestra",
+		"tags": ["Orchestra"],
+		"length": {
+			"min": 6,
+			"max": 7
+		},
+		"date": "2024-06-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "coolAndGoodDuo",
+		"title": "Cool & Good (Duo Version)",
+		"for": "Piano and Alto Saxophone",
+		"dedication": "Dedicated to the victims of flight 752",
+		"category": "Chamber",
+		"subcategory": "Duo",
+		"tags": ["Piano", "Saxophone", "Duos"],
+		"length": {
+			"default": 20
+		},
+		"date": "2022-01-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "coolAndGoodEnsemble",
+		"title": "Cool & Good",
+		"for": "Piano, Alto Saxophone, and 11-piece ensemble",
+		"dedication": "Dedicated to the victims of flight 752",
+		"category": "Large Ensemble",
+		"subcategory": "Mixed Ensemble",
+		"tags": ["Piano", "Saxophone", "Mixed Ensemble", "conducted"],
+		"length": {
+			"default": 22
+		},
+		"date": "2020-05-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "whirlingOnwardDanceFilm",
+		"title": "Dance Film: Whirling, Onward…",
+		"category": "Large Ensemble",
+		"subcategory": "Orchestra",
+		"summary": "A dance film for my Orchestra piece, \"Whirling, Onward…\"",
+		"tags": ["film", "dance", "orchestra"],
+		"length": {
+			"default": 5.5
+		},
+		"date": "2021-04-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "whirlingOnward",
+		"title": "Whirling, Onward…",
+		"for": "Orchestra",
+		"category": "Large Ensemble",
+		"subcategory": "Orchestra",
+		"tags": ["Orchestra"],
+		"length": {
+			"min": 14,
+			"max": 15
+		},
+		"date": "2019-01-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "carolyn",
+		"title": "Carolyn",
+		"for": "Piano Solo",
+		"dedication": "In memory of Dr. Carolyn Bremer",
+		"category": "Solo",
+		"subcategory": "Piano",
+		"tags": ["Piano"],
+		"length": {
+			"default": 5.5
+		},
+		"date": "2018-10-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "longing",
+		"title": "Longing",
+		"for": "SATB choir",
+		"category": "Vocal",
+		"subcategory": "Choir",
+		"tags": ["Choir", "SATB"],
+		"length": {
+			"default": 7
+		},
+		"date": "2018-04-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "iYou",
+		"title": "I, You",
+		"for": "Guitar & Violin",
+		"summary": "Read and Recorded by Lina Bahn and Mak Grgic Violin and Guitar duo",
+		"category": "Chamber",
+		"subcategory": "Duo",
+		"tags": ["Guitar", "Violin"],
+		"length": {
+			"default": 5.5
+		},
+		"date": "2018-03-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "miniatureSuite",
+		"title": "Miniature Suite",
+		"for": "Woodwind Quartet",
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"tags": ["Woodwind"],
+		"length": {
+			"default": 5
+		},
+		"date": "2017-11-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "evilWitchAwakens",
+		"title": "The Evil Witch Awakens!",
+		"for": "Mixed Ensemble",
+		"category": "Large Ensemble",
+		"subcategory": "Mixed Ensemble",
+		"tags": ["Mixed Ensemble"],
+		"length": {
+			"default": 3
+		},
+		"date": "2017-10-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "wandererLonelyCityStreets",
+		"title": "Wanderer of Lonely City Streets",
+		"for": "Brass Ensemble",
+		"category": "Chamber",
+		"subcategory": "Brass",
+		"tags": ["Brass"],
+		"length": {
+			"default": 8
+		},
+		"date": "2017-03-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "persistenceOfMemory",
+		"title": "Persistence of Memory",
+		"for": "Piano Solo",
+		"category": "Solo",
+		"subcategory": "Piano",
+		"tags": ["Piano"],
+		"length": {
+			"default": 12.5
+		},
+		"date": "2016-11-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "sunRisesAgain",
+		"title": "And the Sun Rises Again",
+		"for": "Brass Ensemble",
+		"dedication": "Commissioned by Mr. Jake Marsh for His Conducting Recital",
+		"category": "Chamber",
+		"subcategory": "Brass",
+		"tags": ["Brass"],
+		"length": {
+			"default": 7
+		},
+		"date": "2016-03-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "groveRunner",
+		"title": "The Grove Runner",
+		"for": "Clarinet in A, 2 Bb Trumpets, Trombone, and Piano",
+		"category": "Chamber",
+		"subcategory": "Mixed Ensemble",
+		"tags": ["Clarinet", "Trumpet", "Trombone", "Piano"],
+		"length": {
+			"default": 6
+		},
+		"date": "2016-01-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "breathingOfNight",
+		"title": "Breathing of Night",
+		"for": "Wind Symphony",
+
+		"category": "Large Ensemble",
+		"subcategory": "Wind Symphony",
+		"tags": ["Wind Symphony"],
+		"length": {
+			"default": 5
+		},
+		"date": "2015-02-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "brassQuintet",
+		"title": "Brass Quintet",
+		"for": "Brass Quintet",
+		"category": "Chamber",
+		"subcategory": "Quintet",
+		"tags": ["Brass"],
+		"length": {
+			"default": 6
+		},
+		"date": "2015-01-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "greenEggsAndHam",
+		"title": "Green Eggs and Ham",
+		"for": "SATB Choir",
+		"category": "Vocal",
+		"subcategory": "Choir",
+		"tags": ["Choir", "SATB"],
+		"length": {
+			"default": 2
+		},
+		"date": "2014-11-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "dreamersReveries",
+		"title": "A Dreamer's Reveries",
+		"for": "Wind Symphony",
+		"category": "Large Ensemble",
+		"subcategory": "Wind Symphony",
+		"tags": ["Wind Symphony"],
+		"length": {
+			"default": 10.5
+		},
+		"date": "2014-10-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "sonataContrabassPiano",
+		"title": "Sonata for Contrabass and Piano",
+		"category": "Chamber",
+		"subcategory": "Duo",
+		"tags": ["Contrabass", "Piano"],
+		"length": {
+			"default": 20
+		},
+		"date": "2014-04-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "trashcanLives",
+		"title": "Trashcan Lives",
+		"for": "SATB Choir",
+		"category": "Vocal",
+		"subcategory": "Choir",
+		"tags": ["Choir", "SATB"],
+		"length": {
+			"default": 3
+		},
+		"date": "2013-11-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "orchestralOverture",
+		"title": "Orchestral Overture",
+		"category": "Large Ensemble",
+		"subcategory": "Orchestra",
+		"tags": ["Orchestra"],
+		"length": {
+			"default": 8
+		},
+		"date": "2013-11-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	},
+	{
+		"id": "danceOfBrashWoman",
+		"title": "Dance of the Brash Woman",
+		"for": "Orchestra",
+		"category": "Large Ensemble",
+		"subcategory": "Orchestra",
+		"tags": ["Orchestra"],
+		"length": {
+			"default": 3
+		},
+		"date": "2013-05-11",
+		"detailed_instrumentation": "",
+		"image": "",
+		"soundcloud": "",
+		"videos": [],
+		"recordings": []
+	}
+]
