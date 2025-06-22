@@ -46,7 +46,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div
-  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4 transition-all duration-300 ease-out {isVisible ? 'opacity-100 backdrop-blur-sm' : 'opacity-0 backdrop-blur-none'}"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4 transition-all duration-300 ease-out {(isVisible && !isClosing) ? 'opacity-100 backdrop-blur-sm' : 'opacity-0 backdrop-blur-none'}"
   on:click={close}
   on:keydown={(e: KeyboardEvent) => e.key === 'Enter' && close()}
   role="button"
@@ -121,7 +121,7 @@
       <!-- Video Section -->
       {#if item.videos && item.videos.length > 0}
         <div class="mb-6 mt-8">
-          <h3 class="text-xl font-bold text-zinc-700 mb-4">Video</h3>
+          <h3 class="text-xl font-bold text-zinc-700 mb-4">Watch</h3>
           {#each item.videos as video, index}
             <YouTubeEmbed videoUrl={video} />
           {/each}

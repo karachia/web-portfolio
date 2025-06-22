@@ -17,11 +17,33 @@
   onMount(async () => {
     const response = await fetch('/data/music.json');
     music = await response.json();
+    
+    // Check for music item in URL after loading data
+    checkUrlForMusicItem();
   });
+
+  function checkUrlForMusicItem() {
+    // Check URL hash for music item ID
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#music-')) {
+      const musicId = hash.replace('#music-', '');
+      const musicItem = music.find(item => item.id === musicId);
+      if (musicItem) {
+        selectedMusicItem = musicItem;
+        isModalClosing = false;
+      }
+    }
+  }
 
   function showDetails(event) {
     selectedMusicItem = event.detail;
     isModalClosing = false;
+    
+    // Update URL with music item ID
+    const musicId = event.detail.id;
+    if (musicId) {
+      window.location.hash = `music-${musicId}`;
+    }
   }
 
   function closeModal() {
@@ -30,8 +52,27 @@
     setTimeout(() => {
       selectedMusicItem = null;
       isModalClosing = false;
+      // Remove music item from URL
+      if (window.location.hash.startsWith('#music-')) {
+        window.location.hash = '';
+      }
     }, 300);
   }
+
+  // Listen for browser back/forward buttons
+  onMount(() => {
+    const handleHashChange = () => {
+      if (window.location.hash.startsWith('#music-')) {
+        checkUrlForMusicItem();
+      } else if (selectedMusicItem) {
+        // If hash is cleared and modal is open, close it
+        closeModal();
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  });
 </script>
 
 <section id="home" class="min-h-[70vh] flex flex-col justify-center items-center px-4 pt-16 fade-in">
