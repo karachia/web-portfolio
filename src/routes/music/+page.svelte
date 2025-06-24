@@ -3,11 +3,14 @@
 	import MusicItem from '$lib/components/MusicItem.svelte';
 	import SortToggle from '$lib/components/SortToggle.svelte';
 	import CategorySection from '$lib/components/CategorySection.svelte';
+	import ExpandableSearch from '$lib/components/ExpandableSearch.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
 	let music: any[] = [];
 	let sortMode: 'chronological' | 'category' = 'chronological';
 	let expandedCategories: { [key: string]: boolean } = {};
+	let searchQuery = '';
+	let prevExpandedCategories: { [key: string]: boolean } = {};
 
 	onMount(async () => {
 		const response = await fetch('/data/music.json');
@@ -30,6 +33,21 @@
 		expandedCategories = { ...expandedCategories };
 	}
 
+	function handleSearch(e: CustomEvent<string>) {
+		const newQuery = e.detail.trim().toLowerCase();
+		if (sortMode === 'category') {
+			if (newQuery && !searchQuery) {
+				// Save previous state and expand all
+				prevExpandedCategories = { ...expandedCategories };
+				Object.keys(expandedCategories).forEach(cat => expandedCategories[cat] = true);
+			} else if (!newQuery && searchQuery) {
+				// Restore previous state
+				expandedCategories = { ...prevExpandedCategories };
+			}
+		}
+		searchQuery = newQuery;
+	}
+
 	// Custom ordering for categories and subcategories
 	const categoryOrder = [
 		'Large Ensemble',
@@ -47,11 +65,19 @@
 		'Open Instrumentation': []
 	};
 
+	// Filtered music by search query
+	$: filteredMusic = searchQuery
+		? music.filter(item =>
+			item.title.toLowerCase().includes(searchQuery) ||
+			(item.for && item.for.toLowerCase().includes(searchQuery))
+		)
+		: music;
+
 	// Sort music chronologically (newest first)
-	$: chronologicalMusic = [...music].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	$: chronologicalMusic = [...filteredMusic].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 	// Group music by category and subcategory with custom ordering
-	$: categoryMusic = music.reduce((acc: { [key: string]: { [key: string]: any[] } }, item) => {
+	$: categoryMusic = filteredMusic.reduce((acc: { [key: string]: { [key: string]: any[] } }, item) => {
 		if (!acc[item.category]) {
 			acc[item.category] = {};
 		}
@@ -86,14 +112,17 @@
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50 py-8">
-	<div class="mx-auto max-w-4xl px-4">
+	<div class="mx-auto max-w-4xl px-4 mt-12">
 		<!-- Header -->
 		<div class="mb-12 text-center">
 			<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Music Catalog</h1>
 		</div>
 
-		<!-- Sort Toggle -->
-		<SortToggle {sortMode} onToggle={handleSortToggle} />
+		<!-- Toggle and Search Row -->
+		<div class="flex items-center justify-center gap-4 mb-8">
+			<SortToggle {sortMode} onToggle={handleSortToggle} />
+			<ExpandableSearch on:search={handleSearch} />
+		</div>
 
 		<!-- Music Items -->
 		{#if sortMode === 'chronological'}

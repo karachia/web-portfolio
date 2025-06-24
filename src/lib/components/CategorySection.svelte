@@ -32,10 +32,10 @@
 
 	{#if isExpanded}
 		<!-- Subcategories -->
-		<div class="space-y-6">
+		<div class="space-y-6 mb-16">
 			{#each Object.entries(subcategories) as [subcategory, items]}
 				<div>
-					<div class="flex justify-center mt-12 mb-4">
+					<div class="flex justify-center mt-10 mb-4">
 						<h3 class="text-xl font-bold drop-shadow-lg bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent text-center">
 							{subcategory}
 						</h3>
