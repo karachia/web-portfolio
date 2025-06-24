@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import MusicItem from '$lib/components/MusicItem.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Icon from 'svelte-awesome';
 
@@ -9,13 +7,6 @@
   import linkedin from 'svelte-awesome/icons/linkedin';
   import instagram from 'svelte-awesome/icons/instagram';
   import soundcloud from 'svelte-awesome/icons/soundcloud';
-
-  let music: any[] = [];
-
-  onMount(async () => {
-    const response = await fetch('/data/music.json');
-    music = await response.json();
-  });
 </script>
 
 <section id="home" class="min-h-[70vh] flex flex-col justify-center items-center px-4 pt-16 fade-in">
@@ -51,15 +42,6 @@
   <p class="max-w-2xl text-lg md:text-xl text-gray-600 text-center mb-2">
     Hi, I'm Sina. Welcome to my minimal, elegant portfolio. I create music, art, and digital experiences.<br />Scroll down to explore more.
   </p>
-</section>
-
-<section id="music" class="min-h-screen flex flex-col items-center px-4 py-24 md:py-32 fade-in">
-  <h2 class="text-3xl md:text-5xl font-bold mb-8 text-gray-900">Music</h2>
-  <div class="w-full flex flex-col items-center space-y-8">
-    {#each music as item}
-      <MusicItem {item} />
-    {/each}
-  </div>
 </section>
 
 <section id="art" class="min-h-screen flex flex-col justify-center items-center px-4 py-24 md:py-32 fade-in">

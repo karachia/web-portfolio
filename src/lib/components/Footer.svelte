@@ -8,7 +8,7 @@
 	import soundcloud from 'svelte-awesome/icons/soundcloud';
 </script>
 
-<footer class="bg-zinc-900 text-white py-6">
+<footer class="bg-zinc-900 text-white py-8">
 	<div class="mx-auto max-w-4xl px-4">
 		<div class="relative flex items-center justify-between">
 			<div class="flex items-center space-x-6">
@@ -16,8 +16,9 @@
 					Contact Me!
 				</a>
 			</div>
-			<div class="absolute left-1/2 transform -translate-x-1/2 text-sm text-zinc-400">
-				© {new Date().getFullYear()} Sina Karachiani. All rights reserved.
+			<div class="absolute left-1/2 transform -translate-x-1/2 text-sm text-zinc-400 text-center">
+				<div>© {new Date().getFullYear()} Sina Karachiani. All rights reserved.</div> 
+                <div class="mt-1">Made with ❤️ by myself in San Francisco, CA</div>
 			</div>
 			<div class="flex items-center space-x-4">
 				<a href="https://github.com/karachia" target="_blank" class="text-zinc-400 hover:text-white transition-colors">

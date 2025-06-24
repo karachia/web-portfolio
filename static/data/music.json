@@ -92,7 +92,7 @@
 		"title": "Transients",
 		"for": "Piano Solo",
 		"category": "Solo",
-		"subcategory": "Piano Solo",
+		"subcategory": "Piano",
 		"description": "Transients is a three-movement piece for solo piano that is inspired by the poems of the persian poet, Rumi.",
 		"tags": ["Piano"],
 		"length": {
@@ -208,7 +208,7 @@
 	{
 		"id": "coolAndGoodDuo",
 		"title": "Cool & Good (Duo Version)",
-		"for": "Piano and Alto Saxophone",
+		"for": "Piano & Alto Saxophone",
 		"dedication": "Dedicated to the victims of flight 752",
 		"category": "Chamber",
 		"subcategory": "Duo",
@@ -226,7 +226,7 @@
 	{
 		"id": "coolAndGoodEnsemble",
 		"title": "Cool & Good",
-		"for": "Piano, Alto Saxophone, and 11-piece ensemble",
+		"for": "Piano, Alto Saxophone, & 11-piece ensemble",
 		"dedication": "Dedicated to the victims of flight 752",
 		"category": "Large Ensemble",
 		"subcategory": "Mixed Ensemble",
@@ -315,7 +315,7 @@
 		"id": "iYou",
 		"title": "I, You",
 		"for": "Guitar & Violin",
-		"summary": "Read and Recorded by Lina Bahn and Mak Grgic Violin and Guitar duo",
+		"description": "Composed for and Recorded by Lina Bahn and Mak Grgic Violin and Guitar duo",
 		"category": "Chamber",
 		"subcategory": "Duo",
 		"tags": ["Guitar", "Violin"],
@@ -418,9 +418,9 @@
 	{
 		"id": "groveRunner",
 		"title": "The Grove Runner",
-		"for": "Clarinet in A, 2 Bb Trumpets, Trombone, and Piano",
+		"for": "Clarinet in A, 2 Bb Trumpets, Trombone, & Piano",
 		"category": "Chamber",
-		"subcategory": "Mixed Ensemble",
+		"subcategory": "Quintet",
 		"tags": ["Clarinet", "Trumpet", "Trombone", "Piano"],
 		"length": {
 			"default": 6
@@ -503,7 +503,7 @@
 	},
 	{
 		"id": "sonataContrabassPiano",
-		"title": "Sonata for Contrabass and Piano",
+		"title": "Sonata for Contrabass & Piano",
 		"category": "Chamber",
 		"subcategory": "Duo",
 		"tags": ["Contrabass", "Piano"],

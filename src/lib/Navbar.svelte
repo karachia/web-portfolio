@@ -7,7 +7,7 @@ let menuOpen = false;
 let showMenu = false;
 const navItems = [
   { name: 'About', href: '#about' },
-  { name: 'Music', href: '#music' },
+  { name: 'Music', href: '/music' },
   { name: 'Art', href: '#art' },
   { name: 'Contact', href: '#contact' }
 ];
@@ -28,8 +28,12 @@ function toggleMenu() {
 function handleNavClick(href: string) {
   closeMenu();
   
-  // If we're not on the main page, navigate to main page with hash
-  if ($page.url.pathname !== '/') {
+  // If it's an external page link (starts with /), navigate to that page
+  if (href.startsWith('/')) {
+    goto(href);
+  }
+  // If we're not on the main page and it's a hash link, navigate to main page with hash
+  else if ($page.url.pathname !== '/') {
     goto('/' + href);
   }
   // If we're already on the main page, just scroll to the section
