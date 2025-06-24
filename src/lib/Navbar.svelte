@@ -2,14 +2,22 @@
 import { onMount } from 'svelte';
 import { page } from '$app/stores';
 import { goto } from '$app/navigation';
+import Icon from 'svelte-awesome';
+import chevronDown from 'svelte-awesome/icons/chevronDown';
 
 let menuOpen = false;
 let showMenu = false;
+let mobileDropdownOpen: string | null = null;
+let musicDropdownOpen = false;
+let musicDropdownCloseTimeout: ReturnType<typeof setTimeout> | null = null;
 const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Music', href: '/music' },
-  { name: 'Art', href: '#art' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'About', href: '/about' },
+  { name: 'Music', isDropdown: true, dropdown: [
+      { name: 'Music Catalog', href: '/music' },
+      { name: 'Media & Recordings', href: '/media' }
+    ] },
+  { name: 'Art', href: '/art' },
+  { name: 'Contact', href: '/contact' }
 ];
 
 function openMenu() {
@@ -56,6 +64,19 @@ function handleLogoClick(event: MouseEvent) {
   event.preventDefault();
   goto('/');
 }
+
+function openMusicDropdown() {
+  if (musicDropdownCloseTimeout) {
+    clearTimeout(musicDropdownCloseTimeout);
+    musicDropdownCloseTimeout = null;
+  }
+  musicDropdownOpen = true;
+}
+function closeMusicDropdown() {
+  musicDropdownCloseTimeout = setTimeout(() => {
+    musicDropdownOpen = false;
+  }, 240); // 300ms delay for reliability
+}
 </script>
 
 <nav class="w-full fixed top-0 left-0 z-50 flex justify-center pointer-events-none">
@@ -73,15 +94,42 @@ function handleLogoClick(event: MouseEvent) {
       </svg>
     </button>
     <!-- Nav Links (desktop) -->
-    <ul class="hidden md:flex space-x-6">
+    <ul class="hidden md:flex space-x-6 items-center">
       {#each navItems as item}
-        <li>
-          <a
-            href={item.href}
-            on:click={() => handleNavClick(item.href)}
-            class="text-gray-700 hover:text-black transition-colors duration-200 font-medium px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
-            >{item.name}</a
-          >
+        <li class="relative group flex items-center"
+            on:mouseenter={item.isDropdown ? openMusicDropdown : undefined}
+            on:mouseleave={item.isDropdown ? closeMusicDropdown : undefined}
+        >
+          {#if item.isDropdown}
+            <button type="button"
+              class="flex items-center text-gray-700 hover:text-black transition-colors duration-200 font-medium px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
+              aria-haspopup="true"
+              aria-expanded={musicDropdownOpen}
+            >
+              {item.name}
+              <Icon class="ml-1 w-3 h-3 align-middle text-gray-700 group-hover:text-black transition-colors duration-200" data={chevronDown} />
+            </button>
+            {#if musicDropdownOpen}
+              <ul class="absolute left-0 top-full mt-2 w-48 bg-white/95 shadow-lg rounded-2xl py-2 z-50 border-t border-gray-100">
+                {#each item.dropdown as subitem, i (subitem.name)}
+                  <li>
+                    <a href={subitem.href} on:click={() => handleNavClick(subitem.href)}
+                      class="block w-full text-left text-gray-700 hover:text-black transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
+                    >{subitem.name}</a>
+                  </li>
+                  {#if i < item.dropdown.length - 1}
+                    <div class="mx-3 my-1 border-t border-gray-200"></div>
+                  {/if}
+                {/each}
+              </ul>
+            {/if}
+          {:else}
+            <a
+              href={item.href}
+              on:click={() => handleNavClick(item.href || '')}
+              class="text-gray-700 hover:text-black transition-colors duration-200 font-medium px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
+            >{item.name}</a>
+          {/if}
         </li>
       {/each}
     </ul>
@@ -89,14 +137,33 @@ function handleLogoClick(event: MouseEvent) {
     {#if showMenu}
       <ul class="absolute top-full left-0 w-full bg-white/95 shadow-lg rounded-2xl mt-2 flex flex-col items-center py-4 space-y-2 md:hidden pointer-events-auto animate-fade-in-out" class:open={menuOpen} class:close={!menuOpen}>
         {#each navItems as item}
-          <li>
-            <a
-              href={item.href}
-              on:click={() => handleNavClick(item.href)}
-              class="block w-full text-center text-gray-700 hover:text-black transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
-              >{item.name}</a
-            >
-          </li>
+          {#if item.isDropdown}
+            <li class="w-full flex flex-col items-center">
+              <button type="button" class="flex items-center justify-center w-full text-gray-700 hover:text-black transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300" on:click={() => mobileDropdownOpen = mobileDropdownOpen === item.name ? null : item.name}>
+                {item.name}
+                <Icon class="ml-1 w-3 h-3 align-middle text-light text-gray-500" data={chevronDown} />
+              </button>
+              {#if mobileDropdownOpen === item.name}
+                <ul class="w-full flex flex-col items-center">
+                  {#each item.dropdown as subitem}
+                    <li class="w-full">
+                      <a href={subitem.href} on:click={() => handleNavClick(subitem.href)}
+                        class="block w-full text-center text-gray-700 hover:text-black transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
+                      >{subitem.name}</a>
+                    </li>
+                  {/each}
+                </ul>
+              {/if}
+            </li>
+          {:else}
+            <li>
+              <a
+                href={item.href}
+                on:click={() => handleNavClick(item.href || '')}
+                class="block w-full text-center text-gray-700 hover:text-black transition-colors duration-200 font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-300"
+              >{item.name}</a>
+            </li>
+          {/if}
         {/each}
       </ul>
     {/if}
