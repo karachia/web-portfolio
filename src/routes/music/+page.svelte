@@ -87,16 +87,33 @@
 	$: subcategories = Object.fromEntries(categories.map(cat => [cat, Array.from(new Set(music.filter(item => item.category === cat).map(item => item.subcategory)))]));
 	$: tags = Array.from(new Set(music.flatMap(item => item.tags || [])));
 
-	// Filtered music by search query only
+	// Helper to parse selectedCategory value
+	function parseCategorySelection(value: string) {
+		if (!value) return { category: '', subcategory: '' };
+		const parts = value.split('::');
+		return parts.length === 2
+			? { category: parts[0], subcategory: parts[1] }
+			: { category: value, subcategory: '' };
+	}
+
+	// Filtered music by search query and category/subcategory
 	$: filteredMusic = music.filter(item => {
-		if (!searchQuery) return true;
+		// Search filter
 		const words = searchQuery.split(/\s+/).filter(Boolean);
 		const fields = [
 			item.title?.toLowerCase() || '',
 			item.for?.toLowerCase() || '',
 			item.detailed_instrumentation?.toLowerCase() || ''
 		];
-		return words.every(word => fields.some(field => field.includes(word)));
+		const matchesSearch = !searchQuery || words.every(word => fields.some(field => field.includes(word)));
+
+		// Category/subcategory filter
+		const { category, subcategory } = parseCategorySelection(selectedCategory);
+		const matchesCategory = !category || (
+			item.category === category && (!subcategory || item.subcategory === subcategory)
+		);
+
+		return matchesSearch && matchesCategory;
 	});
 
 	// Sort music chronologically (newest first)
@@ -111,7 +128,7 @@
 		'Open Instrumentation'
 	];
 	const subcategoryOrder = {
-		'Large Ensemble': ['Orchestra', 'Chamber Orchestra', 'Mixed Ensemble', 'Wind Symphony'],
+		'Large Ensemble': ['Orchestra', 'Chamber Orchestra', 'Mixed Ensemble', 'Wind Symphony', 'Brass Ensemble'],
 		'Chamber': ['Duo', 'Trio', 'Quartet', 'Quintet', 'Sextet', 'Septet'],
 		'Solo': ['Piano', 'String', 'Wind', 'Others'],
 		'Vocal': ['Choir', 'Voice'],

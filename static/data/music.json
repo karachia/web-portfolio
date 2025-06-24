@@ -158,7 +158,7 @@
 		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
 		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
 		"category": "Large Ensemble",
-		"subcategory": "Chamber Orchestra",
+		"subcategory": "Mixed Ensemble",
 		"tags": ["Mixed Ensemble"],
 		"length": {
 			"min": 9,
@@ -367,8 +367,8 @@
 		"id": "wandererLonelyCityStreets",
 		"title": "Wanderer of Lonely City Streets",
 		"for": "Brass Ensemble",
-		"category": "Chamber",
-		"subcategory": "Brass",
+		"category": "Large Ensemble",
+		"subcategory": "Brass Ensemble",
 		"tags": ["Brass"],
 		"length": {
 			"default": 8
@@ -402,8 +402,8 @@
 		"title": "And the Sun Rises Again",
 		"for": "Brass Ensemble",
 		"dedication": "Commissioned by Mr. Jake Marsh for His Conducting Recital",
-		"category": "Chamber",
-		"subcategory": "Brass",
+		"category": "Large Ensemble",
+		"subcategory": "Brass Ensemble",
 		"tags": ["Brass"],
 		"length": {
 			"default": 7
