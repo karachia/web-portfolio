@@ -63,7 +63,8 @@
 		const matchesSearch =
 			!searchQuery ||
 			item.title.toLowerCase().includes(searchQuery) ||
-			(item.for && item.for.toLowerCase().includes(searchQuery));
+			(item.for && item.for.toLowerCase().includes(searchQuery)) ||
+			(item.detailed_instrumentation && item.detailed_instrumentation.toLowerCase().includes(searchQuery));
 		return matchesSearch;
 	});
 

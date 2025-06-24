@@ -36,7 +36,7 @@
 	});
 
 	function goBack() {
-		goto('/#music');
+		goto('/music');
 	}
 
 	// Helper function to check if a value is truthy and not an empty string

@@ -51,12 +51,17 @@ onMount(() => {
   window.addEventListener('resize', handler);
   return () => window.removeEventListener('resize', handler);
 });
+
+function handleLogoClick(event: MouseEvent) {
+  event.preventDefault();
+  goto('/');
+}
 </script>
 
 <nav class="w-full fixed top-0 left-0 z-50 flex justify-center pointer-events-none">
   <div class="pointer-events-auto bg-white/60 backdrop-blur-lg shadow-xl rounded-3xl mt-4 mx-2 w-full max-w-2xl md:max-w-3xl lg:max-w-4xl flex items-center justify-between px-6 py-3 border border-white/30 relative">
     <div class="flex items-center space-x-3">
-      <a href="#" class="flex items-center space-x-3 text-xl tracking-tight text-gray-700 select-none focus:outline-none focus:ring-2 focus:ring-gray-300 hover:text-black transition-colors duration-200" aria-label="Go to top">
+      <a href="/" on:click={handleLogoClick} class="flex items-center space-x-3 text-xl tracking-tight text-gray-700 select-none focus:outline-none focus:ring-2 focus:ring-gray-300 hover:text-black transition-colors duration-200" aria-label="Go to top">
         <img src="/assets/SK_Brand.png" alt="Sina Karachiani Logo" class="h-10 w-auto rounded" />
         <div class="-ml-1">Sina Karachiani</div>
       </a>
