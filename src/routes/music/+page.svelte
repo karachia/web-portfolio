@@ -7,6 +7,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import FilterButton from '$lib/components/FilterButton.svelte';
 	import RangeSlider from 'svelte-range-slider-pips';
+	import { fade, scale } from 'svelte/transition';
 
 	let music: any[] = [];
 	let sortMode: 'chronological' | 'category' = 'chronological';
@@ -141,6 +142,15 @@
 				)
 			])
 	);
+
+	function fadeScale(node: Element, params: any) {
+		const fadeTrans = fade(node, params);
+		const scaleTrans = scale(node, params);
+		return {
+			css: (t: number) =>
+				(fadeTrans.css ? fadeTrans.css(t, 1 - t) : '') + (scaleTrans.css ? scaleTrans.css(t, 1 - t) : '')
+		};
+	}
 </script>
 
 <svelte:head>
@@ -164,8 +174,8 @@
 
 		<!-- Filter Panel -->
 		{#if filterActive}
-			<div class="w-full max-w-2xl mx-auto mb-8 flex flex-col items-center">
-				<div class="w-full bg-white border border-gray-100 rounded-2xl shadow-lg p-6 pt-2 pb-1 pr-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+			<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-8 flex flex-col items-center">
+				<div in:scale={{ duration: 180, start: 0.96 }} out:scale={{ duration: 120, start: 0.96 }} class="w-full bg-white border border-gray-100 rounded-2xl shadow-lg p-6 pt-2 pb-1 pr-2 grid grid-cols-1 md:grid-cols-2 gap-6">
 					<!-- Top Row: Clear and Close -->
 					<div class="col-span-2 flex justify-between items-center mt-2 relative">
 						<button
@@ -222,7 +232,7 @@
 								style="--range: #a855f7;"
 							/>
 						</div>
-						<div class="flex justify-center w-full mb-6">
+						<div class="flex justify-center w-full mb-4">
 							<span class="text-sm text-semibold text-zinc-600 -mt-1">
 								{sliderMin === 16 ? "15+'" : `${sliderMin}'`} - {sliderMax === 16 ? "15+'" : `${sliderMax}'`}
 							</span>
