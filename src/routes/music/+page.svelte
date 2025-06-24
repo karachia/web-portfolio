@@ -96,7 +96,7 @@
 			: { category: value, subcategory: '' };
 	}
 
-	// Filtered music by search query and category/subcategory
+	// Filtered music by search query, category/subcategory, and duration
 	$: filteredMusic = music.filter(item => {
 		// Search filter
 		const words = searchQuery.split(/\s+/).filter(Boolean);
@@ -113,7 +113,27 @@
 			item.category === category && (!subcategory || item.subcategory === subcategory)
 		);
 
-		return matchesSearch && matchesCategory;
+		// Duration filter
+		let matchesDuration = true;
+		const min = sliderMin;
+		const max = sliderMax;
+
+		if (item.length && typeof item.length === 'object') {
+			if ('min' in item.length && 'max' in item.length) {
+				const itemMin = item.length.min;
+				const itemMax = item.length.max;
+				const minCheck = min === 16 ? itemMin > 15 : itemMin >= min;
+				const maxCheck = max === 16 ? true : itemMax <= max;
+				matchesDuration = minCheck && maxCheck;
+			} else if ('default' in item.length) {
+				const itemDefault = item.length.default;
+				const minCheck = min === 16 ? itemDefault > 15 : itemDefault >= min;
+				const maxCheck = max === 16 ? true : itemDefault <= max;
+				matchesDuration = minCheck && maxCheck;
+			}
+		}
+
+		return matchesSearch && matchesCategory && matchesDuration;
 	});
 
 	// Sort music chronologically (newest first)
