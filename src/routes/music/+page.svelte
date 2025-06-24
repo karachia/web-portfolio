@@ -5,17 +5,18 @@
 	import CategorySection from '$lib/components/CategorySection.svelte';
 	import ExpandableSearch from '$lib/components/ExpandableSearch.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import FilterButton from '$lib/components/FilterButton.svelte';
 
 	let music: any[] = [];
 	let sortMode: 'chronological' | 'category' = 'chronological';
 	let expandedCategories: { [key: string]: boolean } = {};
 	let searchQuery = '';
 	let prevExpandedCategories: { [key: string]: boolean } = {};
+	let filterActive = false;
 
 	onMount(async () => {
 		const response = await fetch('/data/music.json');
 		music = await response.json();
-		
 		// Initialize expanded state for all categories
 		const categories = [...new Set(music.map(item => item.category))];
 		categories.forEach(category => {
@@ -48,7 +49,28 @@
 		searchQuery = newQuery;
 	}
 
-	// Custom ordering for categories and subcategories
+	function handleFilterButtonClick() {
+		filterActive = !filterActive;
+	}
+
+	// Extract options from music data
+	$: categories = Array.from(new Set(music.map(item => item.category)));
+	$: subcategories = Object.fromEntries(categories.map(cat => [cat, Array.from(new Set(music.filter(item => item.category === cat).map(item => item.subcategory)))]));
+	$: tags = Array.from(new Set(music.flatMap(item => item.tags || [])));
+
+	// Filtered music by search query only
+	$: filteredMusic = music.filter(item => {
+		const matchesSearch =
+			!searchQuery ||
+			item.title.toLowerCase().includes(searchQuery) ||
+			(item.for && item.for.toLowerCase().includes(searchQuery));
+		return matchesSearch;
+	});
+
+	// Sort music chronologically (newest first)
+	$: chronologicalMusic = [...filteredMusic].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+	// Group music by category and subcategory with custom ordering
 	const categoryOrder = [
 		'Large Ensemble',
 		'Chamber', 
@@ -56,7 +78,6 @@
 		'Vocal',
 		'Open Instrumentation'
 	];
-
 	const subcategoryOrder = {
 		'Large Ensemble': ['Orchestra', 'Chamber Orchestra', 'Mixed Ensemble', 'Wind Symphony'],
 		'Chamber': ['Duo', 'Trio', 'Quartet', 'Quintet', 'Sextet', 'Septet'],
@@ -64,19 +85,6 @@
 		'Vocal': ['Choir', 'Voice'],
 		'Open Instrumentation': []
 	};
-
-	// Filtered music by search query
-	$: filteredMusic = searchQuery
-		? music.filter(item =>
-			item.title.toLowerCase().includes(searchQuery) ||
-			(item.for && item.for.toLowerCase().includes(searchQuery))
-		)
-		: music;
-
-	// Sort music chronologically (newest first)
-	$: chronologicalMusic = [...filteredMusic].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-	// Group music by category and subcategory with custom ordering
 	$: categoryMusic = filteredMusic.reduce((acc: { [key: string]: { [key: string]: any[] } }, item) => {
 		if (!acc[item.category]) {
 			acc[item.category] = {};
@@ -87,8 +95,6 @@
 		acc[item.category][item.subcategory].push(item);
 		return acc;
 	}, {} as { [key: string]: { [key: string]: any[] } });
-
-	// Sort categories and subcategories according to custom order
 	$: sortedCategoryMusic = Object.fromEntries(
 		categoryOrder
 			.filter(category => categoryMusic[category])
@@ -118,8 +124,9 @@
 			<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Music Catalog</h1>
 		</div>
 
-		<!-- Toggle and Search Row -->
+		<!-- Controls Row -->
 		<div class="flex items-center justify-center gap-4 mb-8">
+			<FilterButton active={filterActive} on:click={handleFilterButtonClick} />
 			<SortToggle {sortMode} onToggle={handleSortToggle} />
 			<ExpandableSearch on:search={handleSearch} />
 		</div>

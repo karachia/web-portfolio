@@ -16,7 +16,7 @@
             {/if}
 			<!-- Dedication  -->
 			{#if item.dedication}
-				<p class="font-light text-sm italic text-zinc-400">{item.dedication}</p>
+				<p class="font-light text-sm mt-1 italic text-zinc-400">{item.dedication}</p>
 			{/if}
 		</div>
 		<!-- <span class="rounded-full bg-teal-400/20 px-3 py-1 text-xs font-semibold whitespace-nowrap text-teal-300">

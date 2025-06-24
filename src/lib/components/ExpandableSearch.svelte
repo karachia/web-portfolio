@@ -42,7 +42,7 @@
 	}
 </script>
 
-<div class="flex items-center justify-center mb-8">
+<div class="flex items-center justify-center">
 	<div class="relative flex items-center" style="width:3rem; min-width:3rem;">
 		<!-- Search Button -->
 		{#if showButton}

@@ -3,7 +3,7 @@
 	export let onToggle: (mode: 'chronological' | 'category') => void;
 </script>
 
-<div class="flex items-center justify-center mb-8">
+<div class="flex items-center justify-center">
 	<div class="relative bg-white/60 backdrop-blur-lg rounded-full p-1.5 shadow-lg border border-white/30 w-[278px] h-12 flex items-center">
 		<!-- Sliding pill -->
 		<div
