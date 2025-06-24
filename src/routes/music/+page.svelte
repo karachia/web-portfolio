@@ -60,12 +60,14 @@
 
 	// Filtered music by search query only
 	$: filteredMusic = music.filter(item => {
-		const matchesSearch =
-			!searchQuery ||
-			item.title.toLowerCase().includes(searchQuery) ||
-			(item.for && item.for.toLowerCase().includes(searchQuery)) ||
-			(item.detailed_instrumentation && item.detailed_instrumentation.toLowerCase().includes(searchQuery));
-		return matchesSearch;
+		if (!searchQuery) return true;
+		const words = searchQuery.split(/\s+/).filter(Boolean);
+		const fields = [
+			item.title?.toLowerCase() || '',
+			item.for?.toLowerCase() || '',
+			item.detailed_instrumentation?.toLowerCase() || ''
+		];
+		return words.every(word => fields.some(field => field.includes(word)));
 	});
 
 	// Sort music chronologically (newest first)
