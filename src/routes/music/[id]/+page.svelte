@@ -36,7 +36,11 @@
 	});
 
 	function goBack() {
-		goto('/music');
+		if (window.history.length > 1) {
+			window.history.back();
+		} else {
+			goto('/music');
+		}
 	}
 
 	// Helper function to check if a value is truthy and not an empty string
@@ -80,7 +84,7 @@
 				on:click={goBack}
 				class="rounded bg-gray-900 px-6 py-2 text-white shadow transition-colors duration-200 hover:bg-gray-700"
 			>
-				Back to Music
+				Back
 			</button>
 		</div>
 	</div>
@@ -96,7 +100,7 @@
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"
 					></path>
 				</svg>
-				Back to Music
+				Back
 			</button>
 
 			<!-- Music content -->

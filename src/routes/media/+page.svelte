@@ -45,8 +45,8 @@
   <meta name="description" content="Explore media, recordings, and featured performances by Sina Karachiani." />
 </svelte:head>
 
-<div class="min-h-screen bg-gray-50 py-12">
-  <div class="max-w-6xl mx-auto px-4">
+<div class="min-h-screen flex flex-col bg-gray-50">
+  <div class="flex-1 max-w-6xl mx-auto px-4 py-12">
     <!-- Header -->
     <div class="text-center mt-4 mb-12">
       <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Media & Recordings</h1>
