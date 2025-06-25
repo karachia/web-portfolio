@@ -88,6 +88,106 @@
 		]
 	},
 	{
+		"id": "Example3",
+		"title": "Example 3",
+		"for": "Orchestra",
+		"commissionedBy": "Commissioned by the University of Michigan",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
+		"summary": "A piece inspired by the poems of the persian poet, Rumi.",
+		"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"tags": ["String Quartet", "Chamber"],
+		"length": {
+			"min": 7.5,
+			"max": 10,
+			"default": 7.5
+		},
+		"date": "2025-07-12",
+		"detailed_instrumentation": "2 Violins, Viola, Cello",
+		"image": "/assets/whirlingonward.png",
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
+			"width": "100%",
+			"height": 320,
+			"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
+			"title": "Whirling Onward hahaha"
+		},
+		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
+		"recordings": {
+			"preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
+			"previewWidth": "100%",
+			"previewHeight": 380,
+			"theme": 0,
+			"appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
+			"spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
+			"youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
+			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
+			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+		},
+		"score": {
+			"url": "https://www.dropbox.com/scl/fi/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000?rlkey=0000000000000000000000000000000000000000&dl=0",
+			"price": 100,
+			"partsPrice": 100
+		}, 
+		"otherVersions": [
+			"StrangerOfKinForOrchestra",
+			"StrangerOfKinForChamberOrchestra",
+			"StrangerOfKinForMixedEnsemble",
+			"StrangerOfKinForMixedQuartet"
+		]
+	},
+	{
+		"id": "Example4",
+		"title": "Exampl 4",
+		"for": "String Quartet",
+		"commissionedBy": "Commissioned by the University of Michigan",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
+		"summary": "A piece inspired by the poems of the persian poet, Rumi.",
+		"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"tags": ["String Quartet", "Chamber"],
+		"comingSoon": true,
+		"length": {
+			"min": 7.5,
+			"max": 10,
+			"default": 7.5
+		},
+		"date": "2025-07-12",
+		"detailed_instrumentation": "2 Violins, Viola, Cello",
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
+			"width": "100%",
+			"height": 320,
+			"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
+			"title": "Whirling Onward hahaha"
+		},
+		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
+		"recordings": {
+			"preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
+			"previewWidth": "100%",
+			"previewHeight": 380,
+			"theme": 0,
+			"appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
+			"spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
+			"youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
+			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
+			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+		},
+		"score": {
+			"url": "https://www.dropbox.com/scl/fi/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000?rlkey=0000000000000000000000000000000000000000&dl=0",
+			"price": 100,
+			"partsPrice": 100
+		}, 
+		"otherVersions": [
+			"StrangerOfKinForOrchestra",
+			"StrangerOfKinForChamberOrchestra",
+			"StrangerOfKinForMixedEnsemble",
+			"StrangerOfKinForMixedQuartet"
+		]
+	},
+	{
 		"id": "transients",
 		"title": "Transients",
 		"for": "Piano Solo",

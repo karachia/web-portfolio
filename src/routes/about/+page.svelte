@@ -1,5 +1,6 @@
 <script lang="ts">
   // About page content
+  import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -15,4 +16,5 @@
       This page will soon feature a more detailed bio and background.
     </p>
   </div>
-</div> 
+</div>
+<Footer /> 

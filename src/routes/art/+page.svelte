@@ -1,5 +1,6 @@
 <script lang="ts">
   // Art page content
+  import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -15,4 +16,5 @@
       A gallery of my works will be coming soon!
     </p>
   </div>
-</div> 
+</div>
+<Footer /> 

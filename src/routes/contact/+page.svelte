@@ -1,5 +1,6 @@
 <script lang="ts">
   // Contact page content
+  import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -16,4 +17,5 @@
     </p>
     <a href="mailto:youremail@example.com" class="inline-block px-6 py-2 bg-gray-900 text-white rounded shadow hover:bg-gray-700 transition-colors duration-200">Email Me</a>
   </div>
-</div> 
+</div>
+<Footer /> 
