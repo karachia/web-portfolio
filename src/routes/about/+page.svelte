@@ -2,15 +2,15 @@
   // About page content
   import Footer from '$lib/components/Footer.svelte';
   import { slide } from 'svelte/transition';
-  import CollapsibleText from '$lib/components/CollapsibleText.svelte';
   let shortBioExpanded = false;
   let veryShortBioExpanded = false;
 
 </script>
 
 <svelte:head>
-  <title>About - Sina Karachiani</title>
+  <title>Sina Karachiani - About</title>
   <meta name="description" content="Learn more about Sina Karachiani, composer, artist, and software engineer." />
+  <link rel="icon" href="/assets/web_icon.png"/>
 </svelte:head>
 
 <div class="min-h-screen flex flex-col bg-gray-50">

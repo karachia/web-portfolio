@@ -41,7 +41,7 @@
 </script>
 
 <svelte:head>
-  <title>Media & Recordings - Sina Karachiani</title>
+  <title>Sina Karachiani - Media & Recordings</title>
   <meta name="description" content="Explore media, recordings, and featured performances by Sina Karachiani." />
 </svelte:head>
 

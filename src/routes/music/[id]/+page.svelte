@@ -62,7 +62,7 @@
 </script>
 
 <svelte:head>
-	<title>{musicItem ? `${musicItem.title} - Sina Karachiani` : 'Music - Sina Karachiani'}</title>
+	<title>{musicItem ? `${musicItem.title} - Sina Karachiani` : 'Sina Karachiani - Music'}</title>
 	<meta
 		name="description"
 		content={musicItem

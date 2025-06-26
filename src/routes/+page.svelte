@@ -9,6 +9,11 @@
   import soundcloud from 'svelte-awesome/icons/soundcloud';
 </script>
 
+<svelte:head>
+  <title>Sina Karachiani</title>
+  <meta name="description" content="Portfolio of Sina Karachiani, composer, artist, and software engineer." />
+</svelte:head>
+
 <section id="home" class="min-h-[70vh] flex flex-col justify-center items-center px-4 pt-16 fade-in">
   <div class="flex items-center justify-center space-x-4">
     <img src="/assets/SK_Brand.png" alt="Sina Karachiani Logo" class="h-44 w-auto rounded drop-shadow-lg -mt-6" />
