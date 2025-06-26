@@ -102,7 +102,7 @@
 		const words = searchQuery.split(/\s+/).filter(Boolean);
 		const fields = [
 			item.title?.toLowerCase() || '',
-			item.for?.toLowerCase() || '',
+			(('for ' + item.for) || '').toLowerCase(),
 			item.detailed_instrumentation?.toLowerCase() || ''
 		];
 		const matchesSearch = !searchQuery || words.every(word => fields.some(field => field.includes(word)));

@@ -5,7 +5,7 @@
 
 <Navbar />
 <div class="pt-20">
-	{@render children()}
+	<slot />
 </div>
 
 <svelte:head>
