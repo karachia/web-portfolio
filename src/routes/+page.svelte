@@ -134,7 +134,7 @@
     </p>
     <p class="mt-4">***</p>
     <p class="mt-3">
-      Here, you can explore my art and music, and learn more about me.
+      Here, you can learn more about me and explore my art and music.
       <br/>
       And if you'd like to shoot me a message or collaborate, 
       <br/>
