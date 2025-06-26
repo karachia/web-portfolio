@@ -61,8 +61,8 @@
     <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
       I've been drawing since before I could speak. I find it a very therapeutic and fun way to express myself. Nowadays, I often use my art as gifts for friends and family.
       My work ranges from traditional sketches and drawings to digital illustrations and logos, and even cartoons and cards. 
-      <br>
-      <br>
+      <br/>
+      <br/>
       <i>Want to collaborate or commission an artwork?</i>
     </p>
     <button
@@ -88,7 +88,7 @@
         {#each artwork as item}
           <div class="group cursor-pointer" on:click={() => openModal(item)}>
             <!-- Square Card with Image -->
-            <div class="relative aspect-square bg-white border-1 border-zinc-100 hover:border-zinc-300 rounded-none shadow-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105">
+            <div class="relative aspect-square bg-white border-1 border-zinc-100 group-hover:border-zinc-300 rounded-none shadow-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105">
               <!-- Inner square space with consistent margins -->
               <div class="absolute inset-2 flex items-center justify-center">
                 <img
