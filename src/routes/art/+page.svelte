@@ -88,13 +88,14 @@
         {#each artwork as item}
           <div class="group cursor-pointer" on:click={() => openModal(item)}>
             <!-- Square Card with Image -->
-            <div class="relative aspect-square bg-white border-1 border-zinc-100 rounded-none shadow-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105">
+            <div class="relative aspect-square bg-white border-1 border-zinc-100 hover:border-zinc-300 rounded-none shadow-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105">
               <!-- Inner square space with consistent margins -->
               <div class="absolute inset-2 flex items-center justify-center">
                 <img
-                  src={item.image}
+                  src={item.thumbnail || item.image}
                   alt={item.title || 'Artwork'}
                   class="max-w-full max-h-full object-contain"
+                  loading="lazy"
                   on:error={(e) => (e.target as HTMLImageElement).src = '/assets/placeholderImage.png'}
                 />
               </div>
@@ -160,6 +161,7 @@
           src={selectedArtwork.image}
           alt={selectedArtwork.title || 'Artwork'}
           class="max-w-full max-h-[80vh] w-auto h-auto object-contain"
+          loading="lazy"
           on:error={(e) => (e.target as HTMLImageElement).src = '/assets/placeholderImage.png'}
         />
         {#if artwork.length > 1}

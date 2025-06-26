@@ -4,125 +4,143 @@
     "image": "/assets/art/artwork-1.png",
     "title": "Soulmates",
     "caption": "An engagement gift for my friends to mark their new exciting chapter in life.",
-    "medium": "Drawn on iPad"
+    "medium": "Drawn on iPad",
+    "thumbnail": "/assets/art/thumbnails/artwork-1.png"
   },
   {
-    "id": "artwork-2", 
+    "id": "artwork-2",
     "image": "/assets/art/artwork-2.png",
     "title": "Painted Lady",
     "caption": "Exploration of colors in human form. A birthday gift for my friend.",
-    "medium": "Drawn on iPad"
+    "medium": "Drawn on iPad",
+    "thumbnail": "/assets/art/thumbnails/artwork-2.png"
   },
   {
     "id": "artwork-3",
     "image": "/assets/art/artwork-3.png",
     "title": "رقص (Dance)",
     "caption": "Study of motion, dance, and fabric. A birthday gift for my mother.",
-    "medium": "Drawn on iPad"
+    "medium": "Drawn on iPad",
+    "thumbnail": "/assets/art/thumbnails/artwork-3.png"
   },
   {
     "id": "artwork-4",
     "image": "/assets/art/artwork-4.png",
     "title": "زن، زندگی، آزادی",
     "caption": "Artwork for the Women, Life, Freedom movement in Iran.",
-    "medium": "Drawn on iPad"
+    "medium": "Drawn on iPad",
+    "thumbnail": "/assets/art/thumbnails/artwork-4.png"
   },
   {
     "id": "artwork-5",
     "image": "/assets/art/artwork-5.png",
     "title": "The Castle",
     "caption": "An imaginery cityscape inspired by Austria.",
-    "medium": "Pencil on paper"
+    "medium": "Pencil on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-5.png"
   },
   {
     "id": "artwork-6",
     "image": "/assets/art/artwork-6.png",
     "title": "رافی - Rafi",
     "caption": "In memory of my cousin's dog, Rafi.",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-6.png"
   },
   {
     "id": "artwork-7",
     "image": "/assets/art/artwork-7.png",
     "title": "Kindred",
     "caption": "My version of San Francisco.",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-7.png"
   },
   {
     "id": "artwork-8",
     "image": "/assets/art/artwork-8.png",
     "title": "Cat vs the City",
     "caption": "A cat in the San Francisco.",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-8.png"
   },
   {
     "id": "artwork-9",
     "image": "/assets/art/artwork-9.png",
     "title": "Website Logo",
     "caption": "A logo for my website.",
-    "medium": "Drawn on iPad"
+    "medium": "Drawn on iPad",
+    "thumbnail": "/assets/art/thumbnails/artwork-9.png"
   },
   {
     "id": "artwork-10",
     "image": "/assets/art/artwork-10.png",
     "title": "NIMBY Logic",
     "caption": "A political commentary on NIMBYism and Aaron Peskin",
-    "medium": "Drawn on iPad"
+    "medium": "Drawn on iPad",
+    "thumbnail": "/assets/art/thumbnails/artwork-10.png"
   },
   {
     "id": "artwork-11",
     "image": "/assets/art/artwork-11.png",
     "title": "Girl & Her Dog",
     "caption": "A thank you gift for my friend.",
-    "medium": "Drawn on iPad"
+    "medium": "Drawn on iPad",
+    "thumbnail": "/assets/art/thumbnails/artwork-11.png"
   },
   {
     "id": "artwork-12",
     "image": "/assets/art/artwork-12.png",
     "title": "Bergamot Quartet",
     "caption": "Bergamot Quartet in action!",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-12.png"
   },
   {
     "id": "artwork-13",
     "image": "/assets/art/artwork-13.png",
     "title": "Christmas Card 1",
     "caption": "A Christmas card for my friends.",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-13.png"
   },
   {
     "id": "artwork-14",
     "image": "/assets/art/artwork-14.png",
     "title": "Christmas Card 2",
     "caption": "A Christmas card for my friends.",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-14.png"
   },
   {
     "id": "artwork-15",
     "image": "/assets/art/artwork-15.png",
     "title": "Anniversary Card",
     "caption": "An interactive anniversary card (cabinet doors and the window open).",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-15.png"
   },
   {
     "id": "artwork-16",
     "image": "/assets/art/artwork-16.png",
     "title": "Simon and Sutro",
     "caption": "An interactive Christmas card with a view of the Sutro Tower in San Francisco. The cat slides out from under the tree.",
-    "medium": "Ink on paper"
+    "medium": "Ink on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-16.png"
   },
   {
     "id": "artwork-17",
     "image": "/assets/art/artwork-17.png",
     "title": "Supersonic Airliner",
     "caption": "An imaginery supersonic passenger aircraft, inspired by Tupolev Tu-160, taking off.",
-    "medium": "Pencil on paper"
+    "medium": "Pencil on paper",
+    "thumbnail": "/assets/art/thumbnails/artwork-17.png"
   },
   {
     "id": "artwork-18",
     "image": "/assets/art/artwork-18.png",
     "title": "SF MUNI Fantasy Map",
     "caption": "A fantasy map of San Francisco Metro system.",
-    "medium": "Digital"
+    "medium": "Digital",
+    "thumbnail": "/assets/art/thumbnails/artwork-18.png"
   }
-] 
+]
