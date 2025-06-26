@@ -5,6 +5,8 @@
 
   let artwork: any[] = [];
   let loading = true;
+  let selectedArtwork: any = null;
+  let showModal = false;
 
   onMount(async () => {
     try {
@@ -21,6 +23,30 @@
     // TODO: Link to future contact form
     goto('/contact');
   }
+
+  function openModal(item: any) {
+    selectedArtwork = item;
+    showModal = true;
+  }
+
+  function closeModal() {
+    showModal = false;
+    selectedArtwork = null;
+  }
+
+  function showPrev() {
+    if (!selectedArtwork || artwork.length < 2) return;
+    const idx = artwork.findIndex(a => a.id === selectedArtwork.id);
+    const prevIdx = (idx - 1 + artwork.length) % artwork.length;
+    selectedArtwork = artwork[prevIdx];
+  }
+
+  function showNext() {
+    if (!selectedArtwork || artwork.length < 2) return;
+    const idx = artwork.findIndex(a => a.id === selectedArtwork.id);
+    const nextIdx = (idx + 1) % artwork.length;
+    selectedArtwork = artwork[nextIdx];
+  }
 </script>
 
 <svelte:head>
@@ -33,15 +59,17 @@
   <section class="max-w-4xl mx-auto mt-20 mb-16 px-4 text-center">
     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Visual Art</h1>
     <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-      I create visual art that explores the intersection of music, technology, and human expression. 
-      My work ranges from traditional sketches and drawings to digital illustrations and experimental pieces 
-      that bridge the gap between sound and visual form.
+      I've been drawing since before I could speak. I find it a very therapeutic and fun way to express myself. Nowadays, I often use my art as gifts for friends and family.
+      My work ranges from traditional sketches and drawings to digital illustrations and logos, and even cartoons and cards. 
+      <br>
+      <br>
+      <i>Want to collaborate or commission an artwork?</i>
     </p>
     <button
       on:click={handleCommissionClick}
-      class="inline-flex items-center px-8 py-3 bg-gray-900 text-white font-medium rounded-xl shadow-lg hover:bg-gray-700 transition-all duration-200 hover:shadow-xl"
+      class="inline-flex items-center px-8 py-3 bg-gray-900 text-white font-medium rounded-3xl shadow-lg hover:bg-gray-700 transition-all duration-200 hover:shadow-xl"
     >
-      Get Commission / Collaborate
+      Contact Me!
     </button>
   </section>
 
@@ -58,7 +86,7 @@
     {:else}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {#each artwork as item}
-          <div class="group cursor-pointer">
+          <div class="group cursor-pointer" on:click={() => openModal(item)}>
             <!-- Square Card with Image -->
             <div class="relative aspect-square bg-white border-1 border-zinc-100 rounded-none shadow-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105">
               <!-- Inner square space with consistent margins -->
@@ -94,6 +122,68 @@
       </div>
     {/if}
   </section>
+
+  <!-- Modal -->
+  {#if showModal && selectedArtwork}
+    <div class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm p-4" on:click={closeModal}>
+      <!-- Absolute close button -->
+      <button 
+        class="fixed top-6 right-6 z-50 text-white hover:text-amber-300 transition-colors p-3" 
+        on:click={closeModal}
+        aria-label="Close modal"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <!-- Title -->
+      {#if selectedArtwork.title}
+        <div class="w-full max-w-4xl text-center mb-4">
+          <h3 class="text-2xl font-semibold text-zinc-200 truncate">{selectedArtwork.title}</h3>
+        </div>
+      {/if}
+      <!-- Image section with chevrons -->
+      <div class="relative flex items-center justify-center w-full max-w-6xl">
+        {#if artwork.length > 1}
+          <!-- Left chevron -->
+          <button
+            class="fixed left-8 top-1/2 -translate-y-1/2 z-50 ml-2 p-2 rounded-full bg-black/40 hover:bg-zinc-700/80 hover:text-zinc-200 text-white transition-colors"
+            on:click|stopPropagation={showPrev}
+            aria-label="Previous artwork"
+          >
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+        {/if}
+        <img
+          src={selectedArtwork.image}
+          alt={selectedArtwork.title || 'Artwork'}
+          class="max-w-full max-h-[80vh] w-auto h-auto object-contain"
+          on:error={(e) => (e.target as HTMLImageElement).src = '/assets/placeholderImage.png'}
+        />
+        {#if artwork.length > 1}
+          <!-- Right chevron -->
+          <button
+            class="fixed right-8 top-1/2 -translate-y-1/2 z-50 mr-2 p-2 rounded-full bg-black/40 hover:bg-zinc-700/80 hover:text-zinc-200 text-white transition-colors"
+            on:click|stopPropagation={showNext}
+            aria-label="Next artwork"
+          >
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        {/if}
+      </div>
+      <!-- Footer info (now right under the image) -->
+      <div class="w-full max-w-2xl mx-auto mt-6 text-center">
+        <p class="text-zinc-300 italic text-md mb-4">{selectedArtwork.caption}</p>
+        <span class="inline-block px-3 py-1.5 bg-zinc-800 text-zinc-200 text-sm font-medium rounded-full">
+          {selectedArtwork.medium}
+        </span>
+      </div>
+    </div>
+  {/if}
 
   <Footer />
 </div> 
