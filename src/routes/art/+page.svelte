@@ -56,23 +56,36 @@
         <p class="text-gray-600">No artwork available at the moment.</p>
       </div>
     {:else}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {#each artwork as item}
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-            <div class="aspect-square overflow-hidden">
-              <img
-                src={item.image}
-                alt={item.title || 'Artwork'}
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                on:error={() => this.src = '/assets/placeholderImage.png'}
-              />
+          <div class="group cursor-pointer">
+            <!-- Square Card with Image -->
+            <div class="relative aspect-square bg-white border-1 border-zinc-100 rounded-none shadow-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105">
+              <!-- Inner square space with consistent margins -->
+              <div class="absolute inset-2 flex items-center justify-center">
+                <img
+                  src={item.image}
+                  alt={item.title || 'Artwork'}
+                  class="max-w-full max-h-full object-contain"
+                  on:error={(e) => (e.target as HTMLImageElement).src = '/assets/placeholderImage.png'}
+                />
+              </div>
+              
+              <!-- Enlarge overlay on hover -->
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="bg-white/70 rounded-full px-5 py-2 text-zinc-700 font-semibold text-base shadow">
+                  ENLARGE
+                </div>
+              </div>
             </div>
-            <div class="p-6">
+            
+            <!-- Caption outside the card -->
+            <div class="text-center">
               {#if item.title}
-                <h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <h3 class="font-semibold text-gray-900 text-lg mb-1">{item.title}</h3>
               {/if}
-              <p class="text-gray-600 mb-3">{item.caption}</p>
-              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full">
+              <p class="text-gray-600 text-sm italic mb-2">{item.caption}</p>
+              <span class="inline-block px-3 py-1 bg-gradient-to-tr from-gray-200 via-white to-zinc-200 border-1 border-zinc-100 text-zinc-400 text-sm font-medium rounded-full">
                 {item.medium}
               </span>
             </div>
