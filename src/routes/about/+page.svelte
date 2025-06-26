@@ -10,7 +10,6 @@
 <svelte:head>
   <title>Sina Karachiani - About</title>
   <meta name="description" content="Learn more about Sina Karachiani, composer, artist, and software engineer." />
-  <link rel="icon" href="/assets/web_icon.png"/>
 </svelte:head>
 
 <div class="min-h-screen flex flex-col bg-gray-50">

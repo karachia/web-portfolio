@@ -176,14 +176,10 @@
 			<p class="mt-4">***</p>
 			<p class="mt-3">
 				Here, you can learn more about me and explore my art and music.
-				<br />
-				And if you'd like to shoot me a message or collaborate,
-				<br />
-				feel free to reach out!
 			</p>
 		</div>
 
-		<p class="mt-12 max-w-2xl text-center text-lg text-gray-600 md:text-xl">Explore:</p>
+		<p class="mt-6 max-w-2xl text-center text-lg text-gray-600 md:text-xl">Explore:</p>
 		<div class="mt-6 mb-8 flex w-full justify-center">
 			<div class="grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
 				<a
@@ -206,7 +202,14 @@
 				</a>
 			</div>
 		</div>
-		<div class="mt-16 flex justify-center">
+
+    <p class="mt-12 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
+      And if you'd like to shoot me a message or collaborate,
+    <br />
+    feel free to reach out!
+  </p>
+		<div class="mt-6 flex justify-center">
+      
 			<a
 				href="/contact"
 				class="inline-flex items-center rounded-3xl bg-gray-900 px-8 py-3 font-large text-white shadow-xl transition-all duration-200 hover:bg-gray-700 hover:shadow-xl"

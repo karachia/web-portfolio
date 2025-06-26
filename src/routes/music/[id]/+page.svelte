@@ -72,11 +72,11 @@
 </svelte:head>
 
 {#if loading}
-	<div class="flex min-h-screen items-center justify-center">
+	<div class="flex min-h-screen items-center justify-center relative z-[2]">
 		<div class="text-xl text-gray-600">Loading...</div>
 	</div>
 {:else if error || !musicItem}
-	<div class="flex min-h-screen items-center justify-center">
+	<div class="flex min-h-screen items-center justify-center relative z-[2]">
 		<div class="text-center">
 			<h1 class="mb-4 text-2xl font-bold text-gray-800">Music piece not found</h1>
 			<p class="mb-6 text-gray-600">The music piece you're looking for doesn't exist.</p>
@@ -90,7 +90,7 @@
 	</div>
 {:else}
 	<div class="min-h-screen bg-gray-50 py-8">
-		<div class="mx-auto max-w-4xl px-4">
+		<div class="mx-auto max-w-4xl px-4 relative z-[2]">
 			<!-- Back button -->
 			<button
 				on:click={goBack}
