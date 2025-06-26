@@ -128,7 +128,7 @@
     </section>
 
     <!-- Videos Section -->
-    <section class="mb-16">
+    <section id="videos" class="mb-16">
       <h2 class="text-3xl font-bold text-zinc-700 mb-12 italic text-center flex items-center justify-center gap-3">
         <img src="/assets/media-features/video.png" alt="Video Icon" class="w-9 h-9 inline-block align-middle" />
         Videos
@@ -137,7 +137,7 @@
         <div class="flex flex-col gap-10">
           {#each music.filter(item => item.videos && item.videos.length > 0) as item}
             {#each item.videos as videoUrl}
-              <div class="bg-white shadow-2xl rounded-2xl p-4 flex flex-col">
+              <div class="bg-white shadow-2xl rounded-2xl p-4 flex flex-col relative z-[2]">
                 <div>
                   <YouTubeEmbed videoUrl={videoUrl} width="w-full" title={item.title} />
                 </div>

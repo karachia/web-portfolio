@@ -15,7 +15,7 @@
 
 <div class="min-h-screen flex flex-col bg-gray-50">
   <!-- Profile Images -->
-  <div class="flex justify-center mt-16 mb-10">
+  <div class="flex justify-center mt-16 mb-10 relative z-[2]">
     <img src="/assets/about/about-1.png" alt="Sina Karachiani portrait" class="w-64 h-64 object-cover rounded-full shadow-lg border-4 border-white transition-transform duration-200 hover:scale-105" />
   </div>
   <!-- Biography Section -->

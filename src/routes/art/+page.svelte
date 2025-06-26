@@ -56,7 +56,7 @@
 
 <div class="min-h-screen flex flex-col bg-gray-50">
   <!-- Header Section -->
-  <section class="max-w-4xl mx-auto mt-20 mb-16 px-4 text-center">
+  <section class="max-w-4xl mx-auto mt-20 mb-16 px-4 text-center relative z-[2]">
     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Visual Art</h1>
     <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
       I've been drawing since before I could speak. I find it a very therapeutic and fun way to express myself. Nowadays, I often use my art as gifts for friends and family.
@@ -74,7 +74,7 @@
   </section>
 
   <!-- Artwork Grid -->
-  <section class="max-w-6xl mx-auto px-4 mb-20 flex-1">
+  <section class="max-w-6xl mx-auto px-4 mb-20 flex-1 relative z-[2]">
     {#if loading}
       <div class="flex justify-center items-center py-20">
         <div class="text-xl text-gray-600">Loading artwork...</div>

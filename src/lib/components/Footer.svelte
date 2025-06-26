@@ -8,7 +8,7 @@
 	import soundcloud from 'svelte-awesome/icons/soundcloud';
 </script>
 
-<footer class="bg-zinc-900 text-white py-8">
+<footer class="bg-zinc-900 text-white py-8 relative z-[2]">
 	<div class="mx-auto max-w-4xl px-4">
 		<div class="relative flex items-center justify-between">
 			<div class="flex items-center space-x-6">
