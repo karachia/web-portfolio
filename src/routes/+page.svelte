@@ -173,13 +173,12 @@
 				<br />
 				based in San Francisco, CA.
 			</p>
-			<p class="mt-4">***</p>
-			<p class="mt-3">
+			<!-- <p class="mt-3">
 				Here, you can learn more about me and explore my art and music.
-			</p>
+			</p> -->
 		</div>
 
-		<p class="mt-6 max-w-2xl text-center text-lg text-gray-600 md:text-xl">Explore:</p>
+		<p class="mt-6 max-w-2xl text-center text-lg text-gray-600 md:text-xl">Explore my work:</p>
 		<div class="mt-6 mb-8 flex w-full justify-center">
 			<div class="grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
 				<a
@@ -202,11 +201,11 @@
 				</a>
 			</div>
 		</div>
-
-    <p class="mt-12 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
-      And if you'd like to shoot me a message or collaborate,
+    <p class="mt-10 text-center text-lg text-gray-600 md:text-xl">***</p>
+    <p class="mt-10 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
+      If you'd like to collaborate or get in touch,
     <br />
-    feel free to reach out!
+    shoot me a message!
   </p>
 		<div class="mt-6 flex justify-center">
       

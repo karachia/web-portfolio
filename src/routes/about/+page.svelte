@@ -18,7 +18,7 @@
     <img src="/assets/about/about-1.png" alt="Sina Karachiani portrait" class="w-64 h-64 object-cover rounded-full shadow-lg border-4 border-white transition-transform duration-200 hover:scale-105" />
   </div>
   <!-- Biography Section -->
-  <section class="max-w-2xl mx-auto mb-20 px-4 flex-1">
+  <section class="max-w-2xl mx-auto mb-20 px-4 flex-1 relative z-[2]">
     <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Biography</h2>
     <div class="text-lg text-gray-600 text-justify">
       <p class="mb-4"><span class="font-bold text-black">Sina Karachiani (b. 1996, Esfahan, Iran)</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.</p>
