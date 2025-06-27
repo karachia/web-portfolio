@@ -1,15 +1,31 @@
 <script lang="ts">
   // Contact page content
   import Footer from '$lib/components/Footer.svelte';
+  import { onMount } from 'svelte';
   let submitted = false;
   let sending = false;
   let errorMsg = '';
 
+  onMount(() => {
+    // Hide the fax honeypot field with JavaScript
+    const faxField = document.querySelector('input[name="fax"]') as HTMLInputElement;
+    if (faxField) {
+      faxField.style.display = 'none';
+    }
+  });
+
   async function handleSubmit(event: Event) {
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    console.log("Form Data:");
-    console.log(formData);
+    
+    // Get reCAPTCHA token
+    //TODO: Uncomment this when before production
+    // const recaptchaToken = (window as any).grecaptcha?.getResponse();
+    // if (!recaptchaToken) {
+    //   errorMsg = "Please complete the reCAPTCHA verification.";
+    //   return;
+    // }
+    
     const url = "https://script.google.com/macros/s/AKfycbxHQUrjb282efmdZHksYQ25GlyamUlVLc6RL96mePCP1n_n5HgO9q89PhSY_ACMpfc7/exec";
     
     // Convert FormData to JSON string
@@ -17,8 +33,14 @@
     for (const [key, value] of formData.entries()) {
       formDataObj[key] = value.toString();
     }
-    const jsonData = JSON.stringify(formDataObj);
     
+    // Add reCAPTCHA token
+    //TODO: Uncomment this when before production
+    // formDataObj.recaptchaToken = recaptchaToken;
+    
+    const jsonData = JSON.stringify(formDataObj);
+    console.log("Form Data:");
+    console.log(jsonData);
     try {
       sending = true;
       errorMsg = '';
@@ -36,6 +58,7 @@
         form.reset();
       } else {
         errorMsg = result.error || "There was an error submitting the form. Please try again.";
+        console.log(result.error);
       }
       sending = false;
     } catch (error) {
@@ -49,6 +72,7 @@
 <svelte:head>
   <title>Contact - Sina Karachiani</title>
   <meta name="description" content="Contact Sina Karachiani for collaborations, performances, or questions." />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50 py-12 flex items-center justify-center">
@@ -75,7 +99,7 @@
         </div>
         <div class="flex-1">
           <label for="lastName" class="block text-gray-700 font-medium mb-1">Last Name</label>
-          <input id="lastName" name="lastName" type="text" class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+          <input id="lastName" name="lastName" type="text" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400" />
         </div>
       </div>
       <div>
@@ -90,9 +114,21 @@
         <label for="message" class="block text-gray-700 font-medium mb-1">Message</label>
         <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"></textarea>
       </div>
-      <button type="submit" class="w-full bg-gray-900 text-white font-semibold rounded-lg py-3 mt-2 shadow hover:bg-gray-700 transition-colors duration-200">
+      <!-- field to catch to find naughty guys -->
+      <div style="position: absolute; left: -9999px;">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+      <!-- Second field to find naughty guys hidden with Skript of Gava -->
+      <div>
+        <input type="text" name="fax" tabindex="-1" autocomplete="off" />
+      </div>
+      <!-- reCAPTCHA -->
+      <!-- <div class="flex justify-center">
+        <div class="g-recaptcha" data-sitekey="6Ld9WnArAAAAAAaqcmJefDW76nhXRrok9rUOnlSZ"></div>
+      </div> -->
+      <button type="submit" disabled={sending} class="w-full bg-gray-900 text-white font-semibold rounded-lg py-3 mt-2 shadow hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-900">
         {#if sending}
-          Sending...
+          Submitting...
         {:else}
           Send Message
         {/if}
