@@ -8,18 +8,36 @@
   async function handleSubmit(event: Event) {
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    const url = "https://script.google.com/macros/s/AKfycbxcv-SHIfKPMygUFS6dR-simIxUt-ktP69ThWpOECAo0S_aaqwFXtWuFcgK-OVj8Az4/exec";
+    console.log("Form Data:");
+    console.log(formData);
+    const url = "https://script.google.com/macros/s/AKfycbxHQUrjb282efmdZHksYQ25GlyamUlVLc6RL96mePCP1n_n5HgO9q89PhSY_ACMpfc7/exec";
+    
+    // Convert FormData to JSON string
+    const formDataObj: Record<string, string> = {};
+    for (const [key, value] of formData.entries()) {
+      formDataObj[key] = value.toString();
+    }
+    const jsonData = JSON.stringify(formDataObj);
+    
     try {
       sending = true;
       errorMsg = '';
-      await fetch(url, {
+      const response = await fetch(url, {
+        redirect: "follow",
         method: "POST",
-        body: formData,
-        mode: "no-cors"
+        body: jsonData,
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
       });
-      submitted = true;
+      const result = await response.json();
+      if (result.status === "success") {
+        submitted = true;
+        form.reset();
+      } else {
+        errorMsg = result.error || "There was an error submitting the form. Please try again.";
+      }
       sending = false;
-      form.reset();
     } catch (error) {
       sending = false;
       errorMsg = "There was an error submitting the form. Please try again.";
@@ -57,7 +75,7 @@
         </div>
         <div class="flex-1">
           <label for="lastName" class="block text-gray-700 font-medium mb-1">Last Name</label>
-          <input id="lastName" name="lastName" type="text" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+          <input id="lastName" name="lastName" type="text" class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400" />
         </div>
       </div>
       <div>
