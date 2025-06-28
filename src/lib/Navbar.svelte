@@ -135,7 +135,7 @@ function closeMusicDropdown() {
     </ul>
     <!-- Mobile Dropdown -->
     {#if showMenu}
-      <ul class="absolute top-full left-0 w-full bg-white/95 shadow-lg rounded-2xl mt-2 flex flex-col items-center py-4 space-y-2 md:hidden pointer-events-auto animate-fade-in-out" class:open={menuOpen} class:close={!menuOpen}>
+      <ul class="absolute top-full left-0 w-full bg-white/95 backdrop-blur shadow-xl rounded-2xl mt-2 flex flex-col items-center py-4 space-y-2 md:hidden pointer-events-auto animate-fade-in-out" class:open={menuOpen} class:close={!menuOpen}>
         {#each navItems as item}
           {#if item.isDropdown}
             <li class="w-full flex flex-col items-center">
@@ -185,6 +185,7 @@ function closeMusicDropdown() {
 .animate-fade-in-out.close {
   animation: fade-out 0.2s cubic-bezier(0.4,0,0.2,1) both;
 }
+
 nav {
   /* Remove default box-shadow, handled by Tailwind */
 }
