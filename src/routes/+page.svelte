@@ -85,50 +85,50 @@
 	id="home"
 	class="fade-in relative flex min-h-[70vh] flex-col items-center justify-center px-4 pt-16"
 >
-	<div class="flex items-center justify-center space-x-4">
+	<div class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 		<img
 			src="/assets/SK_Brand.png"
 			alt="Sina Karachiani Logo"
 			class="-mt-6 h-44 w-auto rounded drop-shadow-lg"
 		/>
-		<div class="flex flex-col">
+		<div class="flex flex-col items-center text-center sm:items-start sm:text-left">
 			<h1
-				style="font-family: 'Zen Kurenaido', sans-serif;"
-				class="font-serif text-4xl font-extrabold tracking-tight text-gray-900 drop-shadow-lg md:text-6xl"
+				style="font-family: 'Zen Kurenaido', spagans-serif;"
+				class="font-serif text-2xl font-extrabold tracking-tight text-gray-900 drop-shadow-lg sm:text-4xl md:text-6xl"
 			>
 				S I N A&nbsp;&nbsp;&nbsp;K A R A C H I A N I
 			</h1>
-			<h2 class="mt-2 text-lg font-light tracking-wide text-gray-600 drop-shadow-lg md:text-2xl">
+			<h2 class="mt-2 text-base font-light tracking-wide text-gray-600 drop-shadow-lg sm:text-lg md:text-2xl">
 				Composer, Artist, Pianist, Software Engineer
 			</h2>
-			<div class="mt-4 flex space-x-6">
+			<div class="mt-4 flex space-x-4 sm:space-x-6">
 				<a
 					href="https://github.com/karachia"
 					target="_blank"
 					class="text-gray-600 transition-colors hover:text-gray-900"
 				>
-					<Icon data={github} scale={1.5} />
+					<Icon data={github} scale={1.2} class="sm:scale-150" />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/sina-karachiani-5b9b8593/"
 					target="_blank"
 					class="text-gray-600 transition-colors hover:text-gray-900"
 				>
-					<Icon data={linkedin} scale={1.5} />
+					<Icon data={linkedin} scale={1.2} class="sm:scale-150" />
 				</a>
 				<a
 					href="https://www.instagram.com/sina.karachiani.music/ "
 					target="_blank"
 					class="text-gray-600 transition-colors hover:text-gray-900"
 				>
-					<Icon data={instagram} scale={1.5} />
+					<Icon data={instagram} scale={1.2} class="sm:scale-150" />
 				</a>
 				<a
 					href="https://soundcloud.com/sinakarachiani/ "
 					target="_blank"
 					class="text-gray-600 transition-colors hover:text-gray-900"
 				>
-					<Icon data={soundcloud} scale={2} />
+					<Icon data={soundcloud} scale={1.6} class="sm:scale-200" />
 				</a>
 			</div>
 		</div>
@@ -180,7 +180,7 @@
 
 		<p class="mt-6 max-w-2xl text-center text-lg text-gray-600 md:text-xl">Explore my work:</p>
 		<div class="mt-6 mb-8 flex w-full justify-center">
-			<div class="grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
+			<div class="grid w-full max-w-sm sm:max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
 				<a
 					href="/music"
 					class="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-100/50 px-3 py-3 text-center font-medium text-zinc-500 shadow-xl backdrop-blur transition-all duration-200 hover:bg-gray-200 hover:text-zinc-600"
