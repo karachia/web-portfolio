@@ -16,6 +16,7 @@
 	let prevExpandedCategories: { [key: string]: boolean } = {};
 	let filterActive = false;
 	let selectedCategory = "";
+	let mounted = false;
 
 	// Slider state for filter panel
 	let sliderMin = 0;
@@ -32,6 +33,11 @@
 			expandedCategories[category] = true;
 		});
 	});
+
+	// Set mounted to true after a brief delay to trigger fade-in
+	setTimeout(() => {
+		mounted = true;
+	}, 100);
 
 	function handleSortToggle(mode: 'chronological' | 'category') {
 		sortMode = mode;
@@ -196,133 +202,140 @@
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50 py-8">
-	<div class="mx-auto max-w-4xl px-4 mt-12">
-		<!-- Header -->
-		<div class="mb-12 text-center">
-			<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Music Catalog</h1>
-		</div>
+	{#if mounted}
+		<div class="mx-auto max-w-4xl px-4 mt-12" in:fade={{ duration: 1200 }}>
+			<!-- Header -->
+			<div class="mb-12 text-center">
+				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Music Catalog</h1>
+			</div>
 
-		<!-- Controls Row -->
-		<div class="flex items-center justify-center gap-4 mb-4">
-			<FilterButton active={filterActive} on:click={handleFilterButtonClick} />
-			<SortToggle {sortMode} onToggle={handleSortToggle} />
-			<ExpandableSearch on:search={handleSearch} />
-		</div>
+			<!-- Controls Row -->
+			<div class="flex items-center justify-center gap-4 mb-4">
+				<FilterButton active={filterActive} on:click={handleFilterButtonClick} />
+				<SortToggle {sortMode} onToggle={handleSortToggle} />
+				<ExpandableSearch on:search={handleSearch} />
+			</div>
 
-		<!-- Filter Panel -->
-		{#if filterActive}
-			<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-8 flex flex-col items-center">
-				<div in:scale={{ duration: 180, start: 0.96 }} out:scale={{ duration: 120, start: 0.96 }} class="w-full bg-white border border-gray-100 rounded-2xl shadow-lg p-6 pt-2 pb-1 pr-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-					<!-- Top Row: Clear and Close -->
-					<div class="col-span-2 flex justify-between items-center mt-2 relative">
-						<button
-							on:click={handleClearFilters}
-							class="text-xs font-semibold text-zinc-500 hover:text-zinc-700 bg-zinc-100 hover:bg-zinc-200 rounded-full px-4 py-1 transition-colors"
-						>
-							Clear All
-						</button>
-						<button
-							on:click={handleCloseFilterPanel}
-							class="text-lg text-zinc-400 hover:text-zinc-700 rounded-full px-2 py-1 transition-colors flex items-center justify-center absolute right-0 "
-							aria-label="Close filter panel"
-						>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1" class="w-8 h-8">
-								<line x1="5" y1="5" x2="15" y2="15" stroke-linecap="round" />
-								<line x1="15" y1="5" x2="5" y2="15" stroke-linecap="round" />
-							</svg>
-						</button>
-					</div>
-					<!-- Category Selector -->
-					<div class="flex flex-col gap-2">
-						<label class="block text-sm font-semibold text-zinc-600" for="category-dropdown">Category</label>
-						<select id="category-dropdown" bind:value={selectedCategory} class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300">
-							<option value="">All Categories</option>
-							{#each categoryOrder as category}
-								<option value={category}>{category}</option>
-								{#each subcategoryOrder[category as keyof typeof subcategoryOrder] as subcategory}
-									<option value={`${category}::${subcategory}`}> &nbsp; &nbsp; {subcategory}</option>
+			<!-- Filter Panel -->
+			{#if filterActive}
+				<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-8 flex flex-col items-center">
+					<div in:scale={{ duration: 180, start: 0.96 }} out:scale={{ duration: 120, start: 0.96 }} class="w-full bg-white border border-gray-100 rounded-2xl shadow-lg p-6 pt-2 pb-1 pr-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+						<!-- Top Row: Clear and Close -->
+						<div class="col-span-2 flex justify-between items-center mt-2 relative">
+							<button
+								on:click={handleClearFilters}
+								class="text-xs font-semibold text-zinc-500 hover:text-zinc-700 bg-zinc-100 hover:bg-zinc-200 rounded-full px-4 py-1 transition-colors"
+							>
+								Clear All
+							</button>
+							<button
+								on:click={handleCloseFilterPanel}
+								class="text-lg text-zinc-400 hover:text-zinc-700 rounded-full px-2 py-1 transition-colors flex items-center justify-center absolute right-0 "
+								aria-label="Close filter panel"
+							>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1" class="w-8 h-8">
+									<line x1="5" y1="5" x2="15" y2="15" stroke-linecap="round" />
+									<line x1="15" y1="5" x2="5" y2="15" stroke-linecap="round" />
+								</svg>
+							</button>
+						</div>
+						<!-- Category Selector -->
+						<div class="flex flex-col gap-2">
+							<label class="block text-sm font-semibold text-zinc-600" for="category-dropdown">Category</label>
+							<select id="category-dropdown" bind:value={selectedCategory} class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300">
+								<option value="">All Categories</option>
+								{#each categoryOrder as category}
+									<option value={category}>{category}</option>
+									{#each subcategoryOrder[category as keyof typeof subcategoryOrder] as subcategory}
+										<option value={`${category}::${subcategory}`}> &nbsp; &nbsp; {subcategory}</option>
+									{/each}
 								{/each}
-							{/each}
-						</select>
-					</div>
-					<!-- Range Slider -->
-					<div class="flex flex-col ">
-						<label class="block text-sm font-semibold text-zinc-600 mb-1">Duration (min)</label>
-						<div class="flex justify-between w-full px-1 -mb-1.5">
-							<span class="text-xs text-zinc-500 font-semibold ml-1.5">0</span>
-							<span class="text-xs text-zinc-500 font-semibold mr-1">15+</span>
+							</select>
 						</div>
-						<div class="flex items-center justify-center h-full">
-							<RangeSlider
-								min={sliderMinLimit}
-								max={sliderMaxLimit}
-								values={[sliderMin, sliderMax]}
-								range={true}
-								on:input={(e) => {
-									let [min, max] = e.detail.values;
-									sliderMin = min;
-									sliderMax = max;
-								}}
-								on:change={(e) => { [sliderMin, sliderMax] = e.detail.values; }}
-								step={1}
-								class="w-full"
-								style="--range: #a855f7;"
-							/>
+						<!-- Range Slider -->
+						<div class="flex flex-col ">
+							<label class="block text-sm font-semibold text-zinc-600 mb-1">Duration (min)</label>
+							<div class="flex justify-between w-full px-1 -mb-1.5">
+								<span class="text-xs text-zinc-500 font-semibold ml-1.5">0</span>
+								<span class="text-xs text-zinc-500 font-semibold mr-1">15+</span>
+							</div>
+							<div class="flex items-center justify-center h-full">
+								<RangeSlider
+									min={sliderMinLimit}
+									max={sliderMaxLimit}
+									values={[sliderMin, sliderMax]}
+									range={true}
+									on:input={(e) => {
+										let [min, max] = e.detail.values;
+										sliderMin = min;
+										sliderMax = max;
+									}}
+									on:change={(e) => { [sliderMin, sliderMax] = e.detail.values; }}
+									step={1}
+									class="w-full"
+									style="--range: #a855f7;"
+								/>
+							</div>
+							<div class="flex justify-center w-full mb-4">
+								<span class="text-sm text-semibold text-zinc-600 -mt-1">
+									{sliderMin === 16 ? "15+'" : `${sliderMin}'`} - {sliderMax === 16 ? "15+'" : `${sliderMax}'`}
+								</span>
+							</div>
 						</div>
-						<div class="flex justify-center w-full mb-4">
-							<span class="text-sm text-semibold text-zinc-600 -mt-1">
-								{sliderMin === 16 ? "15+'" : `${sliderMin}'`} - {sliderMax === 16 ? "15+'" : `${sliderMax}'`}
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		{/if}
-
-		<div class="mb-22"></div>
-
-        <!-- Music Items -->
-		{#if sortMode === 'chronological'}
-			<div class="w-full flex flex-col items-center space-y-8 mt-12">
-				{#each chronologicalMusic as item}
-					<MusicItem {item} />
-				{/each}
-			</div>
-		{:else}
-			<div class="w-full mt-12 relative">
-				<!-- Expand/Collapse All Buttons above first category -->
-				<div class="absolute right-0 -top-10 z-10">
-					<div class="inline-flex rounded-full bg-gray-100 shadow-sm overflow-hidden">
-						<button
-							on:click={expandAllCategories}
-							class="px-4 py-1 text-xs font-medium text-zinc-500 hover:bg-gray-200 focus:outline-none"
-							aria-label="Expand all categories"
-							style="border-top-left-radius:9999px; border-bottom-left-radius:9999px;"
-						>
-							Expand All
-						</button>
-						<div class="w-px bg-gray-200 my-1"></div>
-						<button
-							on:click={collapseAllCategories}
-							class="px-4 py-1 text-xs font-medium text-zinc-500 hover:bg-gray-200 focus:outline-none"
-							aria-label="Collapse all categories"
-							style="border-top-right-radius:9999px; border-bottom-right-radius:9999px;"
-						>
-							Collapse All
-						</button>
 					</div>
 				</div>
-				{#each Object.entries(sortedCategoryMusic) as [category, subcategories]}
-					<CategorySection
-						{category}
-						{subcategories}
-						isExpanded={expandedCategories[category]}
-						on:toggle={handleCategoryToggle}
-					/>
-				{/each}
-			</div>
-		{/if}
-	</div>
+			{/if}
+
+			<div class="mb-22"></div>
+
+			<!-- Music Items -->
+			{#if sortMode === 'chronological'}
+				<div class="w-full flex flex-col items-center space-y-8 mt-12">
+					{#each chronologicalMusic as item}
+						<MusicItem {item} />
+					{/each}
+				</div>
+			{:else}
+				<div class="w-full mt-12 relative">
+					<!-- Expand/Collapse All Buttons above first category -->
+					<div class="absolute right-0 -top-10 z-10">
+						<div class="inline-flex rounded-full bg-gray-100 shadow-sm overflow-hidden">
+							<button
+								on:click={expandAllCategories}
+								class="px-4 py-1 text-xs font-medium text-zinc-500 hover:bg-gray-200 focus:outline-none"
+								aria-label="Expand all categories"
+								style="border-top-left-radius:9999px; border-bottom-left-radius:9999px;"
+							>
+								Expand All
+							</button>
+							<div class="w-px bg-gray-200 my-1"></div>
+							<button
+								on:click={collapseAllCategories}
+								class="px-4 py-1 text-xs font-medium text-zinc-500 hover:bg-gray-200 focus:outline-none"
+								aria-label="Collapse all categories"
+								style="border-top-right-radius:9999px; border-bottom-right-radius:9999px;"
+							>
+								Collapse All
+							</button>
+						</div>
+					</div>
+					{#each Object.entries(sortedCategoryMusic) as [category, subcategories]}
+						<CategorySection
+							{category}
+							{subcategories}
+							isExpanded={expandedCategories[category]}
+							on:toggle={handleCategoryToggle}
+						/>
+					{/each}
+				</div>
+			{/if}
+		</div>
+	{:else}
+		<!-- Placeholder to maintain layout -->
+		<div class="mx-auto max-w-4xl px-4 mt-12">
+			<div class="h-96"></div>
+		</div>
+	{/if}
 </div>
 
 <Footer /> 
