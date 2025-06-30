@@ -210,10 +210,23 @@
 			</div>
 
 			<!-- Controls Row -->
-			<div class="flex items-center justify-center gap-4 mb-4">
-				<FilterButton active={filterActive} on:click={handleFilterButtonClick} />
-				<SortToggle {sortMode} onToggle={handleSortToggle} />
-				<ExpandableSearch on:search={handleSearch} />
+			<div class="flex flex-col md:flex-row md:items-center md:justify-center gap-2 md:gap-4 mb-4">
+				<!-- Search bar: always on top on mobile, right on desktop -->
+				<div class="w-full md:w-auto md:order-2 mb-2 md:mb-0">
+					<!-- Mobile: always expanded -->
+					<div class="block md:hidden">
+						<ExpandableSearch />
+					</div>
+					<!-- Desktop: expandable -->
+					<div class="hidden md:block">
+						<ExpandableSearch />
+					</div>
+				</div>
+				<!-- Filter and Sort controls -->
+				<div class="flex flex-row gap-2 md:order-1 justify-center">
+					<FilterButton active={filterActive} on:click={handleFilterButtonClick} />
+					<SortToggle {sortMode} onToggle={handleSortToggle} />
+				</div>
 			</div>
 
 			<!-- Filter Panel -->
