@@ -7,7 +7,7 @@
 
 {#if otherVersions.length > 0}
   <div>
-    <div class="text-md text-bold mt-6 text-zinc-800">Other Arrangements:</div>
+    <div class="text-md text-bold mt-6 text-zinc-800">Also See:</div>
     <div class="mt-1 text-sm text-zinc-600">
       {#each otherVersions as version}
         <div class="mb-0 flex items-start">

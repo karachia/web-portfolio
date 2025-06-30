@@ -13,6 +13,9 @@
   let showModal = false;
   let mounted = false;
 
+  // For deduplication of videos
+  let displayedVideos = new Set<string>();
+
   onMount(async () => {
     try {
       const response = await fetch('/data/music.json');
@@ -22,7 +25,7 @@
       recordings = music.filter(item => 
         item.recordings && 
         Object.keys(item.recordings).length > 0 && 
-        item.recordings.preview // Check if there's a preview
+        (item.recordings.preview || item.recordings.comingSoon)// Check if there's a preview
       );
     } catch (error) {
       console.error('Error loading music data:', error);
@@ -73,7 +76,7 @@
         {#if recordings.length > 0}
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {#each recordings as recording}
-              <div class="group cursor-pointer" on:click={() => { if (!recording.comingSoon) openModal(recording); }}>
+              <div class="group cursor-pointer" on:click={() => { if (!recording.recordings.comingSoon) openModal(recording); }}>
                 <!-- Album Cover with Vinyl Sleeve Effect -->
                 <div class="relative aspect-square bg-gradient-to-b from-gray-100 via-stone-50 via-stone-50 to-stone-100 rounded-none shadow-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105 p-3 flex items-center justify-center">
                   {#if recording.image}
@@ -95,7 +98,7 @@
                   
                   <!-- Play overlay on hover -->
                   <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    {#if recording.comingSoon}
+                    {#if recording.recordings.comingSoon}
                       <div class="bg-white/90 rounded-full px-5 py-2 text-gray-700 font-semibold text-base shadow">
                         Coming Soon
                       </div>
@@ -112,7 +115,9 @@
                 <!-- Caption -->
                 <div class="text-center">
                   <h3 class="font-semibold text-gray-900 text-lg mb-1">{recording.title}</h3>
+                  {#if isValidString(recording.for)}
                   <p class="text-gray-600 text-sm italic">for {recording.for}</p>
+                  {/if}
                 </div>
               </div>
             {/each}
@@ -143,26 +148,34 @@
         </h2>
         {#if music.filter(item => item.videos && item.videos.length > 0).length > 0}
           <div class="flex flex-col gap-10">
-            {#each music.filter(item => item.videos && item.videos.length > 0) as item}
-              {#each item.videos as videoUrl}
-                <div class="bg-white shadow-2xl rounded-2xl p-4 flex flex-col relative z-[2]">
-                  <div>
-                    <YouTubeEmbed videoUrl={videoUrl} width="w-full" title={item.title} />
-                  </div>
-                  <div class="grid grid-cols-2 gap-2 items-center">
-                    <div>
-                      <h3 class="font-semibold text-gray-900 text-lg mb-1">{item.title}</h3>
+            {#key music}
+              {@html (() => { displayedVideos.clear(); return '' })()}
+              {#each music.filter(item => item.videos && item.videos.length > 0) as item}
+                {#each item.videos as videoUrl}
+                  {#if !displayedVideos.has(videoUrl)}
+                    {@html (() => { displayedVideos.add(videoUrl); return '' })()}
+                    <div class="bg-white shadow-2xl rounded-2xl p-4 flex flex-col relative z-[2]">
+                      <div>
+                        <YouTubeEmbed videoUrl={videoUrl} width="w-full" title={item.title} />
+                      </div>
+                      <div class="grid grid-cols-2 gap-2 items-center">
+                        <div>
+                          <h3 class="font-semibold text-gray-900 text-lg mb-1">{item.title}</h3>
+                        </div>
+                        <div class="text-right">
+                          <a class="text-purple-600 hover:underline font-medium" href={`/music/${item.id}`}>View full details &rarr;</a>
+                        </div>
+                      </div>
+                      <div>
+                        {#if isValidString(item.for)}
+                        <p class="text-gray-600 text-sm italic">for {item.for}</p>
+                        {/if}
+                      </div>
                     </div>
-                    <div class="text-right">
-                      <a class="text-purple-600 hover:underline font-medium" href={`/music/${item.id}`}>View full details &rarr;</a>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="text-gray-600 text-sm italic">for {item.for}</p>
-                  </div>
-                </div>
+                  {/if}
+                {/each}
               {/each}
-            {/each}
+            {/key}
           </div>
         {:else}
           <div class="text-center py-12">

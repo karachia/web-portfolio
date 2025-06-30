@@ -205,7 +205,7 @@
 	{#if mounted}
 		<div class="mx-auto max-w-4xl px-4 mt-12" in:fade={{ duration: 1200 }}>
 			<!-- Header -->
-			<div class="mb-12 text-center">
+			<div class="mb-12 text-center relative z-[2]">
 				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Music Catalog</h1>
 			</div>
 

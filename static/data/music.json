@@ -23,145 +23,7 @@
 			"width": "100%",
 			"height": 320,
 			"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
-			"title": "Whirling Onward hahaha"
-		},
-		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
-		"recordings": {
-			"preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
-			"previewWidth": "100%",
-			"previewHeight": 380,
-			"theme": 0,
-			"appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
-			"spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
-			"youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
-			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
-			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-		},
-		"score": {
-			"url": "https://www.dropbox.com/scl/fi/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000?rlkey=0000000000000000000000000000000000000000&dl=0",
-			"price": 100,
-			"partsPrice": 100
-		}, 
-		"otherVersions": [
-			"StrangerOfKinForOrchestra",
-			"StrangerOfKinForChamberOrchestra",
-			"StrangerOfKinForMixedEnsemble",
-			"StrangerOfKinForMixedQuartet"
-		]
-	},
-	{
-		"id": "Example2",
-		"title": "Example 2 with no image or streaming",
-		"for": "String Quartet",
-		"commissionedBy": "Commissioned by the University of Michigan",
-		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
-		"summary": "A piece inspired by the poems of the persian poet, Rumi.",
-		"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-		"category": "Chamber",
-		"subcategory": "Quartet",
-		"tags": ["String Quartet", "Chamber"],
-		"length": {
-			"min": 7.5,
-			"max": 10,
-			"default": 7.5
-		},
-		"date": "2025-07-12",
-		"detailed_instrumentation": "2 Violins, Viola, Cello",
-		"soundcloud": {
-			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
-			"width": "100%",
-			"height": 320,
-			"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
-			"title": "Whirling Onward hahaha"
-		},
-		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
-		"score": {
-			"url": "https://www.dropbox.com/scl/fi/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000?rlkey=0000000000000000000000000000000000000000&dl=0",
-			"price": 100,
-			"partsPrice": 100
-		}, 
-		"otherVersions": [
-			"StrangerOfKinForOrchestra",
-			"StrangerOfKinForChamberOrchestra",
-			"StrangerOfKinForMixedEnsemble",
-			"StrangerOfKinForMixedQuartet"
-		]
-	},
-	{
-		"id": "Example3",
-		"title": "Example 3",
-		"for": "Orchestra",
-		"commissionedBy": "Commissioned by the University of Michigan",
-		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
-		"summary": "A piece inspired by the poems of the persian poet, Rumi.",
-		"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-		"category": "Chamber",
-		"subcategory": "Quartet",
-		"tags": ["String Quartet", "Chamber"],
-		"length": {
-			"min": 7.5,
-			"max": 10,
-			"default": 7.5
-		},
-		"date": "2025-07-12",
-		"detailed_instrumentation": "2 Violins, Viola, Cello",
-		"image": "/assets/music/whirlingonward.png",
-		"soundcloud": {
-			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
-			"width": "100%",
-			"height": 320,
-			"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
-			"title": "Whirling Onward hahaha"
-		},
-		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
-		"recordings": {
-			"preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
-			"previewWidth": "100%",
-			"previewHeight": 380,
-			"theme": 0,
-			"appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
-			"spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
-			"youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
-			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
-			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-		},
-		"score": {
-			"url": "https://www.dropbox.com/scl/fi/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000?rlkey=0000000000000000000000000000000000000000&dl=0",
-			"price": 100,
-			"partsPrice": 100
-		}, 
-		"otherVersions": [
-			"StrangerOfKinForOrchestra",
-			"StrangerOfKinForChamberOrchestra",
-			"StrangerOfKinForMixedEnsemble",
-			"StrangerOfKinForMixedQuartet"
-		]
-	},
-	{
-		"id": "Example4",
-		"title": "Exampl 4",
-		"for": "String Quartet",
-		"commissionedBy": "Commissioned by the University of Michigan",
-		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
-		"summary": "A piece inspired by the poems of the persian poet, Rumi.",
-		"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-		"category": "Chamber",
-		"subcategory": "Quartet",
-		"tags": ["String Quartet", "Chamber"],
-		"comingSoon": true,
-		"length": {
-			"min": 7.5,
-			"max": 10,
-			"default": 7.5
-		},
-		"date": "2025-07-12",
-		"detailed_instrumentation": "2 Violins, Viola, Cello",
-		"soundcloud": {
-			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
-			"width": "100%",
-			"height": 320,
-			"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
-			"title": "Whirling Onward hahaha"
+			"title": "Whirling Onward..."
 		},
 		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
 		"recordings": {
@@ -231,8 +93,13 @@
 			"max": 11
 		},
 		"date": "2025-03-20",
-		"image": "/assets/album-art-2.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+		"image": "/assets/music/strangerofkin.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
+		"otherVersions": [
+			"StrangerOfKinForChamberOrchestra",
+			"StrangerOfKinForMixedEnsemble",
+			"StrangerOfKinForMixedQuartet"
+		]
 	},
 	{
 		"id": "StrangerOfKinForChamberOrchestra",
@@ -248,8 +115,13 @@
 			"max": 11
 		},
 		"date": "2024-11-20",
-		"image": "/assets/album-art-2.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+		"image": "/assets/music/strangerofkin.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
+		"otherVersions": [
+			"StrangerOfKinForOrchestra",
+			"StrangerOfKinForMixedEnsemble",
+			"StrangerOfKinForMixedQuartet"
+		]
 	},
 	{
 		"id": "StrangerOfKinForMixedEnsemble",
@@ -266,8 +138,13 @@
 		},
 		"detailed_instrumentation": "Flute, Bb Clarinet (doubling Bass), Alto Saxophone, Violin, Viola, Cello, Piano, 2 Percussions",
 		"date": "2024-09-20",
-		"image": "/assets/album-art-2.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+		"image": "/assets/music/strangerofkin.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
+		"otherVersions": [
+			"StrangerOfKinForOrchestra",
+			"StrangerOfKinForChamberOrchestra",
+			"StrangerOfKinForMixedQuartet"
+		]
 	},
 	{
 		"id": "StrangerOfKinForMixedQuartet",
@@ -283,8 +160,13 @@
 			"max": 7.5
 		},
 		"date": "2024-11-20",
-		"image": "/assets/album-art-2.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2"
+		"image": "/assets/music/strangerofkin.png",
+		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
+		"otherVersions": [
+			"StrangerOfKinForOrchestra",
+			"StrangerOfKinForChamberOrchestra",
+			"StrangerOfKinForMixedEnsemble"
+		]
 	},
 	{
 		"id": "aulosInWonderland",
@@ -300,7 +182,7 @@
 		},
 		"date": "2024-06-11",
 		"detailed_instrumentation": "",
-		"image": "",
+		"image": "/assets/music/aulosinwonderland_sq.png",
 		"soundcloud": "",
 		"videos": [],
 		"recordings": []
@@ -318,10 +200,24 @@
 		},
 		"date": "2022-01-11",
 		"detailed_instrumentation": "",
-		"image": "",
+		"image": "/assets/music/coolandgood_album.png",
 		"soundcloud": "",
 		"videos": [],
-		"recordings": []
+		"recordings": {
+			"comingSoon": true,
+			"preview": "",
+			"previewWidth": "100%",
+			"previewHeight": 380,
+			"theme": 0,
+			"appleMusic": "",
+			"spotify": "",
+			"youtubeMusic": "",
+			"amazonMusic": "",
+			"soundcloud": ""
+		},
+		"otherVersions": [
+			"coolAndGoodEnsemble"
+		]
 	},
 	{
 		"id": "coolAndGoodEnsemble",
@@ -336,10 +232,13 @@
 		},
 		"date": "2020-05-11",
 		"detailed_instrumentation": "",
-		"image": "",
+		"image": "/assets/music/coolandgood.png",
 		"soundcloud": "",
 		"videos": [],
-		"recordings": []
+		"recordings": [],
+		"otherVersions": [
+			"coolAndGoodDuo"
+		]
 	},
 	{
 		"id": "whirlingOnwardDanceFilm",
@@ -353,10 +252,13 @@
 		},
 		"date": "2021-04-11",
 		"detailed_instrumentation": "",
-		"image": "",
+		"image": "/assets/music/whirlingdancefilm.png",
 		"soundcloud": "",
-		"videos": [],
-		"recordings": []
+		"videos": ["https://www.youtube.com/embed/zbDhZ-TRa4A?si=H6nahyWuZ7YQCtdp"],
+		"recordings": [],
+		"otherVersions": [
+			"whirlingOnward"
+		]
 	},
 	{
 		"id": "whirlingOnward",
@@ -371,10 +273,23 @@
 		},
 		"date": "2019-01-11",
 		"detailed_instrumentation": "",
-		"image": "",
+		"image": "/assets/music/whirlingonward.png",
 		"soundcloud": "",
-		"videos": [],
-		"recordings": []
+		"videos": ["https://www.youtube.com/embed/zbDhZ-TRa4A?si=H6nahyWuZ7YQCtdp"],
+		"recordings": {
+			"preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
+			"previewWidth": "100%",
+			"previewHeight": 380,
+			"theme": 0,
+			"appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
+			"spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
+			"youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
+			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
+			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+		},
+		"otherVersions": [
+			"whirlingOnwardDanceFilm"
+		]
 	},
 	{
 		"id": "carolyn",
@@ -389,10 +304,20 @@
 		},
 		"date": "2018-10-11",
 		"detailed_instrumentation": "",
-		"image": "",
+		"image": "/assets/music/carolyn.png",
 		"soundcloud": "",
-		"videos": [],
-		"recordings": []
+		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI?si=jMhezp8BxJLLg0K-"],
+		"recordings": {
+			"preview": "https://open.spotify.com/embed/track/3msZZf2N0fzpsr7alLwvwj?utm_source=generator",
+			"previewWidth": "100%",
+			"previewHeight": 380,
+			"theme": 0,
+			"appleMusic": "https://music.apple.com/us/album/carolyn-single/1532001241",
+			"spotify": "https://open.spotify.com/track/3msZZf2N0fzpsr7alLwvwj?si=1f7dc25288e84587",
+			"youtubeMusic": "https://music.youtube.com/watch?v=GAzYC4y9PV4&si=WUycfm_n92gBUARk",
+			"amazonMusic": "https://music.amazon.com/albums/B08JCSGFYH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_YmKZoxE3rySjhvzc2iUtERwqA&trackAsin=B08JCFLNWZ",
+			"soundcloud": "https://soundcloud.com/sinakarachiani/carolyn?si=c2de3ef8fac743408da9ece32aef0ae7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+		}
 	},
 	{
 		"id": "longing",
@@ -443,7 +368,7 @@
 		"detailed_instrumentation": "",
 		"image": "",
 		"soundcloud": "",
-		"videos": [],
+		"videos": ["https://www.youtube.com/embed/piN8LccY_iI?si=gNnU8O-8hGwZ65VA"],
 		"recordings": []
 	},
 	{
@@ -494,7 +419,7 @@
 		"detailed_instrumentation": "",
 		"image": "",
 		"soundcloud": "",
-		"videos": [],
+		"videos": ["https://www.youtube.com/embed/xsoLlCgB1rk?si=vmc1JqRktdy0x986"],
 		"recordings": []
 	},
 	{

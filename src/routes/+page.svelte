@@ -99,7 +99,8 @@
 				S I N A&nbsp;&nbsp;&nbsp;K A R A C H I A N I
 			</h1>
 			<h2 class="mt-2 text-base font-light tracking-wide text-gray-600 drop-shadow-lg sm:text-lg md:text-2xl">
-				Composer, Artist, Pianist, Software Engineer
+				<!-- Composer, Artist, Pianist, Software Engineer -->
+        Composer • Artist • Pianist • Software Engineer
 			</h2>
 			<div class="mt-4 flex space-x-4 sm:space-x-6">
 				<a
@@ -126,9 +127,9 @@
 				<a
 					href="https://soundcloud.com/sinakarachiani/ "
 					target="_blank"
-					class="text-gray-600 transition-colors hover:text-gray-900"
+					class="text-gray-600 transition-colors hover:text-gray-900 ml-2"
 				>
-					<Icon data={soundcloud} scale={1.6} class="sm:scale-200" />
+					<Icon data={soundcloud} scale={1.5} class="sm:scale-200" />
 				</a>
 			</div>
 		</div>
@@ -213,7 +214,7 @@
 				href="/contact"
 				class="inline-flex items-center rounded-3xl bg-gray-900 px-8 py-3 font-large text-white shadow-xl transition-all duration-200 hover:bg-gray-700 hover:shadow-xl"
 			>
-				Message Me!
+				Contact Me!
 			</a>
 		</div>
 	</section>

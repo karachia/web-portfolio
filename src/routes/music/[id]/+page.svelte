@@ -116,7 +116,9 @@
 					<div class="mb-4 flex flex-shrink-0 items-start justify-between">
 						<div class="flex-1">
 							<h1 class="text-3xl font-bold text-zinc-800">{musicItem.title}</h1>
-							<p class="mt-0 text-xl font-light text-zinc-600 italic">for {musicItem.for}</p>
+							{#if isValidString(musicItem.for)}
+								<p class="mt-0 text-xl font-light text-zinc-600 italic">for {musicItem.for}</p>
+							{/if}
 							{#if isValidString(musicItem.dedication)}
 								<p class="text-sm text-zinc-500 italic">{musicItem.dedication}</p>
 							{/if}
@@ -229,11 +231,12 @@
 								<p class="mb-6 text-md text-zinc-600">
 									I'd love to hear from you about performances of this piece, questions, or collaborations!
 								</p>
-								<button
-									class="inline-flex items-center rounded-xl bg-zinc-800 px-6 py-3 text-sm font-medium text-white shadow-md transition-all duration-200 hover:bg-zinc-700 hover:shadow-lg"
+								<a
+									href="/contact"
+									class="inline-flex items-center rounded-3xl bg-zinc-800 px-6 py-3 text-sm font-medium text-white shadow-md transition-all duration-200 hover:bg-zinc-700 hover:shadow-lg"
 								>
 									Contact Me!
-								</button>
+								</a>
 							</div>
 						</div>
 						{/if}
