@@ -106,7 +106,7 @@
   image="/assets/web_icon_sq.png"
 />
   <ExploreLink
-    title="Contac Me!"
+    title="Contact Me!"
     href="/contact"
   />
 </div> 
