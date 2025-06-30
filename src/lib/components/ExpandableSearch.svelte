@@ -37,12 +37,21 @@
 		dispatch('search', '');
 		inputRef?.focus();
 	}
+
+	function getSeachBarWidth() {
+		alwaysExpanded ? '22rem' : (expanded ? '18rem' : '3rem')
+		if (alwaysExpanded) { // for mobile
+			return '22rem';
+		} else { // for large screens
+			return expanded ? '18rem' : '3rem';
+		}
+	}
 </script>
 
 <div class="flex items-center justify-center">
 	<div
 		class="relative flex items-center overflow-hidden transition-all duration-300 shadow-lg border border-white/30 bg-white/80"
-		style="width: {expanded ? '18rem' : '3rem'}; border-radius: 9999px; min-width: 3rem;"
+		style="width: {alwaysExpanded ? '21rem' : (expanded ? '18rem' : '3rem')}; border-radius: 9999px; min-width: 3rem;"
 		on:click={() => { if (!expanded && !alwaysExpanded) expand(); }}
 	>
 		<!-- Search Icon -->
