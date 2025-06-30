@@ -234,7 +234,7 @@
 				<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-8 flex flex-col items-center">
 					<div in:scale={{ duration: 180, start: 0.96 }} out:scale={{ duration: 120, start: 0.96 }} class="w-full bg-white border border-gray-100 rounded-2xl shadow-lg p-6 pt-2 pb-1 pr-2 grid grid-cols-1 md:grid-cols-2 gap-6">
 						<!-- Top Row: Clear and Close -->
-						<div class="col-span-2 flex justify-between items-center mt-2 relative">
+						<div class="col-span-1 md:col-span-2 flex justify-between items-center mt-2 relative">
 							<button
 								on:click={handleClearFilters}
 								class="text-xs font-semibold text-zinc-500 hover:text-zinc-700 bg-zinc-100 hover:bg-zinc-200 rounded-full px-4 py-1 transition-colors"
