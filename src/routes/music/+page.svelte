@@ -215,11 +215,11 @@
 				<div class="w-full md:w-auto md:order-2 mb-2 md:mb-0">
 					<!-- Mobile: always expanded -->
 					<div class="block md:hidden">
-						<ExpandableSearch />
+						<ExpandableSearch on:search={handleSearch} alwaysExpanded={true} />
 					</div>
 					<!-- Desktop: expandable -->
 					<div class="hidden md:block">
-						<ExpandableSearch />
+						<ExpandableSearch on:search={handleSearch} alwaysExpanded={false} />
 					</div>
 				</div>
 				<!-- Filter and Sort controls -->

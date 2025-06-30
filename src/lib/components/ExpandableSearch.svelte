@@ -1,17 +1,20 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	export let alwaysExpanded: boolean = false;
 	const dispatch = createEventDispatcher<{ search: string }>();
 	let expanded = false;
 	let query = '';
 	let inputRef: HTMLInputElement | null = null;
 	let inputFocused = false;
 
+	$: expanded = alwaysExpanded ? true : expanded;
+
 	function expand() {
 		expanded = true;
 		setTimeout(() => inputRef?.focus(), 120);
 	}
 	function collapse() {
-		if (query.trim() === '') {
+		if (!alwaysExpanded && query.trim() === '') {
 			expanded = false;
 			query = '';
 			dispatch('search', '');
@@ -26,7 +29,7 @@
 		if (e.key === 'Escape') {
 			query = '';
 			dispatch('search', '');
-			expanded = false;
+			if (!alwaysExpanded) expanded = false;
 		}
 	}
 	function clearSearch() {
@@ -40,7 +43,7 @@
 	<div
 		class="relative flex items-center overflow-hidden transition-all duration-300 shadow-lg border border-white/30 bg-white/80"
 		style="width: {expanded ? '18rem' : '3rem'}; border-radius: 9999px; min-width: 3rem;"
-		on:click={() => { if (!expanded) expand(); }}
+		on:click={() => { if (!expanded && !alwaysExpanded) expand(); }}
 	>
 		<!-- Search Icon -->
 		<div class="absolute left-0 top-0 h-full w-12 flex items-center justify-center pointer-events-none">
@@ -61,6 +64,7 @@
 			on:keydown={handleKeydown}
 			on:blur={collapse}
 			on:focus={() => inputFocused = true}
+			tabindex={expanded ? 0 : -1}
 		/>
 		<!-- Clear Button -->
 		{#if (inputFocused || query) && expanded}
@@ -78,7 +82,7 @@
 			</button>
 		{/if}
 		<!-- Clickable overlay for collapsed state -->
-		{#if !expanded}
+		{#if !expanded && !alwaysExpanded}
 			<div class="absolute inset-0 cursor-pointer z-10"></div>
 		{/if}
 	</div>
