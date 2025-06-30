@@ -6,11 +6,11 @@
 </script>
 
 {#if otherVersions.length > 0}
-  <div>
+  <div class="text-center sm:text-left">
     <div class="text-md text-bold mt-6 text-zinc-800">Also See:</div>
     <div class="mt-1 text-sm text-zinc-600">
       {#each otherVersions as version}
-        <div class="mb-0 flex items-start">
+        <div class="mb-0 flex items-start justify-center sm:justify-start">
           <span class="mr-2 text-zinc-400">•</span>
           <a
             href="/music/{version.id}"

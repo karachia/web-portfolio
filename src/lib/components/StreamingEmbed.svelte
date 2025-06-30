@@ -21,9 +21,9 @@
 ></iframe>
 
 {#if item.recordings && (item.recordings.spotify || item.recordings.appleMusic || item.recordings.youtubeMusic || item.recordings.amazonMusic || item.recordings.soundcloud)}
-  <div class="mt-4 mb-6">
+  <div class="mt-4 mb-6 text-center sm:text-left">
     <h4 class="text-sm font-semibold text-zinc-600 mb-2">Also available on:</h4>
-    <div class="flex flex-wrap gap-6 items-center">
+    <div class="flex flex-wrap gap-6 items-center justify-center sm:justify-start">
       {#if item.recordings.spotify}
         <StreamingServiceLink 
           serviceName="Spotify"

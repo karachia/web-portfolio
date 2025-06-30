@@ -113,8 +113,8 @@
 
 				<!-- Music content -->
 				<div class="rounded-4xl border border-zinc-200 bg-white p-8 text-zinc-800 shadow-2xl">
-					<div class="mb-4 flex flex-shrink-0 items-start justify-between">
-						<div class="flex-1">
+					<div class="mb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between">
+						<div class="flex-1 text-center sm:text-left">
 							<h1 class="text-3xl font-bold text-zinc-800">{musicItem.title}</h1>
 							{#if isValidString(musicItem.for)}
 								<p class="mt-0 text-xl font-light text-zinc-600 italic">for {musicItem.for}</p>
@@ -145,17 +145,44 @@
 								</div>
 							{/if}
 
+							<!-- Image (mobile: below commission text, desktop: to the right) -->
+							{#if isValidString(musicItem.image)}
+								<div class="mt-6 sm:hidden flex flex-col items-center">
+									<img
+										src={musicItem.image}
+										alt={`Cover art for ${musicItem.title}`}
+										class="h-80 w-80 sm:h-48 sm:w-48 rounded-2xl object-cover shadow-lg"
+									/>
+									<!-- Category Tags -->
+									<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
+									
+									<!-- Media Features -->
+									<div class="mt-3 flex justify-center">
+										<MediaFeatures item={musicItem} />
+									</div>
+								</div>
+							{:else}
+								<!-- Media Features (when no image) - mobile only -->
+								<div class="mt-6 sm:hidden flex flex-col items-center">
+									<!-- Category Tags (when no image) -->
+									<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
+									<div class="mt-2.5">
+										<MediaFeatures item={musicItem} />
+									</div>
+								</div>
+							{/if}
+
 							<!-- Other Versions -->
 							<OtherVersions {otherVersions} />
 						</div>
 
-						<!-- Image -->
+						<!-- Image (desktop only: to the right) -->
 						{#if isValidString(musicItem.image)}
-							<div class="ml-8 flex-shrink-0 flex flex-col items-end">
+							<div class="hidden sm:flex sm:ml-8 sm:flex-shrink-0 sm:flex-col sm:items-end">
 								<img
 									src={musicItem.image}
 									alt={`Cover art for ${musicItem.title}`}
-									class="h-48 w-48 rounded-2xl object-cover shadow-lg"
+									class="h-80 w-80 sm:h-48 sm:w-48 rounded-2xl object-cover shadow-lg"
 								/>
 								<!-- Category Tags -->
 								<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
@@ -166,18 +193,19 @@
 								</div>
 							</div>
 						{:else}
-							<!-- Media Features (when no image) -->
-							<div class="ml-8 flex flex-shrink-0 flex-col items-end justify-end">
-
-							<!-- Category Tags (when no image) -->
-							<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
-							<div class="mt-2.5"> <MediaFeatures item={musicItem} /></div>
+							<!-- Media Features (when no image) - desktop only -->
+							<div class="hidden sm:flex sm:ml-8 sm:flex-shrink-0 sm:flex-col sm:items-end sm:justify-end">
+								<!-- Category Tags (when no image) -->
+								<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
+								<div class="mt-2.5">
+									<MediaFeatures item={musicItem} />
+								</div>
 							</div>
 						{/if}
 					</div>
 
 					<!-- Description -->
-					<div class="-mr-4 flex-grow overflow-y-auto pr-4">
+					<div class="-mr-4 flex-grow overflow-y-auto pr-4 text-center sm:text-left">
 						{#if isValidString(musicItem.description)}
 							<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
 								<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>

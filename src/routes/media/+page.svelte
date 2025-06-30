@@ -204,7 +204,7 @@
   <!-- Modal -->
   {#if showModal && selected}
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" on:click={closeModal}>
-      <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full md:w-[38rem] p-8 relative" on:click|stopPropagation>
+      <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full md:w-[38rem] p-8 relative text-center sm:text-left" on:click|stopPropagation>
         <!-- Close button -->
         <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-700" on:click={closeModal} aria-label="Close modal">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 28 28"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
