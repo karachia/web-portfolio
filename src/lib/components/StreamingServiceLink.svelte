@@ -16,6 +16,6 @@
   class="flex flex-col items-center hover:opacity-80 transition-opacity"
 >
   <img src={iconPath} alt={serviceName} class={iconSize} />
-  <span class="text-xs text-zinc-700 mt-1">{serviceName}
-    <Icon class="w-3 h-3 ml-1" data={externalLink}/>
+  <span class="text-xs text-zinc-700 mt-1 hidden sm:inline">{serviceName}
+    <Icon class="w-3 h-3 ml-1" data={externalLink}/></span>
 </a> 
