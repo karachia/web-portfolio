@@ -11,7 +11,6 @@
 
 	let showRest = false;
 	let welcomeSection: HTMLElement | null = null;
-	let welcomeOpacity = 1;
 
 	function revealRestAndScroll(e: Event) {
 		showRest = true;
@@ -40,18 +39,6 @@
 		e.preventDefault();
 	}
 
-	function updateWelcomeOpacity() {
-		if (!welcomeSection) return;
-		const rect = welcomeSection.getBoundingClientRect();
-		const sectionCenter = rect.top + rect.height / 2;
-		const viewportCenter = window.innerHeight / 2;
-		const distance = Math.abs(sectionCenter - viewportCenter);
-		// Fade out when the center is more than half the section height away from center of viewport
-		const fadeDistance = rect.height / 2 + window.innerHeight / 2;
-		let opacity = 1 - 2 * (distance / fadeDistance);
-		welcomeOpacity = Math.max(0, Math.min(1, opacity));
-	}
-
 	onMount(() => {
 		const onScroll = () => {
 			if (!showRest && window.scrollY > 10) {
@@ -61,14 +48,8 @@
 		};
 		window.addEventListener('scroll', onScroll);
 
-		window.addEventListener('scroll', updateWelcomeOpacity);
-		window.addEventListener('resize', updateWelcomeOpacity);
-		setTimeout(updateWelcomeOpacity, 0);
-
 		return () => {
 			window.removeEventListener('scroll', onScroll);
-			window.removeEventListener('scroll', updateWelcomeOpacity);
-			window.removeEventListener('resize', updateWelcomeOpacity);
 		};
 	});
 </script>
@@ -158,7 +139,6 @@
 		id="welcome"
 		bind:this={welcomeSection}
 		class="flex min-h-screen flex-col items-center justify-center px-4 py-24 md:py-32 relative z-10"
-		style="opacity: {welcomeOpacity}; transition: opacity 0.2s;"
 	>
 		<div class="mt-6 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
 			<p>
@@ -181,7 +161,7 @@
       <p class="mt-3">
         I'm passionate about creating and designing across music, art, and software, and where they intersect. Storytelling is at the heart of everything I do, whether it's through a new musical piece or a visual design. I immensely enjoy collaborating with people to bring fresh ideas to life.
       </p>
-      <p class="mt-3">Beyond my core creative pursuits, I'm enjoy reading about aviation, urbanism, and public transit.
+      <p class="mt-3">Beyond my core creative pursuits, I enjoy reading about aviation, urbanism, and public transit.
       </p>
       <p class="mt-3">This website, which I've personally coded, is where I share my ongoing creative journey and the projects I'm most passionate about.
       </p>
