@@ -19,7 +19,7 @@
   
   $: shouldTruncate = text.length > maxLength;
   $: if (!isAnimating) {
-    displayText = isExpanded ? text : text.slice(0, maxLength) + '...';
+    displayText = isExpanded ? text : text.slice(0, maxLength) + (shouldTruncate ? '...' : '');
   }
   
   async function toggleExpanded() {

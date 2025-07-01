@@ -5,18 +5,19 @@
 		"for": "Piano Solo",
 		"category": "Solo",
 		"subcategory": "Piano",
-		"description": "Transients is a three-movement piece for solo piano that is inspired by the poems of the persian poet, Rumi.",
+		"description": "Transients is a three-movement piece for solo piano that is inspired by 'Shaykh Sanan and the Christian Maiden', a Persian mystical poem written by the Persian Sufi poet Attar.",
 		"tags": ["Piano"],
 		"length": {
 			"default": 10
 		},
-		"date": "2025-06-12"
+		"date": "2025-06-12",
+		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)"
 	},
 	{
 		"id": "orisonForStringQaurtet",
 		"title": "Orison",
 		"for": "String Quartet",
-
+		"description": "\"Orison\" for string quartet invites listeners into a deeply personal realm of contemplation and introspection, akin to a prayer whispered in solitude. Drawing on influences from the composer's Iranian heritage, the piece weaves together ornate melodies that possess a free-flowing and improvisatory quality, following the rich and expressive traditions found in traditional and folk Persian music. The music unfolds as if detached from the external world, exploring the intricate landscape of inner emotions, marked by longing and yearning, turbulence, a sense of reaching and falling, and moments of hope and optimism.",
 		"category": "Chamber",
 		"subcategory": "Quartet",
 		"tags": [],
@@ -26,7 +27,7 @@
 			"default": 7.5
 		},
 		"date": "2025-05-12",
-		"detailed_instrumentation": ""
+		"detailed_instrumentation": "2 Violins, Viola, Cello"
 	},
 	{
 		"id": "StrangerOfKinForOrchestra",
@@ -36,6 +37,7 @@
 		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
 		"category": "Large Ensemble",
 		"subcategory": "Orchestra",
+		"description": "\"Stranger of Kin\", inspired by my grandmother's Alzheimer's disease, which progressively worsened over the course of nine years, explores the complex emotions that arise when a loved one experiences memory loss. Our interactions are a mix of love, sadness at her moments of forgetfulness, and frustration when the same questions, like \"who are you?\", repeat. There are brief moments of joy, too, as she recalls a childhood memory of when she helped raise me like a second mother. But these precious moments are fleeting, and the cycle of confusion and questioning begins anew. At the same time, I imagine my grandmother feels fear and disorientation when she doesn't recognize her surroundings or the people around her. It must be a disorienting whirlwind for her, forced to rely on the explanations of a stranger (me) to understand her reality. However, when a fragment of memory returns, there's a bittersweet acceptance for both of us. We accept that the situation is beyond our control, and all we can offer each other is love, sympathy, and cherishing these precious moments while they last. The music seeks to capture such complex emotions surrounding my interactions with my grandmother in a cyclical fashion. Each cycle presents the same musical material but each time in a different character, color, and/or textures and eventually is interrupted by a dreamy but abrupt cloud of sound that resets the memory and gives way to a new cycle. In the beginning, solo violin harmonics and bowed vibraphone play the first theme, gradually evolving into fragments of a new, but still related, theme. This second theme, inspired by Persian folk tunes, is scattered throughout the piece in fragments, echoing the nostalgia of my grandmother and the memories of her raising me in Iran. It is a tribute to the loving angel who was my grandmother, and only emerges in its entirety halfway through the piece, played by solo violin, and later culminates in a powerful climax in the final cycle. The piece concludes with a variation of the second theme followed by the recurring dream-like sound cloud, marking the end of the cycle. I would like to dedicate this piece to my grandmother, Tahereh Moeini, who passed away shortly after composing the original mixed-ensemble version of this piece on August 5th, 2024.",
 		"tags": ["Orchestra"],
 		"length": {
 			"min": 9.5,
@@ -43,7 +45,6 @@
 		},
 		"date": "2025-03-20",
 		"image": "/assets/music/strangerofkin.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
 		"otherVersions": [
 			"StrangerOfKinForChamberOrchestra",
 			"StrangerOfKinForMixedEnsemble",
@@ -56,6 +57,7 @@
 		"for": "Chamber Orchestra",
 		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
 		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+		"description": "\"Stranger of Kin\", inspired by my grandmother's Alzheimer's disease, which progressively worsened over the course of nine years, explores the complex emotions that arise when a loved one experiences memory loss. Our interactions are a mix of love, sadness at her moments of forgetfulness, and frustration when the same questions, like \"who are you?\", repeat. There are brief moments of joy, too, as she recalls a childhood memory of when she helped raise me like a second mother. But these precious moments are fleeting, and the cycle of confusion and questioning begins anew. At the same time, I imagine my grandmother feels fear and disorientation when she doesn't recognize her surroundings or the people around her. It must be a disorienting whirlwind for her, forced to rely on the explanations of a stranger (me) to understand her reality. However, when a fragment of memory returns, there's a bittersweet acceptance for both of us. We accept that the situation is beyond our control, and all we can offer each other is love, sympathy, and cherishing these precious moments while they last. The music seeks to capture such complex emotions surrounding my interactions with my grandmother in a cyclical fashion. Each cycle presents the same musical material but each time in a different character, color, and/or textures and eventually is interrupted by a dreamy but abrupt cloud of sound that resets the memory and gives way to a new cycle. In the beginning, solo violin harmonics and bowed vibraphone play the first theme, gradually evolving into fragments of a new, but still related, theme. This second theme, inspired by Persian folk tunes, is scattered throughout the piece in fragments, echoing the nostalgia of my grandmother and the memories of her raising me in Iran. It is a tribute to the loving angel who was my grandmother, and only emerges in its entirety halfway through the piece, played by solo violin, and later culminates in a powerful climax in the final cycle. The piece concludes with a variation of the second theme followed by the recurring dream-like sound cloud, marking the end of the cycle. I would like to dedicate this piece to my grandmother, Tahereh Moeini, who passed away shortly after composing the original mixed-ensemble version of this piece on August 5th, 2024.",
 		"category": "Large Ensemble",
 		"subcategory": "Chamber Orchestra",
 		"tags": ["Orchestra", "Chamber Orchestra"],
@@ -65,7 +67,6 @@
 		},
 		"date": "2024-11-20",
 		"image": "/assets/music/strangerofkin.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
 		"otherVersions": [
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForMixedEnsemble",
@@ -78,6 +79,7 @@
 		"for": "9-Piece Mixed Ensemble",
 		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
 		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+		"description": "\"Stranger of Kin\", inspired by my grandmother's Alzheimer's disease, which progressively worsened over the course of nine years, explores the complex emotions that arise when a loved one experiences memory loss. Our interactions are a mix of love, sadness at her moments of forgetfulness, and frustration when the same questions, like \"who are you?\", repeat. There are brief moments of joy, too, as she recalls a childhood memory of when she helped raise me like a second mother. But these precious moments are fleeting, and the cycle of confusion and questioning begins anew. At the same time, I imagine my grandmother feels fear and disorientation when she doesn't recognize her surroundings or the people around her. It must be a disorienting whirlwind for her, forced to rely on the explanations of a stranger (me) to understand her reality. However, when a fragment of memory returns, there's a bittersweet acceptance for both of us. We accept that the situation is beyond our control, and all we can offer each other is love, sympathy, and cherishing these precious moments while they last. The music seeks to capture such complex emotions surrounding my interactions with my grandmother in a cyclical fashion. Each cycle presents the same musical material but each time in a different character, color, and/or textures and eventually is interrupted by a dreamy but abrupt cloud of sound that resets the memory and gives way to a new cycle. In the beginning, solo violin harmonics and bowed vibraphone play the first theme, gradually evolving into fragments of a new, but still related, theme. This second theme, inspired by Persian folk tunes, is scattered throughout the piece in fragments, echoing the nostalgia of my grandmother and the memories of her raising me in Iran. It is a tribute to the loving angel who was my grandmother, and only emerges in its entirety halfway through the piece, played by solo violin, and later culminates in a powerful climax in the final cycle. The piece concludes with a variation of the second theme followed by the recurring dream-like sound cloud, marking the end of the cycle. I would like to dedicate this piece to my grandmother, Tahereh Moeini, who passed away shortly after composing the original mixed-ensemble version of this piece on August 5th, 2024.",
 		"category": "Large Ensemble",
 		"subcategory": "Mixed Ensemble",
 		"tags": ["Mixed Ensemble"],
@@ -88,7 +90,6 @@
 		"detailed_instrumentation": "Flute, Bb Clarinet (doubling Bass), Alto Saxophone, Violin, Viola, Cello, Piano, 2 Percussions",
 		"date": "2024-09-20",
 		"image": "/assets/music/strangerofkin.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
 		"otherVersions": [
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForChamberOrchestra",
@@ -101,16 +102,17 @@
 		"for": "Violin, Horn, Piano, & Percussion",
 		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
 		"summary": "Inspired by my grandmother's struggle wiht Alzheimer's disease.",
+		"description": "\"Stranger of Kin\", inspired by my grandmother's Alzheimer's disease, which progressively worsened over the course of nine years, explores the complex emotions that arise when a loved one experiences memory loss. Our interactions are a mix of love, sadness at her moments of forgetfulness, and frustration when the same questions, like \"who are you?\", repeat. There are brief moments of joy, too, as she recalls a childhood memory of when she helped raise me like a second mother. But these precious moments are fleeting, and the cycle of confusion and questioning begins anew. At the same time, I imagine my grandmother feels fear and disorientation when she doesn't recognize her surroundings or the people around her. It must be a disorienting whirlwind for her, forced to rely on the explanations of a stranger (me) to understand her reality. However, when a fragment of memory returns, there's a bittersweet acceptance for both of us. We accept that the situation is beyond our control, and all we can offer each other is love, sympathy, and cherishing these precious moments while they last. The music seeks to capture such complex emotions surrounding my interactions with my grandmother in a cyclical fashion. Each cycle presents the same musical material but each time in a different character, color, and/or textures and eventually is interrupted by a dreamy but abrupt cloud of sound that resets the memory and gives way to a new cycle. In the beginning, solo violin harmonics and bowed vibraphone play the first theme, gradually evolving into fragments of a new, but still related, theme. This second theme, inspired by Persian folk tunes, is scattered throughout the piece in fragments, echoing the nostalgia of my grandmother and the memories of her raising me in Iran. It is a tribute to the loving angel who was my grandmother, and only emerges in its entirety halfway through the piece, played by solo violin, and later culminates in a powerful climax in the final cycle. The piece concludes with a variation of the second theme followed by the recurring dream-like sound cloud, marking the end of the cycle. I would like to dedicate this piece to my grandmother, Tahereh Moeini, who passed away shortly after composing the original mixed-ensemble version of this piece on August 5th, 2024.",
 		"category": "Chamber",
 		"subcategory": "Quartet",
+		"videos": ["https://www.youtube.com/embed/s0oUMY2HJh0?si=_-zSLvokxsQi6n88"],
 		"tags": [],
 		"length": {
 			"min": 6,
 			"max": 7.5
 		},
-		"date": "2024-11-20",
+		"date": "2024-06-20",
 		"image": "/assets/music/strangerofkin.png",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/your-track-2",
 		"otherVersions": [
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForChamberOrchestra",
@@ -122,6 +124,7 @@
 		"title": "Aulos in Wonderland",
 		"for": "Orchestra",
 		"summary": "Capriccio, a Period Composition for Orchestra",
+		"description": "Growing up in Iran, I had limited exposure to Western classical music. The music I encountered was primarily Iranian pop or traditional music, often heard on TV and radio. By chance, I discovered Tchaikovsky’s vibrant ballet scores, which ignited my passion for orchestral music. This marked the beginning of my journey into Western classical music, where I found inspiration in composers like Tchaikovsky and Mendelssohn. Inspired by the playful spirit of Tchaikovsky and the melodic richness of Mendelssohn, \"Aulos in Wonderland\" is a period composition - my homage to these two composers - that captures the simple joys, excitement, and boundless imagination of childhood. The music portrays an evocative journey through a whimsical land, reminiscent of classic fairy tales. The air thrums with the lilting melodies of the Aulos, an ancient Greek flute, as nymphs and fauns dance and frolic.",
 		"category": "Large Ensemble",
 		"subcategory": "Orchestra",
 		"tags": ["Orchestra"],
@@ -129,12 +132,16 @@
 			"min": 6,
 			"max": 7
 		},
-		"date": "2024-06-11",
+		"date": "2024-05-11",
 		"detailed_instrumentation": "",
 		"image": "/assets/music/aulosinwonderland_sq.png",
-		"soundcloud": "",
-		"videos": [],
-		"recordings": []
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1834948383&color=%23ff5500",
+			"width": "100%",
+			"height": 180,
+			"link": "https://soundcloud.com/sinakarachiani/aulos-in-wonderland",
+			"title": "Aulos in Wonderland"
+		}
 	},
 	{
 		"id": "coolAndGoodDuo",
@@ -525,9 +532,8 @@
 		"recordings": []
 	},
 	{
-		"id": "danceOfBrashWoman",
-		"title": "Dance of the Brash Woman",
-		"for": "Orchestra",
+		"id": "DanceforOrchestra",
+		"title": "Dance for Orchestra",
 		"category": "Large Ensemble",
 		"subcategory": "Orchestra",
 		"tags": ["Orchestra"],

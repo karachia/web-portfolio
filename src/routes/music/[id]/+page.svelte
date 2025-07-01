@@ -209,7 +209,7 @@
 						{#if isValidString(musicItem.description)}
 							<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
 								<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
-								<CollapsibleText text={musicItem.description} maxLength={530} />
+								<CollapsibleText text={musicItem.description} maxLength={1000} />
 							</div>
 						{/if}
 
@@ -245,7 +245,7 @@
 
 						<!-- If there is no content bsides a description, show a spacer -->
 						{#if isValidString(musicItem.description) && (!musicItem.videos || musicItem.videos.length === 0) && (!musicItem.recordings || !musicItem.recordings.preview) && (!musicItem.soundcloud || !musicItem.soundcloud.url)}
-							<div class="mt-30">   </div>
+							<div class="mt-16">   </div>
 						{/if}
 
 						<!-- Contact Section -->

@@ -181,7 +181,15 @@
     <div class="max-w-2xl w-full bg-white/80 rounded-3xl shadow-xl p-10 text-center border border-gray-100 relative z-[2]" in:fade={{ duration: 1200 }}>
       <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact</h1>
       <p class="text-lg text-gray-700 mb-6">
-        Want to collaborate or get in touch? Shoot me a message below.<br/>
+        {#if hasNavigatedToForm}
+        Submit the following form and I will contact you within 48 hours
+        {#if messageType === 'scorePurchase'}
+          to complete the order
+        {/if}
+        .
+        {:else}
+        Want to collaborate or get in touch? Shoot me a message below.
+        {/if}
       </p>
       {#if errorMsg}
         <div class="p-6 bg-red-100 text-red-800 rounded-xl text-center mb-6">
