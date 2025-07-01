@@ -198,7 +198,7 @@
 			</div>
     <!-- <p class="mt-10 text-center text-lg text-gray-600 md:text-xl">***</p> -->
     <p class="mt-10 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
-      Whether you're interested in a potential collaboration, just want to say hello, I'd love to hear from you! Feel free to reach out.
+      Whether you're interested in a potential collaboration, just want to say hello, I'd love to hear from you!
   </p>
 			<div class="mt-6 flex justify-center">
       
