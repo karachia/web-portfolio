@@ -42,10 +42,10 @@
     <span class="flex-1 flex items-center gap-2 text-md font-semibold text-zinc-800">
       {title}
       {#if icon}
-        <Icon data={icon} class="text-zinc-500 w-5 h-5" />
+        <Icon data={icon} class="text-zinc-500 w-5 h-5 flex-shrink-0" />
       {/if}
     </span>
-    <Icon data={chevronRight} class="text-zinc-400 group-hover:text-zinc-700 w-6 h-6 ml-2" />
+    <Icon data={chevronRight} class="text-zinc-400 group-hover:text-zinc-700 w-6 h-6 ml-2 flex-shrink-0" />
   </a>
 
   {#if showModal && modalContent}
