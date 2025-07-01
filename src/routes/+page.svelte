@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import Footer from '$lib/components/Footer.svelte';
 	import Icon from 'svelte-awesome';
 
@@ -134,26 +135,28 @@
 	</a>
 </section>
 
+
 {#if showRest}
 	<section
 		id="welcome"
 		bind:this={welcomeSection}
-		class="flex min-h-screen flex-col items-center justify-center px-4 py-24 md:py-32 relative z-10"
+		class="flex min-h-screen flex-col items-center justify-center px-4 py-24 md:py-32 relative z-10 mt-50"
 	>
-		<div class="mt-6 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
-			<p>
-				Hello! I'm Sina.
-				<br />
-				<span class="text-zinc-400">/ˈsiː.nə/</span>
-			</p>
+		<div transition:fade={{ duration: 2100 }}>
+			<div class="mt-6 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
+				<p>
+					Hello! I'm Sina.
+					<br />
+					<span class="text-zinc-400">/ˈsiː.nə/</span>
+				</p>
 
-			<p class="mt-3">Welcome to my corner of the internet!</p>
+				<p class="mt-3">Welcome to my corner of the internet!</p>
 
-			<p class="mt-3">
-				I am a composer, pianist, artist, and software engineer
-				<br />
-				based in San Francisco, CA.
-			</p>
+				<p class="mt-3">
+					I am a composer, pianist, artist, and software engineer
+					<br />
+					based in San Francisco, CA.
+				</p>
 
       <p class="mt-3">
         By day, I'm a Software Engineer at Apple, contributing to Vision Products that enable groundbreaking new possibilities. By night, you'll often find me composing at the piano, or perhaps drawing—often with my cat, Simon, supervising.
@@ -165,46 +168,47 @@
       </p>
       <p class="mt-3">This website, which I've personally coded, is where I share my ongoing creative journey and the projects I'm most passionate about.
       </p>
-			<!-- <p class="mt-3">
-				Here, you can learn more about me and explore my art and music.
-			</p> -->
-		</div>
-
-		<p class="mt-6 max-w-2xl text-center text-lg text-gray-600 md:text-xl">Explore my work:</p>
-		<div class="mt-6 mb-8 flex w-full justify-center relative z-10">
-			<div class="grid w-full max-w-sm sm:max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
-				<a
-					href="/music"
-					class="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 px-3 py-3 text-center font-medium text-zinc-500 shadow-xl backdrop-blur transition-all duration-200 hover:bg-gray-200 hover:text-zinc-600"
-				>
-					Music Catalog
-				</a>
-				<a
-					href="/media"
-					class="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 px-3 py-3 text-center font-medium text-zinc-500 shadow-xl backdrop-blur transition-all duration-200 hover:bg-gray-200 hover:text-zinc-600"
-				>
-					Media &amp; Recordings
-				</a>
-				<a
-					href="/art"
-					class="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 px-3 py-3 text-center font-medium text-zinc-500 shadow-xl backdrop-blur transition-all duration-200 hover:bg-gray-200 hover:text-zinc-600"
-				>
-					Art
-				</a>
+				<!-- <p class="mt-3">
+					Here, you can learn more about me and explore my art and music.
+				</p> -->
 			</div>
-		</div>
+      
+			<p class="mt-6 max-w-2xl text-center text-lg text-gray-600 md:text-xl">Explore my work:</p>
+			<div class="mt-6 mb-8 flex w-full justify-center relative z-10">
+				<div class="grid w-full max-w-sm sm:max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
+					<a
+						href="/music"
+						class="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 px-3 py-3 text-center font-medium text-zinc-500 shadow-xl backdrop-blur transition-all duration-200 hover:bg-gray-200 hover:text-zinc-600"
+					>
+						Music Catalog
+					</a>
+					<a
+						href="/media"
+						class="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 px-3 py-3 text-center font-medium text-zinc-500 shadow-xl backdrop-blur transition-all duration-200 hover:bg-gray-200 hover:text-zinc-600"
+					>
+						Media &amp; Recordings
+					</a>
+					<a
+						href="/art"
+						class="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 px-3 py-3 text-center font-medium text-zinc-500 shadow-xl backdrop-blur transition-all duration-200 hover:bg-gray-200 hover:text-zinc-600"
+					>
+						Art
+					</a>
+				</div>
+			</div>
     <!-- <p class="mt-10 text-center text-lg text-gray-600 md:text-xl">***</p> -->
     <p class="mt-10 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
       Whether you're interested in a potential collaboration, just want to say hello, I'd love to hear from you! Feel free to reach out.
   </p>
-		<div class="mt-6 flex justify-center">
+			<div class="mt-6 flex justify-center">
       
-			<a
-				href="/contact"
-				class="inline-flex items-center rounded-3xl bg-gray-900 px-8 py-3 font-large text-white shadow-xl transition-all duration-200 hover:bg-gray-700 hover:shadow-xl"
-			>
-				Contact Me!
-			</a>
+				<a
+					href="/contact"
+					class="inline-flex items-center rounded-3xl bg-gray-900 px-8 py-3 font-large text-white shadow-xl transition-all duration-200 hover:bg-gray-700 hover:shadow-xl"
+				>
+					Contact Me!
+				</a>
+			</div>
 		</div>
 	</section>
 
