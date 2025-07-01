@@ -242,7 +242,7 @@
 
 			<!-- Filter Panel -->
 			{#if filterActive}
-				<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-0 md:mb-8 flex flex-col items-center">
+				<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-0 md:mb-8 flex flex-col items-center relative z-[2]">
 					<div in:scale={{ duration: 180, start: 0.96 }} out:scale={{ duration: 120, start: 0.96 }} class="w-full bg-white border border-gray-100 rounded-2xl shadow-lg p-6 pt-2 pb-1 pr-2 grid grid-cols-1 md:grid-cols-2 gap-6">
 						<!-- Top Row: Clear and Close -->
 						<div class="col-span-1 md:col-span-2 flex justify-between items-center mt-2 relative">
@@ -310,7 +310,7 @@
 				</div>
 			{/if}
 
-			<div class="mb-12 md:mb-22"></div>
+			<div class="mb-16 md:mb-22"></div>
 
 			<!-- Music Items -->
 			{#if sortMode === 'chronological'}
@@ -320,9 +320,9 @@
 					{/each}
 				</div>
 			{:else}
-				<div class="w-full  mt-6 md:mb-12 relative">
+				<div class="w-full mt-6 md:mb-12 relative">
 					<!-- Expand/Collapse All Buttons above first category -->
-					<div class="absolute right-0 -top-10 z-10">
+					<div class="w-full flex justify-center md:justify-end -top-10 md:mb-4 z-10 absolute md:static">
 						<div class="inline-flex rounded-full bg-gray-100 shadow-sm overflow-hidden">
 							<button
 								on:click={expandAllCategories}
