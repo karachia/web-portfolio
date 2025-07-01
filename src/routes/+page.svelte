@@ -202,7 +202,7 @@
 				</a>
 			</div>
 		</div>
-    <p class="mt-10 text-center text-lg text-gray-600 md:text-xl">***</p>
+    <!-- <p class="mt-10 text-center text-lg text-gray-600 md:text-xl">***</p> -->
     <p class="mt-10 mb-2 max-w-2xl text-center text-lg text-gray-600 md:text-xl">
       If you'd like to collaborate or get in touch,
     <br />
