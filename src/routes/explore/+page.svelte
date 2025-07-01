@@ -19,7 +19,7 @@
     const res = await fetch('/data/music.json');
     musicData = await res.json();
     whirlingOnward = musicData.find(
-      (item) => item.id === 'whirlingOnward' || item.title?.toLowerCase().includes('whirling, onward')
+      (item) => item.id === 'whirlingOnward'
     );
 
     carolyn = musicData.find(
