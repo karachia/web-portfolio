@@ -204,21 +204,21 @@
   <!-- Modal -->
   {#if showModal && selected}
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" on:click={closeModal}>
-      <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full md:w-[38rem] p-8 relative text-center sm:text-left" on:click|stopPropagation>
+      <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full md:w-[38rem] p-4 md:p-8 relative text-center sm:text-left" on:click|stopPropagation>
         <!-- Close button -->
         <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-700" on:click={closeModal} aria-label="Close modal">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 28 28"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <h2 class="text-2xl font-bold text-gray-900 mb-1">{selected.title}</h2>
-        <p class="text-md text-gray-700 italic mb-2">for {selected.for}</p>
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">{selected.title}</h2>
+        <p class="text-sm md:text-md text-gray-700 italic mb-1 md:mb-2">for {selected.for}</p>
         {#if isValidString(selected.dedication)}
-          <p class="text-sm text-gray-500 italic mb-2">{selected.dedication}</p>
+          <p class="text-xs md:text-sm text-gray-500 italic mb-1 md:mb-2">{selected.dedication}</p>
         {/if}
         {#if isValidString(selected.commissionedBy)}
-          <p class="text-sm text-gray-500 mb-2">{selected.commissionedBy}</p>
+          <p class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">{selected.commissionedBy}</p>
         {/if}
-        <p class="text-sm text-gray-600 mb-4">{formatDate(selected.date)}</p>
-        <a class="inline-block mb-4 text-purple-600 hover:underline font-medium" href={`/music/${selected.id}`}>View full details &rarr;</a>
+        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-4">{formatDate(selected.date)}</p>
+        <a class="inline-block mb-2 md:mb-4 text-purple-600 hover:underline font-medium text-sm md:text-base" href={`/music/${selected.id}`}>View full details &rarr;</a>
         {#if selected.recordings && selected.recordings.preview}
           <div class="mb-4">
             <StreamingEmbed item={selected} />
