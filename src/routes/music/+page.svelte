@@ -210,7 +210,7 @@
 			</div>
 
 			<!-- Controls Row -->
-			<div class="flex flex-col md:flex-row md:items-center md:justify-center gap-2 md:gap-4 mb-0 md:mb-4">
+			<div class="flex flex-col md:flex-row md:items-center md:justify-center gap-2 md:gap-4 mb-4">
 				<!-- Search bar: always on top on mobile, right on desktop -->
 				<div class="w-full md:w-auto md:order-2 mb-2 md:mb-0">
 					<!-- Mobile: always expanded -->
@@ -299,11 +299,11 @@
 				</div>
 			{/if}
 
-			<div class="mb-6 md:mb-22"></div>
+			<div class="mb-12 md:mb-22"></div>
 
 			<!-- Music Items -->
 			{#if sortMode === 'chronological'}
-				<div class="w-full flex flex-col items-center space-y-8 mt-6 md:mb-12">
+				<div class="w-full flex flex-col items-center space-y-3 md:space-y-8 mt-6 md:mb-12">
 					{#each chronologicalMusic as item}
 						<MusicItem {item} />
 					{/each}

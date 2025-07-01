@@ -40,7 +40,7 @@
 							{subcategory}
 						</h3>
 					</div>
-					<div class="flex flex-col items-center space-y-8">
+					<div class="flex flex-col items-center space-y-3 md:space-y-8">
 						{#each items as item}
 							<MusicItem {item} />
 						{/each}
