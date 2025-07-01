@@ -203,14 +203,14 @@
 
 <div class="min-h-screen bg-gray-50 py-8">
 	{#if mounted}
-		<div class="mx-auto max-w-4xl px-4 mt-12" in:fade={{ duration: 1200 }}>
+		<div class="mx-auto max-w-4xl px-4 md:mt-12 mt-0" in:fade={{ duration: 1200 }}>
 			<!-- Header -->
-			<div class="mb-12 text-center relative z-[2]">
-				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Music Catalog</h1>
+			<div class="md:mb-12 mb-4 text-center relative z-[2]">
+				<h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Music Catalog</h1>
 			</div>
 
 			<!-- Controls Row -->
-			<div class="flex flex-col md:flex-row md:items-center md:justify-center gap-2 md:gap-4 mb-4">
+			<div class="flex flex-col md:flex-row md:items-center md:justify-center gap-2 md:gap-4 mb-0 md:mb-4">
 				<!-- Search bar: always on top on mobile, right on desktop -->
 				<div class="w-full md:w-auto md:order-2 mb-2 md:mb-0">
 					<!-- Mobile: always expanded -->
@@ -231,7 +231,7 @@
 
 			<!-- Filter Panel -->
 			{#if filterActive}
-				<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-8 flex flex-col items-center">
+				<div in:fade={{ duration: 180 }} out:fade={{ duration: 120 }} class="w-full max-w-2xl mx-auto mb-0 md:mb-8 flex flex-col items-center">
 					<div in:scale={{ duration: 180, start: 0.96 }} out:scale={{ duration: 120, start: 0.96 }} class="w-full bg-white border border-gray-100 rounded-2xl shadow-lg p-6 pt-2 pb-1 pr-2 grid grid-cols-1 md:grid-cols-2 gap-6">
 						<!-- Top Row: Clear and Close -->
 						<div class="col-span-1 md:col-span-2 flex justify-between items-center mt-2 relative">
@@ -299,17 +299,17 @@
 				</div>
 			{/if}
 
-			<div class="mb-22"></div>
+			<div class="mb-6 md:mb-22"></div>
 
 			<!-- Music Items -->
 			{#if sortMode === 'chronological'}
-				<div class="w-full flex flex-col items-center space-y-8 mt-12">
+				<div class="w-full flex flex-col items-center space-y-8 mt-6 md:mb-12">
 					{#each chronologicalMusic as item}
 						<MusicItem {item} />
 					{/each}
 				</div>
 			{:else}
-				<div class="w-full mt-12 relative">
+				<div class="w-full  mt-6 md:mb-12 relative">
 					<!-- Expand/Collapse All Buttons above first category -->
 					<div class="absolute right-0 -top-10 z-10">
 						<div class="inline-flex rounded-full bg-gray-100 shadow-sm overflow-hidden">
