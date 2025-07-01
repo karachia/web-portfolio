@@ -118,6 +118,11 @@
                   {#if isValidString(recording.for)}
                   <p class="text-gray-600 text-sm italic">for {recording.for}</p>
                   {/if}
+                  {#if recording.recordings.comingSoon}
+                      <p class="text-zinc-400 font-semibold text-sm">
+                        Coming Soon
+                      </p>
+                    {/if}
                 </div>
               </div>
             {/each}

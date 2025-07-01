@@ -111,6 +111,17 @@
 			(('for ' + item.for) || '').toLowerCase(),
 			item.detailed_instrumentation?.toLowerCase() || ''
 		];
+		// For search, add alternate forms for "and" <-> "&" in fields
+		// let augmentedFields = [...fields];
+		for (const field of fields) {
+			if (field.includes(" and ")) {
+				fields.push("&");
+			}
+			if (field.includes(" & ")) {
+				fields.push("and");
+			}
+		}
+
 		const matchesSearch = !searchQuery || words.every(word => fields.some(field => field.includes(word)));
 
 		// Category/subcategory filter

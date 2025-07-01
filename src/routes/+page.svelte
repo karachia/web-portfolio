@@ -155,18 +155,18 @@
 				<p class="mt-3">
 					I am a composer, pianist, artist, and software engineer
 					<br />
-					based in San Francisco, CA.
+					based in <span class="font-bold">San Francisco, CA</span>.
 				</p>
 
       <p class="mt-3">
         By day, I'm a Software Engineer at Apple, contributing to Vision Products that enable groundbreaking new possibilities. By night, you'll often find me composing at the piano, or perhaps drawing—often with my cat, Simon, supervising.
       </p>
       <p class="mt-3">
-        I'm passionate about creating and designing across music, art, and software, and where they intersect. Storytelling is at the heart of everything I do, whether it's through a new musical piece or a visual design. I immensely enjoy collaborating with people to bring fresh ideas to life.
+        I'm passionate about <span class="font-bold">creating and designing across music, art, and software</span>, and where they intersect. <span class="font-bold">Storytelling is at the heart of everything I do</span>, whether it's through a new musical piece or a visual design. I immensely enjoy <span class="font-bold">collaborating with people to bring fresh ideas to life</span>.
       </p>
-      <p class="mt-3">Beyond my core creative pursuits, I enjoy reading about aviation, urbanism, and public transit.
+      <p class="mt-3">Beyond my core creative pursuits, I enjoy reading about <span class="font-bold">aviation, urbanism, and public transit</span>.
       </p>
-      <p class="mt-3">This website, which I've personally coded, is where I share my ongoing creative journey and the projects I'm most passionate about.
+      <p class="mt-3">This website, which I've <span class="font-bold">personally coded</span>, is where I share my ongoing creative journey and the projects I'm most passionate about.
       </p>
 				<!-- <p class="mt-3">
 					Here, you can learn more about me and explore my art and music.

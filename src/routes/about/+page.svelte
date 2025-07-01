@@ -53,7 +53,7 @@
 			<div class="text-justify text-lg text-gray-600" in:fade={{ duration: 800, delay: 800 }}>
 				<p class="mb-4">
 					<span class="font-bold text-black">Sina Karachiani (b. 1996, Esfahan, Iran)</span>
-					is a San Francisco-based Iranian American composer and Software Engineer whose work explores
+					is a San Francisco-based Iranian American composer and software engineer whose work explores
 					the intimate and vulnerable concepts such as identity conflicts, self-discovery, personal struggles,
 					and mental health. His music draws inspiration from both western and eastern musical idioms
 					as his upbringing in Iran, immersed in Persian classical and folk music, has profoundly shaped
@@ -134,8 +134,8 @@
 				>
 					<div class="border-t border-zinc-200 pt-4 text-base text-zinc-700">
 						<p class="mb-4">
-							Sina Karachiani is a San Francisco-based Iranian American composer and Software
-							Engineer whose work explores intimate and vulnerable concepts such as identity
+							Sina Karachiani is a San Francisco-based Iranian American composer and software
+							engineer whose work explores intimate and vulnerable concepts such as identity
 							conflicts, self-discovery, personal struggles, and mental health. His music draws
 							inspiration from both western and eastern musical idioms as his upbringing in Iran,
 							immersed in Persian classical and folk music, has profoundly shaped his compositional
@@ -208,7 +208,7 @@
 					transition:slide
 				>
 					<p class="border-t border-zinc-200 pt-4 text-base text-zinc-700">
-						Sina Karachiani is a San Francisco-based Iranian American composer and Software Engineer whose work explores intimate and vulnerable concepts such as identity conflicts, self-discovery, personal struggles, and mental health. His music draws inspiration from both western and eastern musical idioms as his upbringing in Iran, immersed in Persian classical and folk music, has profoundly shaped his compositional style. His compositions have been premiered across the country and won numerous prizes, including the highly acclaimed "Stranger of Kin for Orchestra", inspired by his grandmother's Alzheimer's disease, which was selected for Memphis Composers Institute and performed by Memphis Symphony Orchestra. Born in Esfahan, Iran, Sina immigrated to California after high school and studied Music Composition and Computer Science at the University of Southern California, graduating in 2020 with honors and receiving the prestigious Renaissance Scholar and Discovery awards. He currently works as a software engineer in Augmented and Virtual Reality at Apple, developing new immersive experiences, while continuing to compose music that seeks to foster connection with listeners and performers through intricate flowing melodies and colorful orchestration.
+						Sina Karachiani is a San Francisco-based Iranian American composer and software engineer whose work explores intimate and vulnerable concepts such as identity conflicts, self-discovery, personal struggles, and mental health. His music draws inspiration from both western and eastern musical idioms as his upbringing in Iran, immersed in Persian classical and folk music, has profoundly shaped his compositional style. His compositions have been premiered across the country and won numerous prizes, including the highly acclaimed "Stranger of Kin for Orchestra", inspired by his grandmother's Alzheimer's disease, which was selected for Memphis Composers Institute and performed by Memphis Symphony Orchestra. Born in Esfahan, Iran, Sina immigrated to California after high school and studied Music Composition and Computer Science at the University of Southern California, graduating in 2020 with honors and receiving the prestigious Renaissance Scholar and Discovery awards. He currently works as a software engineer in Augmented and Virtual Reality at Apple, developing new immersive experiences, while continuing to compose music that seeks to foster connection with listeners and performers through intricate flowing melodies and colorful orchestration.
 					</p>
 				</div>
 			{/if}
