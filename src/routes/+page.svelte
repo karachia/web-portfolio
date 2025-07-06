@@ -109,7 +109,7 @@
 				<a
 					href="https://soundcloud.com/sinakarachiani/ "
 					target="_blank"
-					class="text-gray-600 transition-colors hover:text-gray-900 ml-2"
+					class="text-gray-600 transition-colors hover:text-gray-900 md:ml-2"
 				>
 					<Icon data={soundcloud} scale={1.5} class="sm:scale-200" />
 				</a>

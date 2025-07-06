@@ -63,11 +63,13 @@
     <section class="max-w-4xl mx-auto mt-20 mb-16 px-4 text-center relative z-[2]" in:fade={{ duration: 1200 }}>
       <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Visual Art</h1>
       <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-        I've been drawing since before I could speak. I find it a very therapeutic and fun way to express myself. Nowadays, I often use my art as gifts for friends and family.
-        My work ranges from traditional sketches and drawings to digital illustrations and logos, and even cartoons and cards. 
+        I've been drawing and painting since before I could speak, and it remains a deeply therapeutic and joyful way for me to express myself. 
+        <br/>While many of my pieces find homes as heartfelt gifts for friends and family, this space showcases the diverse range of my work, 
+        from traditional sketches and detailed drawings to digital illustrations, custom logos, and even cartoons and cards.
+        
         <br/>
         <br/>
-        <i>Want to collaborate or commission an artwork?</i>
+        <i>Interested in a collaboration or commissioning a unique piece?<br/>I'd love to hear from you!</i>
       </p>
       <button
         on:click={handleCommissionClick}
