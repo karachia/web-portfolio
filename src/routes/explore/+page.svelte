@@ -55,7 +55,7 @@
       <img
         src="/assets/SK_Brand.png"
         alt="Sina Karachiani Logo"
-        class="w-20 h-auto rounded-full drop-shadow mb-3"
+        class="w-15 h-auto rounded-full drop-shadow mb-3"
       />
       <h1 class="text-2xl font-bold text-gray-900 tracking-tight mb-1" style="font-family: 'Zen Kurenaido', spagans-serif;">
         S I N A &nbsp; &nbsp; K A R A C H I A N I
