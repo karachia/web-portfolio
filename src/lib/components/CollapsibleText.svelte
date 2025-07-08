@@ -102,6 +102,7 @@
 
 <div 
   bind:this={container}
+  style="white-space: pre-line;"
   class="text-zinc-700 italic transition-all duration-300 ease-out {shouldTruncate && showButton ? 'cursor-pointer hover:bg-gray-50 hover:shadow-sm rounded px-2 py-1 -mx-2 -my-1' : ''}"
   on:click={shouldTruncate && showButton ? toggleExpanded : undefined}
   on:mousedown={shouldTruncate && showButton ? handleMouseDown : undefined}
@@ -116,7 +117,7 @@
     }
   }}
 >
-  {displayText}
+  {@html displayText}
   {#if shouldTruncate && showButton}
     <button 
       on:click|stopPropagation={toggleExpanded}
