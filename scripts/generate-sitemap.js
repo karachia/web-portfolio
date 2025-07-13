@@ -16,7 +16,8 @@ const staticPages = [
   '/art', 
   '/contact',
   '/media',
-  '/music'
+  '/music',
+  '/explore'
 ];
 
 // Generate sitemap XML

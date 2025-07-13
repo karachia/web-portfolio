@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sinakarachiani.com/explore</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sinakarachiani.com/art</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
