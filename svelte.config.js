@@ -1,5 +1,19 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+// Function to get all music composition entries from music.json
+function getMusicCompositionEntries() {
+	try {
+		const musicDataPath = join(process.cwd(), 'static', 'data', 'music.json');
+		const musicData = JSON.parse(readFileSync(musicDataPath, 'utf8'));
+		return musicData.map(piece => `/music/${piece.id}`);
+	} catch (error) {
+		console.warn('Could not read music.json, returning empty array:', error.message);
+		return [];
+	}
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,6 +35,18 @@ const config = {
 			strict: true
 		}),
 		prerender: {
+			crawl: true,
+			entries: [
+				'/',
+				'/about',
+				'/art',
+				'/contact',
+				'/music',
+				'/media',
+				'/explore',
+				...getMusicCompositionEntries()
+			],
+			// handleHttpError: 'warn',
 			handleMissingId: 'warn'
 		}
 	}
