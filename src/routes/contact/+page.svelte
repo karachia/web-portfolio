@@ -222,7 +222,7 @@
           <div class="grid gap-4">
             <button
               type="button"
-              class="p-4 text-left border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-gradient-to-r from-blue-50 to-blue-100"
+              class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
               on:click={() => messageType = 'musicCommission'}
             >
               <h3 class="font-semibold text-lg">Music Commission & Collaboration</h3>
@@ -230,7 +230,7 @@
             </button>
             <button
               type="button"
-              class="p-4 text-left border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-gradient-to-r from-green-50 to-green-100"
+              class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 hover:border-green-300 hover:shadow-lg hover:shadow-green-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
               on:click={() => messageType = 'artCommission'}
             >
               <h3 class="font-semibold text-lg">Art Commission, Design, & Collaboration</h3>
@@ -238,7 +238,7 @@
             </button>
             <button
               type="button"
-              class="p-4 text-left border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-gradient-to-r from-purple-50 to-purple-100"
+              class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
               on:click={() => messageType = 'performanceNotice'}
             >
               <h3 class="font-semibold text-lg">Performance Notice</h3>
@@ -246,7 +246,7 @@
             </button>
             <button
               type="button"
-              class="p-4 text-left border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-gradient-to-r from-orange-50 to-orange-100"
+              class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
               on:click={() => messageType = 'scorePurchase'}
             >
               <h3 class="font-semibold text-lg">Score Purchase</h3>
@@ -254,7 +254,7 @@
             </button>
             <button
               type="button"
-              class="p-4 text-left border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-gradient-to-r from-gray-50 to-gray-100"
+              class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
               on:click={() => messageType = 'general'}
             >
               <h3 class="font-semibold text-lg">General</h3>
