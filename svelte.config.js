@@ -24,7 +24,7 @@ const config = {
 			handleMissingId: 'warn'
 		},
 		paths: {
-			base: '/web-portfolio'
+			base: '' //'/web-portfolio'
 		}
 	}
 };
