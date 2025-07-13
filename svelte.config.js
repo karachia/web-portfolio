@@ -18,10 +18,13 @@ const config = {
 			assets: 'build',
 			fallback: '404.html',
 			precompress: true, // Enable compression for better performance
-			strict: false
+			strict: true
 		}),
 		prerender: {
 			handleMissingId: 'warn'
+		},
+		paths: {
+			base: ''
 		}
 	}
 };

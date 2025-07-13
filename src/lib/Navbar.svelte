@@ -2,6 +2,7 @@
 import { onMount } from 'svelte';
 import { page } from '$app/stores';
 import { goto } from '$app/navigation';
+import { base } from '$app/paths';
 import Icon from 'svelte-awesome';
 import chevronDown from 'svelte-awesome/icons/chevronDown';
 
@@ -11,13 +12,13 @@ let mobileDropdownOpen: string | null = null;
 let musicDropdownOpen = false;
 let musicDropdownCloseTimeout: ReturnType<typeof setTimeout> | null = null;
 const navItems = [
-  { name: 'About', href: '/about' },
+  { name: 'About', href: `${base}/about` },
   { name: 'Music', isDropdown: true, dropdown: [
-      { name: 'Music Catalog', href: '/music' },
-      { name: 'Media & Recordings', href: '/media' }
+      { name: 'Music Catalog', href: `${base}/music` },
+      { name: 'Media & Recordings', href: `${base}/media` }
     ] },
-  { name: 'Art', href: '/art' },
-  { name: 'Contact', href: '/contact' }
+  { name: 'Art', href: `${base}/art` },
+  { name: 'Contact', href: `${base}/contact` }
 ];
 
 function openMenu() {
@@ -41,8 +42,8 @@ function handleNavClick(href: string) {
     goto(href);
   }
   // If we're not on the main page and it's a hash link, navigate to main page with hash
-  else if ($page.url.pathname !== '/') {
-    goto('/' + href);
+  else if ($page.url.pathname !== base) {
+    goto(base + href);
   }
   // If we're already on the main page, just scroll to the section
   // (the hash link will handle this automatically)
@@ -62,7 +63,7 @@ onMount(() => {
 
 function handleLogoClick(event: MouseEvent) {
   event.preventDefault();
-  goto('/');
+  goto(base);
 }
 
 function openMusicDropdown() {
@@ -82,7 +83,7 @@ function closeMusicDropdown() {
 <nav class="w-full fixed top-0 left-0 z-50 flex justify-center pointer-events-none">
   <div class="pointer-events-auto bg-white/40 backdrop-blur-lg shadow-xl rounded-3xl mt-4 mx-2 w-full max-w-2xl md:max-w-3xl lg:max-w-4xl flex items-center justify-between px-6 py-3 border border-white/30 relative">
     <div class="flex items-center space-x-3">
-      <a href="/" on:click={handleLogoClick} class="flex items-center space-x-3 text-xl tracking-tight text-gray-700 select-none focus:outline-none focus:ring-2 focus:ring-gray-300 hover:text-black transition-colors duration-200" aria-label="Go to top">
+      <a href={base} on:click={handleLogoClick} class="flex items-center space-x-3 text-xl tracking-tight text-gray-700 select-none focus:outline-none focus:ring-2 focus:ring-gray-300 hover:text-black transition-colors duration-200" aria-label="Go to top">
         <img src="/assets/SK_Brand.png" alt="Sina Karachiani Logo" class="h-10 w-auto rounded" />
         <div class="-ml-1">Sina Karachiani</div>
       </a>
