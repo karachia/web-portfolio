@@ -16,9 +16,9 @@ const config = {
 			// these options are set automatically — see below
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
+			fallback: '404.html',
 			precompress: true, // Enable compression for better performance
-			strict: true
+			strict: false
 		}),
 		prerender: {
 			handleMissingId: 'warn'
