@@ -72,6 +72,8 @@
     // When message type is selected, add to history
     pushState(window.location.pathname, { replace: false });
     hasNavigatedToForm = true;
+    // Load reCAPTCHA when form is actually used
+    loadRecaptcha();
   } else if (!messageType && hasNavigatedToForm) {
     // When message type is cleared, we're back to selection
     hasNavigatedToForm = false;
@@ -91,6 +93,17 @@
   setTimeout(() => {
     mounted = true;
   }, 100);
+
+  // Load reCAPTCHA only when form is actually used
+  function loadRecaptcha() {
+    if (!document.querySelector('script[src*="recaptcha"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }
 
   async function handleSubmit(event: Event) {
     const form = event.target as HTMLFormElement;
@@ -173,7 +186,7 @@
 <svelte:head>
   <title>Contact - Sina Karachiani</title>
   <meta name="description" content="Contact Sina Karachiani for collaborations, performances, or questions." />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50 py-12 flex items-center justify-center">

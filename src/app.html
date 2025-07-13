@@ -4,18 +4,23 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="format-detection" content="telephone=no" />
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
-		integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		
+		<!-- Resource hints for better performance -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="dns-prefetch" href="//www.google.com">
+		<link rel="dns-prefetch" href="//script.google.com">
 
 		<link rel="icon" href="%sveltekit.assets%/assets/web_icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/assets/web_icon.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/assets/web_icon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Preconnect to Google Fonts for faster loading -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200..800&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+		
+		<!-- Load only essential font weights to reduce bundle size -->
+		<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700&family=Manrope:wght@300;400;600&family=Noto+Serif+Display:ital,wght@0,400;0,600;1,400&family=Zen+Kurenaido&display=swap" rel="stylesheet">
 		%sveltekit.head%
 		
 	</head>
@@ -25,9 +30,16 @@
 		<div style="display: contents; position: relative; z-index: 1;" class="relative z-[1]">
 			%sveltekit.body%
 		</div>
+		<!-- Load particles.js from local assets (non-blocking) -->
+		<script src="%sveltekit.assets%/assets/particles.min.js" defer></script>
 		<script>
-			particlesJS.load("particles-js", "assets/particles.json", function () {
-				// console.log("callback - particles.js config loaded");
+			// Initialize particles after DOM is ready
+			document.addEventListener('DOMContentLoaded', function() {
+				if (typeof particlesJS !== 'undefined') {
+					particlesJS.load("particles-js", "%sveltekit.assets%/assets/particles.json", function () {
+						// console.log("callback - particles.js config loaded");
+					});
+				}
 			});
 		</script>
 	</body>	
