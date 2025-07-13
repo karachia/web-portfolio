@@ -62,7 +62,7 @@ onMount(() => {
 
 function handleLogoClick(event: MouseEvent) {
   event.preventDefault();
-  goto(base);
+  goto('/');
 }
 
 function openMusicDropdown() {
