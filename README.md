@@ -1,13 +1,13 @@
 # Web Portfolio - SvelteKit + Tailwind CSS
 
-A modern, responsive portfolio website built with SvelteKit and Tailwind CSS, featuring music, art, and personal branding.
+My modern, responsive portfolio website built with SvelteKit and Tailwind CSS, featuring music, art, and personal branding.
 
 ## Features
 
-- 🎵 **Music Catalog** - Browse and filter musical compositions
-- 🎨 **Art Gallery** - View artwork with modal lightbox
-- 📱 **Media Page** - Audio and video content with embedded players
-- 📞 **Contact Forms** - Commission requests and performance notices
+- 🎵 **Music Catalog** - Browse and filter my musical compositions
+- 🎨 **Art Gallery** - View my artwork with modal lightbox
+- 📱 **Media Page** - Recordings and video content with embedded players
+- 📞 **Contact Forms** - Commission requests, score requests, and performance notices
 - 🎯 **Responsive Design** - Optimized for all devices
 - ⚡ **Fast Performance** - Static site generation with SvelteKit
 
@@ -124,6 +124,13 @@ Edit `static/data/art.json` to add new artwork:
   "thumbnail": "path/to/thumbnail.png"
 }
 ```
+
+## Other
+###sitemap generation:
+```bash
+npm run generate-sitemap 
+```
+
 
 ## License
 

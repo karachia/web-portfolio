@@ -100,14 +100,14 @@
 					<Icon data={linkedin} scale={1.2} class="sm:scale-150" />
 				</a>
 				<a
-					href="https://www.instagram.com/sina.karachiani.music/ "
+					href="https://www.instagram.com/sina.karachiani.music/"
 					target="_blank"
 					class="text-gray-600 transition-colors hover:text-gray-900"
 				>
 					<Icon data={instagram} scale={1.2} class="sm:scale-150" />
 				</a>
 				<a
-					href="https://soundcloud.com/sinakarachiani/ "
+					href="https://soundcloud.com/sinakarachiani/"
 					target="_blank"
 					class="text-gray-600 transition-colors hover:text-gray-900 md:ml-2"
 				>

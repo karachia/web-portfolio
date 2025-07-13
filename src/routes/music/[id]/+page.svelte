@@ -73,9 +73,78 @@
 	<meta
 		name="description"
 		content={musicItem
-			? `Listen to ${musicItem.title} by Sina Karachiani`
+			? `Listen to ${musicItem.title} by Sina Karachiani${musicItem.for ? ` for ${musicItem.for}` : ''}${musicItem.date ? ` (${formatDate(musicItem.date)})` : ''}. ${musicItem.description ? musicItem.description.substring(0, 150) + '...' : 'Original composition by composer and pianist Sina Karachiani.'}`
 			: 'Music by Sina Karachiani'}
 	/>
+	{#if musicItem}
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content={`${musicItem.title} - Sina Karachiani`} />
+		<meta property="og:description" content={`Listen to ${musicItem.title} by Sina Karachiani${musicItem.for ? ` for ${musicItem.for}` : ''}${musicItem.date ? ` (${formatDate(musicItem.date)})` : ''}`} />
+		<meta property="og:type" content="music.song" />
+		<meta property="og:url" content={`https://sinakarachiani.com/music/${musicItem.id}`} />
+		{#if musicItem.image}
+			<meta property="og:image" content={`https://sinakarachiani.com${musicItem.image}`} />
+		{/if}
+		
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={`${musicItem.title} - Sina Karachiani`} />
+		<meta name="twitter:description" content={`Listen to ${musicItem.title} by Sina Karachiani${musicItem.for ? ` for ${musicItem.for}` : ''}`} />
+		{#if musicItem.image}
+			<meta name="twitter:image" content={`https://sinakarachiani.com${musicItem.image}`} />
+		{/if}
+		
+		<!-- Additional SEO Meta Tags -->
+		<meta name="keywords" content="Sina Karachiani, ${musicItem.title}, composer, pianist, ${musicItem.category || 'music'}, ${musicItem.subcategory || 'composition'}, new music, contemporary music${musicItem.for ? `, ${musicItem.for}` : ''}" />
+		<link rel="canonical" href={`https://sinakarachiani.com/music/${musicItem.id}`} />
+		
+		<!-- Music Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "MusicComposition",
+				"name": "${musicItem.title}",
+				"composer": {
+					"@type": "Person",
+					"name": "Sina Karachiani",
+					"url": "https://sinakarachiani.com/"
+				},
+				"dateCreated": "${musicItem.date}",
+				"duration": "PT${Math.floor(musicItem.length / 60)}M${musicItem.length % 60}S",
+				"genre": "${musicItem.category || 'Contemporary Classical'}",
+				"url": "https://sinakarachiani.com/music/${musicItem.id}",
+				{#if musicItem.description}
+				"description": "${musicItem.description.replace(/"/g, '\\"')}",
+				{/if}
+				{#if musicItem.image}
+				"image": "https://sinakarachiani.com${musicItem.image}",
+				{/if}
+				{#if musicItem.for}
+				"audience": {
+					"@type": "Audience",
+					"audienceType": "${musicItem.for}"
+				},
+				{/if}
+				{#if musicItem.detailed_instrumentation}
+				"instrument": "${musicItem.detailed_instrumentation}",
+				{/if}
+				{#if musicItem.soundcloud && musicItem.soundcloud.url}
+				"audio": {
+					"@type": "AudioObject",
+					"contentUrl": "${musicItem.soundcloud.url}",
+					"encodingFormat": "audio/mpeg"
+				},
+				{/if}
+				{#if musicItem.videos && musicItem.videos.length > 0}
+				"video": {
+					"@type": "VideoObject",
+					"contentUrl": "${musicItem.videos[0]}",
+					"encodingFormat": "video/mp4"
+				}
+				{/if}
+			}
+		</script>
+	{/if}
 </svelte:head>
 
 {#if loading}
@@ -99,6 +168,27 @@
 	<div class="min-h-screen bg-gray-50 py-8">
 		{#if mounted}
 			<div class="mx-auto max-w-4xl px-4 relative z-[2]" in:fade={{ duration: 800 }}>
+				<!-- Breadcrumb Navigation -->
+				<nav class="mb-6 text-sm text-gray-600" aria-label="Breadcrumb">
+					<ol class="flex items-center space-x-2">
+						<li>
+							<a href="/" class="hover:text-gray-900 transition-colors">Home</a>
+						</li>
+						<li class="flex items-center">
+							<svg class="h-4 w-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+							</svg>
+							<a href="/music" class="hover:text-gray-900 transition-colors">Music</a>
+						</li>
+						<li class="flex items-center">
+							<svg class="h-4 w-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+							</svg>
+							<span class="text-gray-900 font-medium">{musicItem.title}</span>
+						</li>
+					</ol>
+				</nav>
+
 				<!-- Back button -->
 				<button
 					on:click={goBack}
@@ -115,7 +205,7 @@
 				<div class="rounded-4xl border border-zinc-200 bg-white p-8 text-zinc-800 shadow-2xl">
 					<div class="mb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between">
 						<div class="flex-1 text-center sm:text-left">
-							<h1 class="text-3xl font-bold text-zinc-800">{musicItem.title}</h1>
+							<h1 class="text-3xl font-bold text-zinc-800" itemprop="name">{musicItem.title}</h1>
 							{#if isValidString(musicItem.for)}
 								<p class="mt-0 text-xl font-light text-zinc-600 italic">for {musicItem.for}</p>
 							{/if}
