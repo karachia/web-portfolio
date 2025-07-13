@@ -22,9 +22,6 @@ const config = {
 		}),
 		prerender: {
 			handleMissingId: 'warn'
-		},
-		paths: {
-			base: '' //'/web-portfolio'
 		}
 	}
 };
