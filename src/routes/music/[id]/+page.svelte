@@ -99,51 +99,7 @@
 		<link rel="canonical" href={`https://sinakarachiani.com/music/${musicItem.id}`} />
 		
 		<!-- Music Structured Data -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "MusicComposition",
-				"name": "${musicItem.title}",
-				"composer": {
-					"@type": "Person",
-					"name": "Sina Karachiani",
-					"url": "https://sinakarachiani.com/"
-				},
-				"dateCreated": "${musicItem.date}",
-				"duration": "PT${Math.floor(musicItem.length / 60)}M${musicItem.length % 60}S",
-				"genre": "${musicItem.category || 'Contemporary Classical'}",
-				"url": "https://sinakarachiani.com/music/${musicItem.id}",
-				{#if musicItem.description}
-				"description": "${musicItem.description.replace(/"/g, '\\"')}",
-				{/if}
-				{#if musicItem.image}
-				"image": "https://sinakarachiani.com${musicItem.image}",
-				{/if}
-				{#if musicItem.for}
-				"audience": {
-					"@type": "Audience",
-					"audienceType": "${musicItem.for}"
-				},
-				{/if}
-				{#if musicItem.detailed_instrumentation}
-				"instrument": "${musicItem.detailed_instrumentation}",
-				{/if}
-				{#if musicItem.soundcloud && musicItem.soundcloud.url}
-				"audio": {
-					"@type": "AudioObject",
-					"contentUrl": "${musicItem.soundcloud.url}",
-					"encodingFormat": "audio/mpeg"
-				},
-				{/if}
-				{#if musicItem.videos && musicItem.videos.length > 0}
-				"video": {
-					"@type": "VideoObject",
-					"contentUrl": "${musicItem.videos[0]}",
-					"encodingFormat": "video/mp4"
-				}
-				{/if}
-			}
-		</script>
+		<!-- TODO: Add structured data -->
 	{/if}
 </svelte:head>
 
