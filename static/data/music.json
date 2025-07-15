@@ -11,29 +11,7 @@
 			"default": 10
 		},
 		"date": "2025-06-12",
-		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)",
-		"score": [
-			{
-				"name": "Score (PDF)",
-				"productId": "gku5S",
-				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
-				"price": 0.00,
-				"variantId": "1752562440529"
-			},
-			{
-				"name": "Parts (PDF)",
-				"productId": "gku5S",
-				"price": 0.00,
-				"variantId": "1752562541803"
-			},
-			{
-				"name": "Score & Parts (PDF)",
-				"productId": "gku5S",
-				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
-				"price": 20.00,
-				"variantId": "1752563680122"
-			}
-		]
+		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)"
 	},
 	{
 		"id": "orisonForStringQaurtet",
@@ -303,25 +281,7 @@
 		},
 		"payhip": {
 			"productId": "gku5S"
-		},
-		"score": 
-		[
-			{	"name": "Score (PDF)",
-				"productId": "gku5S",
-				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
-				"price": 10.00
-			},
-			{	"name": "Parts (PDF)",
-				"productId": "gku5S",
-				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
-				"price": 10.00
-			},
-			{	"name": "Score & Parts (PDF)",
-				"productId": "gku5S",
-				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
-				"price": 20.00
-			}
-		]
+		}
 	},
 	{
 		"id": "longing",
