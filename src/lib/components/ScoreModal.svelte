@@ -15,8 +15,12 @@
 	
 	$: scoreLabel = category?.toLowerCase() === 'solo' ? 'sheet music' : 'score';
 	
+	let openIframeProductId: string | null = null;
+	let selectedScore: any = null;
+	
 	function closeModal() {
 		isOpen = false;
+        selectedScore = null;
 		dispatch('close');
 	}
 	
@@ -71,47 +75,63 @@
 			
 			<!-- Content -->
 			<div class="p-6">
-				<p class="text-md text-gray-600 mb-6">
-                    Access the {scoreLabel} in PDF format. Print and shipping is <b>NOT</b> available.
-				</p>
-				
-				<div class="space-y-4">
-					{#each scores as score, index}
-						<div class="border border-gray-200 rounded-2xl p-4 hover:shadow-md transition-shadow">
-							<div class="flex items-start justify-between">
-								<div class="flex-1">
-									<h3 class="text-lg font-semibold text-gray-900 mb-2">
-										{score.name}
-									</h3>
-									<p class="text-2xl font-bold text-zinc-700 mb-3">
-										{score.price === 0 ? 'Free' : `$${score.price.toFixed(2)}`}
-									</p>
-									
-									<div class="flex space-x-3">
-										{#if score.preview}
-											<button
-												on:click={() => openPreview(score.preview)}
-												class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-xl shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-											>
-												<Icon data={eyeIcon} class="w-4 h-4 mr-2" />
-												Preview
-											</button>
-										{/if}
-										
-										<PayhipButton 
-											productId={score.productId}
-											buttonText={score.price === 0 ? `Download` : `Purchase`}
-											theme="none"
-											customTitle={`${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''} - ${score.name}`}
-											customMessage={`${score.price === 0 ? `Download` : `Purchase`} the ${score.name} ${scoreLabel} for ${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''}`}
-										/>
+				{#if selectedScore === null}
+					<p class="text-md text-gray-600 mb-6">
+						Access the {scoreLabel} in PDF format. Print and shipping is <b>NOT</b> available.
+					</p>
+					<div class="space-y-4">
+						{#each scores as score, index}
+							<div class="border border-gray-200 rounded-2xl p-4 hover:shadow-md transition-shadow">
+								<div class="flex items-start justify-between">
+									<div class="flex-1">
+										<h3 class="text-lg font-semibold text-gray-900 mb-2">
+											{score.name}
+										</h3>
+										<p class="text-2xl font-bold text-zinc-700 mb-3">
+											{score.price === 0 ? 'Free' : `$${score.price.toFixed(2)}`}
+										</p>
+										<div class="flex space-x-3">
+											{#if score.preview}
+												<button
+													on:click={() => openPreview(score.preview)}
+													class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-xl shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+												>
+													<Icon data={eyeIcon} class="w-4 h-4 mr-2" />
+													Preview
+												</button>
+											{/if}
+											<PayhipButton 
+												productId={score.productId}
+                                                variantId={score.variantId || ''}
+												buttonText={score.price === 0 ? `Download` : `Purchase`}
+												theme="none"
+												method="inline"
+												iframeTarget="payhip-iframe"
+												customTitle={`${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''} - ${score.name}`}
+												customMessage={`${score.price === 0 ? `Download` : `Purchase`} the ${score.name} ${scoreLabel} for ${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''}`}
+												on:inline={() => { openIframeProductId = score.productId; selectedScore = score; }}
+											/>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					{/each}
-				</div>
-			</div>
+						{/each}
+					</div>
+				{:else}
+					<!-- Step 2: Show only the selected score's PayhipButton and iframe -->
+					<button on:click={() => { selectedScore = null; openIframeProductId = null; }} class="mb-4 text-sm text-blue-600 hover:underline flex items-center">
+						<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+						Back to score options
+					</button>
+					<div class="flex justify-center border-b border-gray-200 pb-4">
+						<h3 class="text-lg font-semibold text-gray-900 mb-2">{selectedScore.name} - {selectedScore.price === 0 ? 'Free' : `$${selectedScore.price.toFixed(2)}`}</h3>
+					</div>
+                    {/if}
+                    <div
+                    class="payhip-iframe mx-auto mt-4 flex justify-center rounded-2xl"
+                    style="min-height:500px; background-color: #dadbdc; display: {selectedScore && openIframeProductId === selectedScore.productId ? 'flex' : 'none'}"
+                    ></div>
+                </div>
 		</div>
 	</div>
 {/if} 
