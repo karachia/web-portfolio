@@ -11,6 +11,8 @@
 	import CategoryTags from '$lib/components/CategoryTags.svelte';
 	import { goto } from '$app/navigation';
 	import Footer from '$lib/components/Footer.svelte';
+	import PayhipButton from '$lib/components/PayhipButton.svelte';
+	import ScoreModal from '$lib/components/ScoreModal.svelte';
 	import { fade } from 'svelte/transition';
 
 	let musicItem: any = null;
@@ -18,6 +20,7 @@
 	let error = false;
 	let allMusic: any[] = [];
 	let mounted = false;
+	let scoreModalOpen = false;
 
 	onMount(async () => {
 		try {
@@ -191,6 +194,21 @@
 								</div>
 							{/if}
 
+							<!-- Get Score Button -->
+							{#if musicItem.score && musicItem.score.length > 0}
+								<div class="mt-4">
+									<button
+										on:click={() => scoreModalOpen = true}
+										id="download-score-button"
+										class="inline-flex items-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 transition-colors duration-200"
+									>
+										<img src="/assets/media-features/score.png" alt="Score" class="w-5 h-5 mr-1 -ml-2 invert scale-115" style="filter: invert(1);" />
+										Download Score
+									</button>
+								</div>
+							{/if}
+
+
 							<!-- Image (mobile: below commission text, desktop: to the right) -->
 							{#if isValidString(musicItem.image)}
 								<div class="mt-6 sm:hidden flex flex-col items-center">
@@ -250,16 +268,16 @@
 						{/if}
 					</div>
 
-					<!-- Description -->
-					<div class="-mr-4 flex-grow overflow-y-auto pr-4 text-center sm:text-left">
-						{#if isValidString(musicItem.description)}
-							<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
-								<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
-								<CollapsibleText text={musicItem.description} maxLength={1000} />
-							</div>
-						{/if}
+											<!-- Description -->
+						<div class="-mr-4 flex-grow overflow-y-auto pr-4 text-center sm:text-left">
+							{#if isValidString(musicItem.description)}
+								<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
+									<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
+									<CollapsibleText text={musicItem.description} maxLength={1000} />
+								</div>
+							{/if}
 
-						<!-- Listen Section -->
+							<!-- Listen Section -->
 						{#if (musicItem.recordings && musicItem.recordings.preview) || (musicItem.soundcloud && musicItem.soundcloud.url)}
 							<div class="mt-8 mb-6">
 								<h3 class="mb-4 text-xl font-bold text-zinc-700">Listen</h3>
@@ -329,3 +347,13 @@
 	<!-- Footer -->
 	<Footer />
 {/if}
+
+<!-- Score Modal -->
+<ScoreModal 
+	isOpen={scoreModalOpen}
+	scores={musicItem?.score || []}
+	pieceTitle={musicItem?.title || ''}
+	pieceFor={musicItem?.for || ''}
+	category={musicItem?.category || ''}
+	on:close={() => scoreModalOpen = false}
+/>

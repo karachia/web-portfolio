@@ -37,11 +37,24 @@
 			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
 			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
 		},
-		"score": {
-			"url": "https://www.dropbox.com/scl/fi/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000?rlkey=0000000000000000000000000000000000000000&dl=0",
-			"price": 100,
-			"partsPrice": 100
-		}, 
+		"score": 
+		[
+			{	"name": "Score (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 10.00
+			},
+			{	"name": "Parts (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 10.00
+			},
+			{	"name": "Score & Parts (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 20.00
+			}
+		], 
 		"otherVersions": [
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForChamberOrchestra",

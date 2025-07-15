@@ -11,7 +11,26 @@
 			"default": 10
 		},
 		"date": "2025-06-12",
-		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)"
+		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)",
+		"score": [
+			{
+				"name": "Score (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 0.00
+			},
+			{
+				"name": "Parts (PDF)",
+				"productId": "gku5S",
+				"price": 0.00
+			},
+			{
+				"name": "Score & Parts (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 20.00
+			}
+		]
 	},
 	{
 		"id": "orisonForStringQaurtet",
@@ -278,7 +297,28 @@
 			"youtubeMusic": "https://music.youtube.com/watch?v=GAzYC4y9PV4&si=WUycfm_n92gBUARk",
 			"amazonMusic": "https://music.amazon.com/albums/B08JCSGFYH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_YmKZoxE3rySjhvzc2iUtERwqA&trackAsin=B08JCFLNWZ",
 			"soundcloud": "https://soundcloud.com/sinakarachiani/carolyn?si=c2de3ef8fac743408da9ece32aef0ae7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-		}
+		},
+		"payhip": {
+			"productId": "gku5S"
+		},
+		"score": 
+		[
+			{	"name": "Score (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 10.00
+			},
+			{	"name": "Parts (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 10.00
+			},
+			{	"name": "Score & Parts (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 20.00
+			}
+		]
 	},
 	{
 		"id": "longing",
