@@ -28,6 +28,8 @@
 	<meta name="keywords" content="Sina Karachiani, composer, artist, pianist, software engineer, San Francisco, music, art, portfolio, new music, composition, piano, apple, AR, VR, Augmented Reality, Virtual Reality, Mixed Reality, Music Technology, Painter, illustrator, paint, illustration, Sina, Karachiani, Persian, American, Iranian, Iranian-American, Iranian-American Artist, Iranian-American Composer, Iranian-American Pianist, Iranian-American Software Engineer, Iranian-American Artist, Iranian-American Composer, Iranian-American Pianist, Iranian-American Software Engineer" />
 	<meta name="language" content="en" />
 	<meta name="revisit-after" content="7 days" />
+	<!-- Payhip Script -->
+	<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

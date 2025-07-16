@@ -11,10 +11,27 @@
 			"default": 10
 		},
 		"date": "2025-06-12",
-		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)"
+		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)",
+		"movements": [
+			{
+				"name": "I. The Mystic",
+				"duration": 2,
+				"numbered": false
+			},
+			{
+				"name": "II. The Dream",
+				"duration": 3.5,
+				"numbered": false
+			},
+			{
+				"name": "III. The Journey",
+				"duration": 4,
+				"numbered": false
+			}
+		]
 	},
 	{
-		"id": "orisonForStringQaurtet",
+		"id": "orisonForStringQuartet",
 		"title": "Orison",
 		"for": "String Quartet",
 		"description": "\"Orison\" for string quartet invites listeners into a deeply personal realm of contemplation and introspection, akin to a prayer whispered in solitude. Drawing on influences from the composer's Iranian heritage, the piece weaves together ornate melodies that possess a free-flowing and improvisatory quality, following the rich and expressive traditions found in traditional and folk Persian music. The music unfolds as if detached from the external world, exploring the intricate landscape of inner emotions, marked by longing and yearning, turbulence, a sense of reaching and falling, and moments of hope and optimism.",
@@ -174,6 +191,18 @@
 		},
 		"otherVersions": [
 			"coolAndGoodEnsemble"
+		],
+		"movements": [
+			{
+				"name": "I. Cool",
+				"duration": 12,
+				"numbered": false
+			},
+			{
+				"name": "II. Good",
+				"duration": 8,
+				"numbered": false
+			}
 		]
 	},
 	{
@@ -196,6 +225,18 @@
 		"recordings": [],
 		"otherVersions": [
 			"coolAndGoodDuo"
+		],
+		"movements": [
+			{
+				"name": "I. Cool",
+				"duration": 12,
+				"numbered": false
+			},
+			{
+				"name": "II. Good",
+				"duration": 8,
+				"numbered": false
+			}
 		]
 	},
 	{
@@ -249,6 +290,23 @@
 		},
 		"otherVersions": [
 			"whirlingOnwardDanceFilm"
+		],
+		"movements": [
+			{
+				"name": "Muse",
+				"duration": 3.5,
+				"numbered": true
+			},
+			{
+				"name": "Whirling",
+				"duration": 6,
+				"numbered": true
+			},
+			{
+				"name": "Onward",
+				"duration": 5.5,
+				"numbered": true
+			}
 		]
 	},
 	{
@@ -278,6 +336,9 @@
 			"youtubeMusic": "https://music.youtube.com/watch?v=GAzYC4y9PV4&si=WUycfm_n92gBUARk",
 			"amazonMusic": "https://music.amazon.com/albums/B08JCSGFYH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_YmKZoxE3rySjhvzc2iUtERwqA&trackAsin=B08JCFLNWZ",
 			"soundcloud": "https://soundcloud.com/sinakarachiani/carolyn?si=c2de3ef8fac743408da9ece32aef0ae7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+		},
+		"payhip": {
+			"productId": "gku5S"
 		}
 	},
 	{
@@ -323,14 +384,31 @@
 		"subcategory": "Quartet",
 		"tags": ["Woodwind"],
 		"length": {
-			"default": 5
+			"default": 5.5
 		},
 		"date": "2017-11-11",
 		"detailed_instrumentation": "",
 		"image": "",
 		"soundcloud": "",
 		"videos": ["https://www.youtube.com/embed/piN8LccY_iI?si=gNnU8O-8hGwZ65VA"],
-		"recordings": []
+		"recordings": [],
+		"movements": [
+			{
+				"name": "Molto Allegro",
+				"duration": 1,
+				"numbered": true
+			},
+			{
+				"name": "Andante",
+				"duration": 2.5,
+				"numbered": true
+			},
+			{
+				"name": "Moderato",
+				"duration": 3,
+				"numbered": true
+			}
+		]
 	},
 	{
 		"id": "evilWitchAwakens",
@@ -382,7 +460,24 @@
 		"image": "",
 		"soundcloud": "",
 		"videos": ["https://www.youtube.com/embed/xsoLlCgB1rk?si=vmc1JqRktdy0x986"],
-		"recordings": []
+		"recordings": [],
+		"movements": [
+			{
+				"name": "-   Movement 1",
+				"duration": 4.5,
+				"numbered": false
+			},
+			{
+				"name": "-   Movement 2",
+				"duration": 4.5,
+				"numbered": false
+			},
+			{
+				"name": "-   Movement 3",
+				"duration": 3,
+				"numbered": false
+			}
+		]
 	},
 	{
 		"id": "sunRisesAgain",
@@ -495,14 +590,32 @@
 		"subcategory": "Duo",
 		"tags": ["Contrabass", "Piano"],
 		"length": {
-			"default": 20
+			"min": 20,
+			"max": 24
 		},
 		"date": "2014-04-11",
 		"detailed_instrumentation": "",
 		"image": "",
 		"soundcloud": "",
 		"videos": [],
-		"recordings": []
+		"recordings": [],
+		"movements": [
+			{
+				"name": "-   Movement 1",
+				"duration": 9,
+				"numbered": false
+			},
+			{
+				"name": "-   Movement 2",
+				"duration": 7.5,
+				"numbered": false
+			},
+			{
+				"name": "-   Movement 3",
+				"duration": 6,
+				"numbered": false
+			}
+		]
 	},
 	{
 		"id": "trashcanLives",

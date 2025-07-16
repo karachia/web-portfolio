@@ -38,7 +38,11 @@
   
   function selectPiece(piece: any) {
     selectedPiece = piece;
-    searchTerm = `${piece.title} - ${piece.for}`;
+    if (piece.for) {
+      searchTerm = `${piece.title} - for ${piece.for}`;
+    } else {
+      searchTerm = `${piece.title}`;
+    } 
     isOpen = false;
   }
   
@@ -79,7 +83,11 @@
   }
   
   $: if (selectedPiece && !searchTerm) {
-    searchTerm = `${selectedPiece.title} - ${selectedPiece.for}`;
+    if (selectedPiece.for) {
+      searchTerm = `${selectedPiece.title} - for ${selectedPiece.for}`;
+    } else {
+      searchTerm = `${selectedPiece.title}`;
+    }
   }
   
   onMount(() => {
@@ -100,7 +108,7 @@
       on:click={toggleDropdown}
     >
       {#if selectedPiece}
-        {selectedPiece.title} - {selectedPiece.for}
+        {selectedPiece.title} {#if selectedPiece.for} - for {selectedPiece.for}{/if}
       {:else}
         {placeholder}
       {/if}
@@ -141,7 +149,9 @@
           on:click={() => selectPiece(piece)}
         >
           <div class="font-medium">{piece.title}</div>
-          <div class="text-sm text-gray-600">for {piece.for}</div>
+          {#if piece.for}
+          <div class="text-sm text-gray-600"> for {piece.for}</div>
+          {/if}
         </button>
       {/each}
       {#if filteredPieces.length === 0}

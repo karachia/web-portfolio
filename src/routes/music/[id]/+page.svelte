@@ -11,6 +11,9 @@
 	import CategoryTags from '$lib/components/CategoryTags.svelte';
 	import { goto } from '$app/navigation';
 	import Footer from '$lib/components/Footer.svelte';
+	import PayhipButton from '$lib/components/PayhipButton.svelte';
+	import ScoreModal from '$lib/components/ScoreModal.svelte';
+	import Movements from '$lib/components/Movements.svelte';
 	import { fade } from 'svelte/transition';
 
 	let musicItem: any = null;
@@ -18,6 +21,7 @@
 	let error = false;
 	let allMusic: any[] = [];
 	let mounted = false;
+	let scoreModalOpen = false;
 
 	onMount(async () => {
 		try {
@@ -191,6 +195,20 @@
 								</div>
 							{/if}
 
+							<!-- Get Score Button -->
+							{#if musicItem.score && musicItem.score.length > 0}
+								<div class="mt-4">
+									<button
+										on:click={() => scoreModalOpen = true}
+										class="inline-flex items-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 transition-colors duration-200"
+									>
+										<img src="/assets/media-features/score.png" alt="Score" class="w-5 h-5 mr-1 -ml-2 invert scale-115" style="filter: invert(1);" />
+										Download Score
+									</button>
+								</div>
+							{/if}
+
+
 							<!-- Image (mobile: below commission text, desktop: to the right) -->
 							{#if isValidString(musicItem.image)}
 								<div class="mt-6 sm:hidden flex flex-col items-center">
@@ -204,7 +222,7 @@
 									
 									<!-- Media Features -->
 									<div class="mt-3 flex justify-center">
-										<MediaFeatures item={musicItem} />
+										<MediaFeatures item={musicItem} isInteractive={true} />
 									</div>
 								</div>
 							{:else}
@@ -213,7 +231,7 @@
 									<!-- Category Tags (when no image) -->
 									<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
 									<div class="mt-2.5">
-										<MediaFeatures item={musicItem} />
+										<MediaFeatures item={musicItem} isInteractive={true} />
 									</div>
 								</div>
 							{/if}
@@ -235,7 +253,7 @@
 								
 								<!-- Media Features -->
 								<div class="mt-3 flex justify-end">
-									<MediaFeatures item={musicItem} />
+									<MediaFeatures item={musicItem} isInteractive={true} />
 								</div>
 							</div>
 						{:else}
@@ -244,7 +262,7 @@
 								<!-- Category Tags (when no image) -->
 								<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
 								<div class="mt-2.5">
-									<MediaFeatures item={musicItem} />
+									<MediaFeatures item={musicItem} isInteractive={true} />
 								</div>
 							</div>
 						{/if}
@@ -252,16 +270,29 @@
 
 					<!-- Description -->
 					<div class="-mr-4 flex-grow overflow-y-auto pr-4 text-center sm:text-left">
-						{#if isValidString(musicItem.description)}
+
+						{#if (musicItem.movements && musicItem.movements.length > 0) || isValidString(musicItem.description)}
 							<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
-								<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
-								<CollapsibleText text={musicItem.description} maxLength={1000} />
+								<h3 class="mb-6 text-xl font-bold text-zinc-700">Description</h3>
+								<!-- Movements -->
+								<Movements movements={musicItem?.movements || []} />
+								
+								<!-- program notes -->
+								{#if isValidString(musicItem.description)}
+
+									{#if (musicItem.movements && musicItem.movements.length > 0)}
+										<h4 class="mb-4 text-lg font-semibold text-zinc-700">Program Notes</h4>
+									{/if}
+									<CollapsibleText text={musicItem.description} maxLength={1000} />
+								{/if}
 							</div>
 						{/if}
+						
 
 						<!-- Listen Section -->
 						{#if (musicItem.recordings && musicItem.recordings.preview) || (musicItem.soundcloud && musicItem.soundcloud.url)}
-							<div class="mt-8 mb-6">
+							<div id="recording-section" class="mt-8 mb-6">
+								<div id="audio-section"></div>
 								<h3 class="mb-4 text-xl font-bold text-zinc-700">Listen</h3>
 
 								{#if musicItem.recordings && musicItem.recordings.preview}
@@ -281,7 +312,7 @@
 
 						<!-- Video Section -->
 						{#if musicItem.videos && musicItem.videos.length > 0}
-							<div class="mt-8 mb-6">
+							<div id="video-section" class="mt-8 mb-6">
 								<h3 class="mb-4 text-xl font-bold text-zinc-700">Watch</h3>
 								{#each musicItem.videos as video, index}
 									<YouTubeEmbed videoUrl={video} />
@@ -329,3 +360,14 @@
 	<!-- Footer -->
 	<Footer />
 {/if}
+
+<!-- Score Modal -->
+<ScoreModal 
+	pieceId={musicItem?.id || ''}
+	isOpen={scoreModalOpen}
+	scores={musicItem?.score || []}
+	pieceTitle={musicItem?.title || ''}
+	pieceFor={musicItem?.for || ''}
+	category={musicItem?.category || ''}
+	on:close={() => scoreModalOpen = false}
+/>
