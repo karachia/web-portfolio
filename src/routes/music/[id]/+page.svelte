@@ -199,7 +199,6 @@
 								<div class="mt-4">
 									<button
 										on:click={() => scoreModalOpen = true}
-										id="download-score-button"
 										class="inline-flex items-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 transition-colors duration-200"
 									>
 										<img src="/assets/media-features/score.png" alt="Score" class="w-5 h-5 mr-1 -ml-2 invert scale-115" style="filter: invert(1);" />
@@ -222,7 +221,7 @@
 									
 									<!-- Media Features -->
 									<div class="mt-3 flex justify-center">
-										<MediaFeatures item={musicItem} />
+										<MediaFeatures item={musicItem} isInteractive={true} />
 									</div>
 								</div>
 							{:else}
@@ -231,7 +230,7 @@
 									<!-- Category Tags (when no image) -->
 									<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
 									<div class="mt-2.5">
-										<MediaFeatures item={musicItem} />
+										<MediaFeatures item={musicItem} isInteractive={true} />
 									</div>
 								</div>
 							{/if}
@@ -253,7 +252,7 @@
 								
 								<!-- Media Features -->
 								<div class="mt-3 flex justify-end">
-									<MediaFeatures item={musicItem} />
+									<MediaFeatures item={musicItem} isInteractive={true} />
 								</div>
 							</div>
 						{:else}
@@ -262,24 +261,25 @@
 								<!-- Category Tags (when no image) -->
 								<CategoryTags category={musicItem.category} subcategory={musicItem.subcategory} />
 								<div class="mt-2.5">
-									<MediaFeatures item={musicItem} />
+									<MediaFeatures item={musicItem} isInteractive={true} />
 								</div>
 							</div>
 						{/if}
 					</div>
 
 											<!-- Description -->
-						<div class="-mr-4 flex-grow overflow-y-auto pr-4 text-center sm:text-left">
-							{#if isValidString(musicItem.description)}
-								<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
-									<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
-									<CollapsibleText text={musicItem.description} maxLength={1000} />
-								</div>
-							{/if}
+					<div class="-mr-4 flex-grow overflow-y-auto pr-4 text-center sm:text-left">
+						{#if isValidString(musicItem.description)}
+							<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
+								<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
+								<CollapsibleText text={musicItem.description} maxLength={1000} />
+							</div>
+						{/if}
 
 							<!-- Listen Section -->
 						{#if (musicItem.recordings && musicItem.recordings.preview) || (musicItem.soundcloud && musicItem.soundcloud.url)}
-							<div class="mt-8 mb-6">
+							<div id="recording-section" class="mt-8 mb-6">
+								<div id="audio-section"></div>
 								<h3 class="mb-4 text-xl font-bold text-zinc-700">Listen</h3>
 
 								{#if musicItem.recordings && musicItem.recordings.preview}
@@ -299,7 +299,7 @@
 
 						<!-- Video Section -->
 						{#if musicItem.videos && musicItem.videos.length > 0}
-							<div class="mt-8 mb-6">
+							<div id="video-section" class="mt-8 mb-6">
 								<h3 class="mb-4 text-xl font-bold text-zinc-700">Watch</h3>
 								{#each musicItem.videos as video, index}
 									<YouTubeEmbed videoUrl={video} />
