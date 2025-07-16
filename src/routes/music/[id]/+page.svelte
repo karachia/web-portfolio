@@ -13,6 +13,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import PayhipButton from '$lib/components/PayhipButton.svelte';
 	import ScoreModal from '$lib/components/ScoreModal.svelte';
+	import Movements from '$lib/components/Movements.svelte';
 	import { fade } from 'svelte/transition';
 
 	let musicItem: any = null;
@@ -267,16 +268,25 @@
 						{/if}
 					</div>
 
-											<!-- Description -->
+					<!-- Description -->
 					<div class="-mr-4 flex-grow overflow-y-auto pr-4 text-center sm:text-left">
-						{#if isValidString(musicItem.description)}
+
+						{#if (musicItem.movements && musicItem.movements.length > 0) || isValidString(musicItem.description)}
 							<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
 								<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
-								<CollapsibleText text={musicItem.description} maxLength={1000} />
+								<!-- Movements -->
+								<Movements movements={musicItem?.movements || []} />
+								
+								<!-- program notes -->
+								{#if isValidString(musicItem.description)}
+									<h4 class="mb-4 text-lg font-semibold text-zinc-600">Program Notes</h4>
+									<CollapsibleText text={musicItem.description} maxLength={1000} />
+								{/if}
 							</div>
 						{/if}
+						
 
-							<!-- Listen Section -->
+						<!-- Listen Section -->
 						{#if (musicItem.recordings && musicItem.recordings.preview) || (musicItem.soundcloud && musicItem.soundcloud.url)}
 							<div id="recording-section" class="mt-8 mb-6">
 								<div id="audio-section"></div>

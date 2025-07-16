@@ -1,69 +1,82 @@
-[{
-	"id": "Example",
-	"title": "Example",
-	"for": "String Quartet",
-	"commissionedBy": "Commissioned by the University of Michigan",
-	"dedication": "Dedicated to my grandmother, Tahereh Moeini",
-	"summary": "A piece inspired by the poems of the persian poet, Rumi.",
-	"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-	"category": "Chamber",
-	"subcategory": "Quartet",
-	"tags": ["String Quartet", "Chamber"],
-	"length": {
-		"min": 7.5,
-		"max": 10,
-		"default": 7.5
-	},
-	"date": "2025-07-12",
-	"detailed_instrumentation": "2 Violins, Viola, Cello",
-	"image": "/assets/music/whirlingonward.png",
-	"soundcloud": {
-		"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
-		"width": "100%",
-		"height": 320,
-		"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
-		"title": "Whirling Onward..."
-	},
-	"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
-	"recordings": {
-		"preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
-		"previewWidth": "100%",
-		"previewHeight": 380,
-		"theme": 0,
-		"appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
-		"spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
-		"youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
-		"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
-		"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-	},
-	"score": [
-		{
-			"name": "Score (PDF)",
-			"productId": "gku5S",
-			"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
-			"price": 10.00,
-			"variantId": "1752562440529"
+[
+	{
+		"id": "Example",
+		"title": "Example",
+		"for": "String Quartet",
+		"commissionedBy": "Commissioned by the University of Michigan",
+		"dedication": "Dedicated to my grandmother, Tahereh Moeini",
+		"summary": "A piece inspired by the poems of the persian poet, Rumi.",
+		"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"tags": ["String Quartet", "Chamber"],
+		"length": {
+			"min": 7.5,
+			"max": 10,
+			"default": 7.5
 		},
-		{
-			"name": "Parts (PDF)",
-			"productId": "gku5S",
-
-			"variantId": "1752562541803"
+		"date": "2025-07-12",
+		"detailed_instrumentation": "2 Violins, Viola, Cello",
+		"image": "/assets/music/whirlingonward.png",
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1251411223&color=%23282828",
+			"width": "100%",
+			"height": 320,
+			"link": "https://soundcloud.com/sinakarachiani/sets/whirling-onward",
+			"title": "Whirling Onward..."
 		},
-		{
-			"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
-			"name": "Score & Parts (PDF)",
+		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI"],
+		"recordings": {
+			"preview": "https://open.spotify.com/embed/album/5kzwUV5Y6SU1jthWJ2Pdkq?utm",
+			"previewWidth": "100%",
+			"previewHeight": 380,
+			"theme": 0,
+			"appleMusic": "https://music.apple.com/us/album/whirling-onward-single/1565630022",
+			"spotify": "https://open.spotify.com/album/5kzwUV5Y6SU1jthWJ2Pdkq?si=piS_UfE0QaC0enFA6Qt_GA",
+			"youtubeMusic": "https://youtube.com/playlist?list=OLAK5uy_kWq544bu_-l0TjLE3dDSs7m3tu8KfwMcg&si=87Za6iQwDYq-W73L",
+			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
+			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+		},
+		"score": [
+			{
+				"name": "Score (PDF)",
+				"productId": "gku5S",
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"price": 10.00,
+				"variantId": "1752562440529"
+			},
+			{
+				"name": "Parts (PDF)",
+				"productId": "gku5S",
 
-			"variantId": "1752563680122"
-		}
-	],
-	"otherVersions": [
-		"StrangerOfKinForOrchestra",
-		"StrangerOfKinForChamberOrchestra",
-		"StrangerOfKinForMixedEnsemble",
-		"StrangerOfKinForMixedQuartet"
-	]
-},
+				"variantId": "1752562541803"
+			},
+			{
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
+				"name": "Score & Parts (PDF)",
+
+				"variantId": "1752563680122"
+			}
+		],
+		"otherVersions": [
+			"StrangerOfKinForOrchestra",
+			"StrangerOfKinForChamberOrchestra",
+			"StrangerOfKinForMixedEnsemble",
+			"StrangerOfKinForMixedQuartet"
+		],
+		"movements": [
+			{
+				"name": "Movement 1",
+				"duration": 10,
+				"numbered": true
+			},
+			{
+				"name": "Movement 2",
+				"duration": 10,
+				"numbered": true
+			}
+		]
+	},
 	{
 		"id": "transients",
 		"title": "Transients",
