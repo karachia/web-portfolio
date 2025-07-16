@@ -48,13 +48,13 @@
 			{
 				"name": "Parts (PDF)",
 				"productId": "gku5S",
-				"price": 10.00,
+
 				"variantId": "1752562541803"
 			},
 			{
+				"preview": "https://pe56d.s3.amazonaws.com/o_1j05ko6gp1r241b5p1i5d8ifkrf10.pdf?AWSAccessKeyId=AKIAIP3NFJ5OR5FTFOQQ&Signature=1UV1RWz4ZrPQc7AHLsCHiovOi0Q%3D&Expires=1752632713&response-content-disposition=inline;filename=%22preview.pdf%22&response-content-type=application/pdf",
 				"name": "Score & Parts (PDF)",
-				"productId": "gku5S",
-				"price": 20.00,
+
 				"variantId": "1752563680122"
 			}
 		],
@@ -63,6 +63,23 @@
 			"StrangerOfKinForChamberOrchestra",
 			"StrangerOfKinForMixedEnsemble",
 			"StrangerOfKinForMixedQuartet"
+		],
+		"movements": [
+			{
+				"name": "-   Movement 1",
+				"duration": 10,
+				"numbered": true
+			},
+			{
+				"name": "-   Movement 2",
+				"duration": 5.5,
+				"numbered": true
+			},
+			{
+				"name": "-   Movement 3",
+				"duration": 7,
+				"numbered": true
+			}
 		]
 	},
 	{

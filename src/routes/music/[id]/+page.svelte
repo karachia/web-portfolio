@@ -273,13 +273,16 @@
 
 						{#if (musicItem.movements && musicItem.movements.length > 0) || isValidString(musicItem.description)}
 							<div class="mt-6 pt-6 mb-6 border-t border-zinc-200">
-								<h3 class="mb-2 text-xl font-bold text-zinc-700">Description</h3>
+								<h3 class="mb-6 text-xl font-bold text-zinc-700">Description</h3>
 								<!-- Movements -->
 								<Movements movements={musicItem?.movements || []} />
 								
 								<!-- program notes -->
 								{#if isValidString(musicItem.description)}
-									<h4 class="mb-4 text-lg font-semibold text-zinc-600">Program Notes</h4>
+
+									{#if (musicItem.movements && musicItem.movements.length > 0)}
+										<h4 class="mb-4 text-lg font-semibold text-zinc-700">Program Notes</h4>
+									{/if}
 									<CollapsibleText text={musicItem.description} maxLength={1000} />
 								{/if}
 							</div>

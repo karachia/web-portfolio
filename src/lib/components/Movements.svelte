@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatDuration } from '$lib/utils/formatters';
+	import { convertNumberToDuration } from '$lib/utils/formatters';
 	
 	export let movements: any[] = [];
 	
@@ -10,25 +10,27 @@
 </script>
 
 {#if hasMovements()}
-	<div class="pt-2 mb-8">
-		<h4 class="mb-4 text-lg font-semibold text-zinc-600">Movements</h4>
+	<div class="mb-8">
+		<h4 class="mb-4 text-lg font-semibold text-zinc-700">Movements</h4>
 		<div class="space-y-1">
 			{#each movements as movement, index}
 				<!-- <div class="flex items-center justify-between"> -->
 					<div class="flex items-center">
 						{#if movement.numbered}
-							<span class="text-sm font-medium text-zinc-600 mr-3 w-6 text-center">
+							<span class="text-sm font-medium text-zinc-600 mr-1 w-6 text-center">
 								{index + 1}.
 							</span>
+                        <!-- {:else} -->
+                            <!-- <span class="text-sm font-medium text-zinc-600 mr-1 w-6 text-center">- </span> -->
 						{/if}
-						<span class="text-zinc-800 font-medium">
+						<span class="text-zinc-700 font-medium">
 							{movement.name}
 						</span>
-                        {#if movement.duration}
-                            <span class="text-sm text-zinc-600 ml-3">
-                                ({formatDuration(movement.duration)})
-                            </span>
-                        {/if}
+						{#if movement.duration}
+							<span class="text-sm text-zinc-600 ml-2">
+								({convertNumberToDuration(movement.duration)})
+							</span>
+						{/if}
 					</div>
 					
 				<!-- </div> -->
