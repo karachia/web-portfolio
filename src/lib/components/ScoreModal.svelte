@@ -87,9 +87,16 @@
 										<h3 class="text-lg font-semibold text-gray-900 mb-2">
 											{score.name}
 										</h3>
-										<p class="text-2xl font-bold text-zinc-700 mb-3">
+										<p class="text-2xl text-zinc-700 mb-3">
+                                            {#if score.price}
 											{score.price === 0 ? 'Free' : `$${score.price.toFixed(2)}`}
+                                            {:else}
+                                            <span class="text-gray-500 text-sm"><a class="underline" href="/contact">Contact me</a> for pricing</span>
+                                            {/if}
 										</p>
+                                        {#if !score.productId}
+                                        <p class="text-gray-500 text-sm mt-0 mb-3">Item is only available upon request.</p>
+                                        {/if}
 										<div class="flex space-x-3">
 											{#if score.preview}
 												<button
@@ -100,17 +107,26 @@
 													Preview
 												</button>
 											{/if}
-											<PayhipButton 
-												productId={score.productId}
-                                                variantId={score.variantId || ''}
-												buttonText={score.price === 0 ? `Download` : `Purchase`}
-												theme="none"
-												method="inline"
-												iframeTarget="payhip-iframe"
-												customTitle={`${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''} - ${score.name}`}
-												customMessage={`${score.price === 0 ? `Download` : `Purchase`} the ${score.name} ${scoreLabel} for ${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''}`}
-												on:inline={() => { openIframeProductId = score.productId; selectedScore = score; }}
-											/>
+                                            {#if score.productId}
+                                                <PayhipButton 
+                                                    productId={score.productId}
+                                                    variantId={score.variantId || ''}
+                                                    buttonText={score.price === 0 ? `Download` : `Purchase`}
+                                                    theme="none"
+                                                    method="inline"
+                                                    iframeTarget="payhip-iframe"
+                                                    customTitle={`${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''} - ${score.name}`}
+                                                    customMessage={`${score.price === 0 ? `Download` : `Purchase`} the ${score.name} ${scoreLabel} for ${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''}`}
+                                                    on:inline={() => { openIframeProductId = score.productId; selectedScore = score; }}
+                                                />
+                                            {:else}
+                                                <button
+                                                on:click={() => window.open('/contact', '_blank')}
+                                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 transition-colors duration-200"
+                                                >
+                                                Contact Me
+                                                </button>
+                                            {/if}
 										</div>
 									</div>
 								</div>
