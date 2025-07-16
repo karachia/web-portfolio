@@ -100,7 +100,7 @@
       on:click={toggleDropdown}
     >
       {#if selectedPiece}
-        {selectedPiece.title} - {selectedPiece.for}
+        {selectedPiece.title}{#if selectedPiece.for} - for {selectedPiece.for}{/if}
       {:else}
         {placeholder}
       {/if}
@@ -141,7 +141,9 @@
           on:click={() => selectPiece(piece)}
         >
           <div class="font-medium">{piece.title}</div>
-          <div class="text-sm text-gray-600">for {piece.for}</div>
+          {#if piece.for}
+            <div class="text-sm text-gray-600">for {piece.for}</div>
+          {/if}
         </button>
       {/each}
       {#if filteredPieces.length === 0}

@@ -5,6 +5,7 @@
 	import Icon from 'svelte-awesome';
 	import eyeIcon from 'svelte-awesome/icons/eye';
 	
+    export let pieceId: string;
 	export let isOpen: boolean = false;
 	export let scores: any[] = [];
 	export let pieceTitle: string = '';
@@ -39,6 +40,10 @@
 	function openPreview(previewUrl: string) {
 		window.open(previewUrl, '_blank');
 	}
+
+    function getPieceString() {
+        return pieceId;
+    }
 </script>
 
 <svelte:window on:keydown={handleEscapeKey} />
@@ -91,7 +96,7 @@
                                             {#if score.price}
 											{score.price === 0 ? 'Free' : `$${score.price.toFixed(2)}`}
                                             {:else}
-                                            <span class="text-gray-500 text-sm"><a class="underline" href="/contact">Contact me</a> for pricing</span>
+                                            <span class="text-gray-500 text-sm"><a class="underline" href="/contact?type=scorePurchase&piece={getPieceString()}" target="_blank" rel="noopener noreferrer">Contact me</a> for pricing</span>
                                             {/if}
 										</p>
                                         {#if !score.productId}
@@ -121,7 +126,7 @@
                                                 />
                                             {:else}
                                                 <button
-                                                on:click={() => window.open('/contact', '_blank')}
+                                                on:click={() => window.open(`/contact?type=scorePurchase&piece=${getPieceString()}`, '_blank')}
                                                 class="inline-flex items-center px-4 py-2 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 transition-colors duration-200"
                                                 >
                                                 Contact Me

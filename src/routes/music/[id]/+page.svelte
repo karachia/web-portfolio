@@ -350,6 +350,7 @@
 
 <!-- Score Modal -->
 <ScoreModal 
+	pieceId={musicItem?.id || ''}
 	isOpen={scoreModalOpen}
 	scores={musicItem?.score || []}
 	pieceTitle={musicItem?.title || ''}

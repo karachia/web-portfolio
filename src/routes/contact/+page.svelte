@@ -5,6 +5,8 @@
   import Footer from '$lib/components/Footer.svelte';
   import MusicPieceDropdown from '$lib/components/MusicPieceDropdown.svelte';
   import { fade } from 'svelte/transition';
+  import { page } from '$app/stores';
+  import { get } from 'svelte/store';
   
   let submitted = false;
   let sending = false;
@@ -40,12 +42,53 @@
   
   // Browser history management
   let hasNavigatedToForm = false;
-  
+
+  // --- Preselect message type and piece from URL params ---
+  $: urlParams = get(page).url.searchParams;
+  $: preselectedType = urlParams.get('type');
+  $: preselectedPiece = urlParams.get('piece');
+
+  // Load music data for preselection
+  let allMusic: any[] = [];
+
+  // Reactive preselection when data is loaded
+  $: if (allMusic.length > 0 && preselectedPiece && !selectedPiece && 
+         ((preselectedType === 'scorePurchase' || messageType === 'scorePurchase') || 
+          (preselectedType === 'performanceNotice' || messageType === 'performanceNotice'))) {
+    console.log('Attempting to preselect piece:', preselectedPiece);
+    const foundPiece = allMusic.find(piece => piece.id === preselectedPiece);
+    console.log('Found piece:', foundPiece);
+    if (foundPiece) {
+      // Add a small delay to ensure the dropdown component is ready
+      setTimeout(() => {
+        selectedPiece = foundPiece;
+        console.log('Set selectedPiece to:', selectedPiece);
+      }, 100);
+    }
+  }
+
+  async function loadMusicData() {
+    try {
+      const response = await fetch('/data/music.json');
+      allMusic = await response.json();
+    } catch (error) {
+      console.error('Error loading music data:', error);
+    }
+  }
+
   onMount(() => {
+    // Load music data for preselection
+    loadMusicData();
+
     // Hide the fax honeypot field with JavaScript
     const faxField = document.querySelector('input[name="fax"]') as HTMLInputElement;
     if (faxField) {
       faxField.style.display = 'none';
+    }
+
+    // Preselect message type if present in URL
+    if (preselectedType && !messageType) {
+      messageType = preselectedType;
     }
 
     // Handle browser back button
@@ -81,12 +124,21 @@
 
   // Hide honeypot when form is rendered
   $: if (messageType) {
+    // Hide fax field when form is rendered
     setTimeout(() => {
       const faxField = document.querySelector('input[name="fax"]') as HTMLInputElement;
       if (faxField) {
         faxField.style.display = 'none';
       }
     }, 0);
+    
+    // Also hide it after a longer delay to ensure it's hidden even if form loads slowly
+    setTimeout(() => {
+      const faxField = document.querySelector('input[name="fax"]') as HTMLInputElement;
+      if (faxField) {
+        faxField.style.display = 'none';
+      }
+    }, 100);
   }
 
   // Set mounted to true after a brief delay to trigger fade-in
@@ -103,6 +155,20 @@
       script.defer = true;
       document.head.appendChild(script);
     }
+  }
+
+  function getSelectedPieceString() {
+    if (selectedPiece) {
+      return `${selectedPiece.title} ${selectedPiece.for ? `for ${selectedPiece.for}` : ''}`;
+    }
+    return '';
+  }
+
+  function getPieceString() {
+    if (selectedPiece) {
+      return selectedPiece.id;
+    }
+    return '';
   }
 
   async function handleSubmit(event: Event) {
@@ -134,10 +200,11 @@
       Object.assign(formDataObj, artCommissionData);
     } else if (messageType === 'performanceNotice') {
       Object.assign(formDataObj, performanceNoticeData);
-      formDataObj.selectedPiece = selectedPiece ? `${selectedPiece.title} for ${selectedPiece.for || ''}` : '';
+      formDataObj.selectedPiece = getSelectedPieceString();
+
     } else if (messageType === 'scorePurchase') {
       Object.assign(formDataObj, scorePurchaseData);
-      formDataObj.selectedPiece = selectedPiece ? `${selectedPiece.title} for ${selectedPiece.for || ''}` : '';
+      formDataObj.selectedPiece = getSelectedPieceString();
     }
     
     // Add reCAPTCHA token
@@ -187,6 +254,16 @@
   <title>Contact - Sina Karachiani</title>
   <meta name="description" content="Contact Sina Karachiani for collaborations, performances, or questions." />
   <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+  <style>
+    /* Ensure fax honeypot is always hidden */
+    input[name="fax"] {
+      display: none !important;
+      position: absolute !important;
+      left: -9999px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+  </style>
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50 py-12 flex items-center justify-center">
