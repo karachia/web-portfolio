@@ -30,7 +30,7 @@ staticPages.forEach(page => {
   <url>
     <loc>${baseUrl}${page}</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>`;
 });
 
@@ -41,7 +41,7 @@ musicData.forEach(music => {
     <loc>${baseUrl}/music/${music.id}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>`;
 });
 

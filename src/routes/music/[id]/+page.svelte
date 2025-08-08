@@ -208,7 +208,6 @@
 								</div>
 							{/if}
 
-
 							<!-- Image (mobile: below commission text, desktop: to the right) -->
 							{#if isValidString(musicItem.image)}
 								<div class="mt-6 sm:hidden flex flex-col items-center">

@@ -53,7 +53,7 @@
 				"https://github.com/karachia",
 				"https://www.instagram.com/skarachiani/",
 				"https://soundcloud.com/sinakarachiani",
-				"https://www.youtube.com/@sinakarachiani7415",
+				"https://www.youtube.com/@SinaKarachianiMusic",
 				"https://www.instagram.com/sina.karachiani.music/"
 			]
 		}
