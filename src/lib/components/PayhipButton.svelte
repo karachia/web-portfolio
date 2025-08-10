@@ -31,7 +31,7 @@
 				successUrl: successUrl || undefined,
 				successCallback: successCallback || undefined,
 				iframeTarget: method === 'inline' && iframeTarget ? iframeTarget : undefined,
-                iframeInitialHeight: 500
+                iframeInitialHeight: 1000
 			});
 			if (method === 'inline') {
 				dispatch('inline');

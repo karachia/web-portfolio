@@ -60,11 +60,11 @@
 	>
 		<!-- Modal Content -->
 		<div 
-			class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+			class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col"
 			in:scale={{ duration: 200 }}
 		>
 			<!-- Header -->
-			<div class="flex items-center justify-between p-6 border-gray-200 border-b">
+			<div class="flex items-center justify-between p-6 border-gray-200 border-b flex-shrink-0">
 				<h2 class="text-2xl font-semibold text-zinc-800">
 					{pieceTitle}{pieceFor ? ` for ${pieceFor}` : ''}
 
@@ -82,7 +82,8 @@
 			</div>
 			
 			<!-- Content -->
-			<div class="p-6">
+			<div class="flex-1 overflow-y-auto">
+				<div class="p-6">
 				{#if selectedScore === null}
 					<p class="text-md text-gray-600 mb-6">
 						Access the {scoreLabel} in PDF format. Print and shipping is <b>NOT</b> available.
@@ -163,9 +164,10 @@
 					<!--  Payhip iframe -->
                     <div
                     class="payhip-iframe mx-auto mt-4 flex justify-center rounded-2xl"
-                    style="min-height:500px; background-color: #dadbdc; display: {selectedScore && openIframeProductId === selectedScore.productId ? 'flex' : 'none'}"
+                    style="height: 1000px; width: 100%; background-color: #dadbdc; display: {selectedScore && openIframeProductId === selectedScore.productId ? 'flex' : 'none'}"
                     ></div>
                 </div>
+			</div>
 		</div>
 	</div>
 {/if} 
