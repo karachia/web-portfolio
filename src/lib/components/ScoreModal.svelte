@@ -7,10 +7,12 @@
 	
     export let pieceId: string;
 	export let isOpen: boolean = false;
-	export let scores: any[] = [];
+	export let scoreData: any = null; // Now expects the full score object with payhipPage and scoreOptions
 	export let pieceTitle: string = '';
 	export let pieceFor: string = '';
 	export let category: string = '';
+	
+	$: scores = scoreData?.scoreOptions || [];
 	
 	const dispatch = createEventDispatcher();
 	
@@ -44,6 +46,7 @@
     function getPieceString() {
         return pieceId;
     }
+
 </script>
 
 <svelte:window on:keydown={handleEscapeKey} />
@@ -62,7 +65,7 @@
 		>
 			<!-- Header -->
 			<div class="flex items-center justify-between p-6 border-gray-200 border-b">
-				<h2 class="text-2xl italic font-semibold text-zinc-600">
+				<h2 class="text-2xl font-semibold text-zinc-800">
 					{pieceTitle}{pieceFor ? ` for ${pieceFor}` : ''}
 
 				</h2>
@@ -84,8 +87,10 @@
 					<p class="text-md text-gray-600 mb-6">
 						Access the {scoreLabel} in PDF format. Print and shipping is <b>NOT</b> available.
 					</p>
-					<div class="space-y-4">
-						{#each scores as score, index}
+					
+					{#if scores.length > 0}
+						<div class="space-y-4">
+							{#each scores as score, index}
 							<div class="border border-gray-200 rounded-2xl p-4 hover:shadow-md transition-shadow">
 								<div class="flex items-start justify-between">
 									<div class="flex-1">
@@ -94,12 +99,12 @@
 										</h3>
 										<p class="text-2xl text-zinc-700 mb-3">
                                             {#if score.price}
-											{score.price === 0 ? 'Free' : `$${score.price.toFixed(2)}`}
-                                            {:else}
-                                            <span class="text-gray-500 text-sm"><a class="underline" href="/contact?type=scorePurchase&piece={getPieceString()}" target="_blank" rel="noopener noreferrer">Contact me</a> for pricing</span>
+												{score.price === 0 ? 'Free' : `$${score.price.toFixed(2)}`}
                                             {/if}
 										</p>
-                                        {#if !score.productId}
+										{#if !score.productId && !score.price}
+											<p class="text-gray-500 text-sm mt-0 mb-3">Item and pricing are only available upon request.</p>
+                                        {:else if !score.productId && score.price}
                                         <p class="text-gray-500 text-sm mt-0 mb-3">Item is only available upon request.</p>
                                         {/if}
 										<div class="flex space-x-3">
@@ -112,7 +117,7 @@
 													Preview
 												</button>
 											{/if}
-                                            {#if score.productId}
+                                            {#if score.productId && score.price}
                                                 <PayhipButton 
                                                     productId={score.productId}
                                                     variantId={score.variantId || ''}
@@ -137,17 +142,25 @@
 								</div>
 							</div>
 						{/each}
-					</div>
+						</div>
+					{:else}
+						<!-- The main score button should not even show if there are no options but this is just for safety  -->
+						<div class="text-center py-8">
+							<p class="text-gray-500">No scores currently available. Please use the Payhip store link above or contact for more information.</p>
+						</div>
+					{/if}
 				{:else}
 					<!-- Step 2: Show only the selected score's PayhipButton and iframe -->
-					<button on:click={() => { selectedScore = null; openIframeProductId = null; }} class="mb-4 text-sm text-blue-600 hover:underline flex items-center">
+					<button on:click={() => { selectedScore = null; openIframeProductId = null; }} class="mb-4 text-sm text-zinc-600 hover:underline flex items-center">
 						<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-						Back to score options
+						Back
 					</button>
-					<div class="flex justify-center border-b border-gray-200 pb-4">
+					<div class="flex justify-center">
 						<h3 class="text-lg font-semibold text-gray-900 mb-2">{selectedScore.name} - {selectedScore.price === 0 ? 'Free' : `$${selectedScore.price.toFixed(2)}`}</h3>
 					</div>
+					<p class="text-gray-500 text-sm text-center pb-4 mt-0 mb-3 border-b border-gray-200">Check-out experience is powered by <span class="font-semibold">Payhip</span> and payments are processed securely through <span class="font-semibold">PayPal</span>. If the pyahip interface below fails to load, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.</p>
                     {/if}
+					<!--  Payhip iframe -->
                     <div
                     class="payhip-iframe mx-auto mt-4 flex justify-center rounded-2xl"
                     style="min-height:500px; background-color: #dadbdc; display: {selectedScore && openIframeProductId === selectedScore.productId ? 'flex' : 'none'}"

@@ -196,7 +196,7 @@
 							{/if}
 
 							<!-- Get Score Button -->
-							{#if musicItem.score && musicItem.score.length > 0}
+							{#if musicItem.score && musicItem.score.scoreOptions.length > 0}
 								<div class="mt-4">
 									<button
 										on:click={() => scoreModalOpen = true}
@@ -364,7 +364,7 @@
 <ScoreModal 
 	pieceId={musicItem?.id || ''}
 	isOpen={scoreModalOpen}
-	scores={musicItem?.score || []}
+	scoreData={musicItem?.score || []}
 	pieceTitle={musicItem?.title || ''}
 	pieceFor={musicItem?.for || ''}
 	category={musicItem?.category || ''}
