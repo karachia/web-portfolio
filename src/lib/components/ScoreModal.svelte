@@ -20,6 +20,7 @@
 	
 	let openIframeProductId: string | null = null;
 	let selectedScore: any = null;
+	let scrollableContentElement: HTMLElement | null = null;
 	
 	function closeModal() {
 		isOpen = false;
@@ -46,6 +47,21 @@
     function getPieceString() {
         return pieceId;
     }
+	
+	function scrollToTop() {
+		if (scrollableContentElement) {
+			scrollableContentElement.scrollTop = 0;
+		}
+	}
+	
+	function handlePurchaseClick(score: any) {
+		openIframeProductId = score.productId;
+		selectedScore = score;
+		// Scroll to top after a brief delay to ensure the iframe section is rendered
+		setTimeout(() => {
+			scrollToTop();
+		}, 100);
+	}
 
 </script>
 
@@ -81,8 +97,22 @@
 				</button>
 			</div>
 			
+			<!-- Back button for Payhip view (fixed position) -->
+			{#if selectedScore !== null}
+				<div class="px-6 py-4 border-b border-gray-200 flex-shrink-0">
+					<button on:click={() => { selectedScore = null; openIframeProductId = null; }} class="text-sm text-zinc-600 hover:underline flex items-center">
+						<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+						Back
+					</button>
+					<div class="flex justify-center mt-2">
+						<h3 class="text-lg font-semibold text-gray-900">{selectedScore.name} - {selectedScore.price === 0 ? 'Free' : `$${selectedScore.price.toFixed(2)}`}</h3>
+					</div>
+					<p class="text-gray-500 text-sm text-center mt-2">Check-out experience is powered by <span class="font-semibold">Payhip</span> and payments are processed securely through <span class="font-semibold">PayPal</span>. If the pyahip interface below fails to load, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.</p>
+				</div>
+			{/if}
+
 			<!-- Content -->
-			<div class="flex-1 overflow-y-auto">
+			<div class="flex-1 overflow-y-auto" bind:this={scrollableContentElement}>
 				<div class="p-6">
 				{#if selectedScore === null}
 					<p class="text-md text-gray-600 mb-6">
@@ -128,7 +158,7 @@
                                                     iframeTarget="payhip-iframe"
                                                     customTitle={`${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''} - ${score.name}`}
                                                     customMessage={`${score.price === 0 ? `Download` : `Purchase`} the ${score.name} ${scoreLabel} for ${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''}`}
-                                                    on:inline={() => { openIframeProductId = score.productId; selectedScore = score; }}
+                                                    on:inline={() => handlePurchaseClick(score)}
                                                 />
                                             {:else}
                                                 <button
@@ -151,15 +181,7 @@
 						</div>
 					{/if}
 				{:else}
-					<!-- Step 2: Show only the selected score's PayhipButton and iframe -->
-					<button on:click={() => { selectedScore = null; openIframeProductId = null; }} class="mb-4 text-sm text-zinc-600 hover:underline flex items-center">
-						<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-						Back
-					</button>
-					<div class="flex justify-center">
-						<h3 class="text-lg font-semibold text-gray-900 mb-2">{selectedScore.name} - {selectedScore.price === 0 ? 'Free' : `$${selectedScore.price.toFixed(2)}`}</h3>
-					</div>
-					<p class="text-gray-500 text-sm text-center pb-4 mt-0 mb-3 border-b border-gray-200">Check-out experience is powered by <span class="font-semibold">Payhip</span> and payments are processed securely through <span class="font-semibold">PayPal</span>. If the pyahip interface below fails to load, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.</p>
+					<!-- Step 2: Show only the Payhip iframe (back button is now fixed above) -->
                     {/if}
 					<!--  Payhip iframe -->
                     <div
