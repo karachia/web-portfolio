@@ -47,16 +47,20 @@
   $: urlParams = get(page).url.searchParams;
   $: preselectedType = urlParams.get('type');
   $: preselectedPiece = urlParams.get('piece');
+  
+  // Captured values that can be cleared after user interaction
+  let capturedType: string | null = null;
+  let capturedPiece: string | null = null;
 
   // Load music data for preselection
   let allMusic: any[] = [];
 
   // Reactive preselection when data is loaded
-  $: if (allMusic.length > 0 && preselectedPiece && !selectedPiece && 
-         ((preselectedType === 'scorePurchase' || messageType === 'scorePurchase') || 
-          (preselectedType === 'performanceNotice' || messageType === 'performanceNotice'))) {
-    console.log('Attempting to preselect piece:', preselectedPiece);
-    const foundPiece = allMusic.find(piece => piece.id === preselectedPiece);
+  $: if (allMusic.length > 0 && capturedPiece && !selectedPiece && 
+         ((capturedType === 'scorePurchase' || messageType === 'scorePurchase') || 
+          (capturedType === 'performanceNotice' || messageType === 'performanceNotice'))) {
+    console.log('Attempting to preselect piece:', capturedPiece);
+    const foundPiece = allMusic.find(piece => piece.id === capturedPiece);
     console.log('Found piece:', foundPiece);
     if (foundPiece) {
       // Add a small delay to ensure the dropdown component is ready
@@ -77,6 +81,10 @@
   }
 
   onMount(() => {
+    // Capture URL parameters once on load
+    capturedType = preselectedType;
+    capturedPiece = preselectedPiece;
+
     // Load music data for preselection
     loadMusicData();
 
@@ -87,8 +95,12 @@
     }
 
     // Preselect message type if present in URL
-    if (preselectedType && !messageType) {
-      messageType = preselectedType;
+    if (capturedType && !messageType) {
+      messageType = capturedType;
+      // Mark as already navigated to form since we're loading directly into it
+      hasNavigatedToForm = true;
+      // Load reCAPTCHA when form is actually used
+      // loadRecaptcha();
     }
 
     // Handle browser back button
@@ -96,8 +108,7 @@
       if (messageType && hasNavigatedToForm) {
         // If we're on the form and back is pressed, go back to message type selection
         event.preventDefault();
-        messageType = '';
-        hasNavigatedToForm = false;
+        clearMessageType();
         // Update URL without adding to history using SvelteKit's replaceState
         replaceState(window.location.pathname, { replace: true });
       }
@@ -110,17 +121,34 @@
     };
   });
 
-  // Watch for message type changes to manage history
-  $: if (messageType && !hasNavigatedToForm) {
-    // When message type is selected, add to history
-    pushState(window.location.pathname, { replace: false });
-    hasNavigatedToForm = true;
+  // Function to handle message type selection
+  function selectMessageType(type: string) {
+    messageType = type;
+    // Clear captured values since user is manually selecting
+    capturedType = null;
+    capturedPiece = null;
+    selectedPiece = null;
+    if (!hasNavigatedToForm) {
+      // When message type is selected, add to history
+      pushState(window.location.pathname, { replace: false });
+      hasNavigatedToForm = true;
+    }
     // Load reCAPTCHA when form is actually used
-    loadRecaptcha();
-  } else if (!messageType && hasNavigatedToForm) {
-    // When message type is cleared, we're back to selection
-    hasNavigatedToForm = false;
+    // loadRecaptcha();
   }
+
+  // Function to clear message type
+  function clearMessageType() {
+    messageType = '';
+    // Clear captured values and selected piece
+    capturedType = null;
+    capturedPiece = null;
+    selectedPiece = null;
+    if (hasNavigatedToForm) {
+      hasNavigatedToForm = false;
+    }
+  }
+  
 
   // Hide honeypot when form is rendered
   $: if (messageType) {
@@ -231,8 +259,7 @@
         submitted = true;
         form.reset();
         // Reset all data
-        messageType = '';
-        selectedPiece = null;
+        clearMessageType();
         musicCommissionData = { duration: '', estimatedDate: '', instrumentation: '', performer: '', performanceLocation: '' };
         artCommissionData = { dateNeeded: '', size: '', delivery: '' };
         performanceNoticeData = { date: '', location: '', performer: '' };
@@ -300,7 +327,7 @@
             <button
               type="button"
               class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
-              on:click={() => messageType = 'musicCommission'}
+              on:click={() => selectMessageType('musicCommission')}
             >
               <h3 class="font-semibold text-lg">Music Commission & Collaboration</h3>
               <p class="text-gray-600">Request a new musical composition or collaboration</p>
@@ -308,7 +335,7 @@
             <button
               type="button"
               class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 hover:border-green-300 hover:shadow-lg hover:shadow-green-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
-              on:click={() => messageType = 'artCommission'}
+              on:click={() => selectMessageType('artCommission')}
             >
               <h3 class="font-semibold text-lg">Art Commission, Design, & Collaboration</h3>
               <p class="text-gray-600">Request visual artwork or design</p>
@@ -316,7 +343,7 @@
             <button
               type="button"
               class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
-              on:click={() => messageType = 'performanceNotice'}
+              on:click={() => selectMessageType('performanceNotice')}
             >
               <h3 class="font-semibold text-lg">Performance Notice</h3>
               <p class="text-gray-600">Notify about a performance of my music</p>
@@ -324,7 +351,7 @@
             <button
               type="button"
               class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
-              on:click={() => messageType = 'scorePurchase'}
+              on:click={() => selectMessageType('scorePurchase')}
             >
               <h3 class="font-semibold text-lg">Score Purchase</h3>
               <p class="text-gray-600">Purchase sheet music or parts</p>
@@ -332,7 +359,7 @@
             <button
               type="button"
               class="group p-4 text-left border border-gray-300 rounded-lg bg-gradient-to-r from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200 hover:-translate-y-1 transition-all duration-300 ease-out transform"
-              on:click={() => messageType = 'general'}
+              on:click={() => selectMessageType('general')}
             >
               <h3 class="font-semibold text-lg">General</h3>
               <p class="text-gray-600">Other inquiries or messages</p>
@@ -348,7 +375,7 @@
             <button
               type="button"
               class="text-gray-600 hover:text-gray-800"
-              on:click={() => messageType = ''}
+              on:click={clearMessageType} 
             >
               Change
             </button>
@@ -454,7 +481,7 @@
               <h3 class="font-semibold text-purple-900">Performance Notice Details</h3>
               <div>
                 <label class="block text-gray-700 font-medium mb-1">Piece *</label>
-                <MusicPieceDropdown bind:selectedPiece placeholder="Select a piece..." />
+                <MusicPieceDropdown bind:selectedPiece placeholder="Select a piece..." on:pieceCleared={() => capturedPiece = null} />
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -478,7 +505,7 @@
               <h3 class="font-semibold text-orange-900">Score Purchase Details</h3>
               <div>
                 <label class="block text-gray-700 font-medium mb-1">Piece *</label>
-                <MusicPieceDropdown bind:selectedPiece placeholder="Select a piece..." />
+                <MusicPieceDropdown bind:selectedPiece placeholder="Select a piece..." on:pieceCleared={() => capturedPiece = null} />
               </div>
               <div>
                 <label class="block text-gray-700 font-medium mb-1">Purchase Type *</label>

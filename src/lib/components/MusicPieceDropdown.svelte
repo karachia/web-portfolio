@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, createEventDispatcher } from 'svelte';
   
   export let selectedPiece: any = null;
   export let placeholder: string = "Select a piece...";
+  
+  const dispatch = createEventDispatcher();
   
   let pieces: any[] = [];
   let filteredPieces: any[] = [];
@@ -115,6 +117,7 @@
     </button>
     
     {#if selectedPiece}
+    <!-- X button to clear selection -->
       <button
         type="button"
         class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600"
@@ -123,6 +126,7 @@
           selectedPiece = null;
           searchTerm = '';
           isOpen = false;
+          dispatch('pieceCleared');
         }}
         aria-label="Clear selection"
       >
