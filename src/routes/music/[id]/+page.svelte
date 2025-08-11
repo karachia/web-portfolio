@@ -100,7 +100,6 @@
 		
 		<!-- Additional SEO Meta Tags -->
 		<meta name="keywords" content="Sina Karachiani, ${musicItem.title}, composer, pianist, ${musicItem.category || 'music'}, ${musicItem.subcategory || 'composition'}, new music, contemporary music${musicItem.for ? `, ${musicItem.for}` : ''}" />
-		<link rel="canonical" href={`https://sinakarachiani.com/music/${musicItem.id}`} />
 		
 		<!-- Music Structured Data -->
 		<!-- TODO: Add structured data -->

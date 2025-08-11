@@ -1,6 +1,11 @@
 <script lang="ts">
 	import '../app.css';
 	import Navbar from '$lib/Navbar.svelte';
+	import { page } from '$app/stores';
+	
+	// Create canonical URL based on current page
+	$: canonicalUrl = `https://sinakarachiani.com${$page.url.pathname}`;
+
 </script>
 
 <Navbar />
@@ -11,7 +16,7 @@
 <svelte:head>
 	<title>Sina Karachiani</title>
 	<meta name="description" content="Portfolio of Sina Karachiani, composer, artist, and software engineer." />
-	<link rel="canonical" href="https://sinakarachiani.com/" />
+	<link rel="canonical" href={canonicalUrl} />
 	<meta property="og:title" content="Sina Karachiani" />
 	<meta property="og:description" content="Portfolio of Sina Karachiani, composer, artist, and software engineer." />
 	<meta property="og:image" content="https://sinakarachiani.com/assets/web_icon.png" />
