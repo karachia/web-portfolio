@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Orison for String Quartet",
+        "description": "Score and recording",
+        "image": "/assets/art/thumbnails/artwork-12.png",
+        "link": "music/orisonForStringQuartet"
+    },
+    {
+        "title": "Stranger of Kin",
+        "description": "Score and recording",
+        "image": "/assets/music/strangerofkin.png",
+        "link": "https://www.google.com"
+    },
+    {
+        "title": "Memphis Symphony:<br />Stranger of Kin",
+        "description": "Media coverage",
+        "image": "/assets/memphis.webp",
+        "link": "media"
+    },
+    {
+        "title": "Orison for String Quartet",
+        "description": "Score and recording",
+        "image": "/assets/art/thumbnails/artwork-12.png",
+        "link": "music/orisonForStringQuartet"
+    },
+    {
+        "title": "Stranger of Kin",
+        "description": "Score and recording",
+        "image": "/assets/music/strangerofkin.png",
+        "link": "https://www.google.com"
+    },
+    {
+        "title": "Memphis Symphony:<br />Stranger of Kin",
+        "description": "Media coverage",
+        "image": "/assets/memphis.webp",
+        "link": "media"
+    },
+    {
+        "title": "Orison for String Quartet",
+        "description": "Score and recording",
+        "image": "/assets/art/thumbnails/artwork-12.png",
+        "link": "music/orisonForStringQuartet"
+    },
+    {
+        "title": "Stranger of Kin",
+        "description": "Score and recording",
+        "image": "/assets/music/strangerofkin.png",
+        "link": "https://www.google.com"
+    },
+    {
+        "title": "Memphis Symphony:<br />Stranger of Kin",
+        "description": "Media coverage",
+        "image": "/assets/memphis.webp",
+        "link": "media"
+    }
+]
