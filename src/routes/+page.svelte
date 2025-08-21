@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import Footer from '$lib/components/Footer.svelte';
-	import HorizontalScrollSection from '$lib/components/HorizontalScrollSection.svelte';
+	import LatestReleasesMinimal from '$lib/components/LatestReleasesMinimal.svelte';
 	import Icon from 'svelte-awesome';
 
 	/// *** Embedded Icons ***
@@ -69,7 +69,8 @@
 	class="fade-in relative flex min-h-[70vh] flex-col items-center justify-center px-4 pt-16"
 >
 	<!-- Hero Content Container -->
-	<div class="w-full max-w-6xl mx-auto">
+	<div class="w-full max-w-6xl mx-auto space-y-12">
+		<!-- Hero Row -->
 		<div class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 			<img
 				src="/assets/SK_Brand.png"
@@ -120,14 +121,8 @@
 			</div>
 		</div>
 
-		<!-- Latest Releases Section - Aligned with hero content -->
-		<div class="mt-16 w-full">
-			<HorizontalScrollSection 
-				title="Latest Releases & News"
-				dataSource="/data/featured_items.json"
-				showSpacerAlignment={true}
-			/>
-		</div>
+		<!-- Latest Releases Row -->
+		<LatestReleasesMinimal />
 	</div>
 
 	<!-- Down chevron button -->
