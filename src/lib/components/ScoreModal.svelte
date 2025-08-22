@@ -107,7 +107,8 @@
 					<div class="flex justify-center mt-2">
 						<h3 class="text-lg font-semibold text-gray-900">{selectedScore.name} - {selectedScore.price === 0 ? 'Free' : `$${selectedScore.price.toFixed(2)}`}</h3>
 					</div>
-					<p class="text-gray-500 text-sm text-center mt-2">Check-out experience is powered by <span class="font-semibold">Payhip</span> and payments are processed securely through <span class="font-semibold">PayPal</span>. If the pyahip interface below fails to load, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.</p>
+					<p class="text-gray-500 text-sm text-center mt-2">Check-out experience is powered by <span class="font-semibold">Payhip</span> & payments are processed securely by <span class="font-semibold">PayPal</span>. <br /> If the transaction fails, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead or use <span class="font-semibold">Chrome</span> browser</p>
+						<!-- as there are some issues browsers such as Safari <br/>On Safari, you may also temporarily disable <span class="font-semibold">Safari &gt; Settings &gt; Privacy &gt; Prevent cross-site tracking</span></p> -->
 				</div>
 			{/if}
 

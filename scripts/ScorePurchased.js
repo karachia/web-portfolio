@@ -7,40 +7,54 @@ var SCORE_PURCHASES_SPREADSHEET_ID = '<Spreadsheet ID>';
 
 // Test function to simulate a Payhip webhook
 function TestScorePurchase() {
+	var testData = {
+		"id": "ZGjVj5x4GN",
+		"email": "customer@example.com",
+		"first_name": "John",
+		"last_name": "Doe",
+		"currency": "USD",
+		"price": 1500, // $15.00 in cents
+		"vat_applied": false,
+		"ip_address": "72.334.28.154",
+		"items": [
+			{
+				"product_id": "2804256",
+				"product_name": "Whirling Onward - Full Score",
+				"product_key": "RGsF",
+				"product_permalink": "https://payhip.com/b/RGsF",
+				"quantity": "1",
+				"on_sale": false,
+				"used_coupon": false,
+				"used_social_discount": false,
+				"used_cross_sell_discount": false,
+				"used_upgrade_discount": false,
+				"promoted_by_affiliate": false,
+				"has_variant": false
+			}
+		],
+		"checkout_questions": [
+			{
+				"question": "Is this purchase for an upcoming performance? If so, please indicate the date and location of the performance.&nbsp;",
+				"response": "Yes, December 15th at Carnegie Hall"
+			},
+			{
+				"question": "Any special requests or notes?",
+				"response": "Please send digital copy as well"
+			}
+		],
+		"payment_type": "card",
+		"stripe_fee": 48,
+		"payhip_fee": 33,
+		"unconsented_from_emails": false,
+		"is_gift": false,
+		"date": 1703693218,
+		"type": "paid",
+		"signature": "dbcdccb0dfc5a57rh704bc75d7bbb18hdd3ee85f4081d5c4adbff934622919d8"
+	};
+	
 	var sampleEvent = {
 		postData: {
-			contents: JSON.stringify({
-				"id": "ZGjVj5x4GN",
-				"email": "customer@example.com",
-				"currency": "USD",
-				"price": 1500, // $15.00 in cents
-				"vat_applied": false,
-				"ip_address": "72.334.28.154",
-				"items": [
-					{
-						"product_id": "2804256",
-						"product_name": "Whirling Onward - Full Score",
-						"product_key": "RGsF",
-						"product_permalink": "https://payhip.com/b/RGsF",
-						"quantity": "1",
-						"on_sale": false,
-						"used_coupon": false,
-						"used_social_discount": false,
-						"used_cross_sell_discount": false,
-						"used_upgrade_discount": false,
-						"promoted_by_affiliate": false,
-						"has_variant": false
-					}
-				],
-				"payment_type": "card",
-				"stripe_fee": 48,
-				"payhip_fee": 33,
-				"unconsented_from_emails": false,
-				"is_gift": false,
-				"date": 1703693218,
-				"type": "paid",
-				"signature": "dbcdccb0dfc5a57rh704bc75d7bbb18hdd3ee85f4081d5c4adbff934622919d8"
-			})
+			contents: JSON.stringify(testData)
 		}
 	};
 	var result = doPost(sampleEvent);
@@ -76,7 +90,7 @@ function doPost(e) {
 		var sanitizedData = validateAndSanitizeWebhookData(webhookData);
 
 		// Record purchase data in spreadsheet
-		recordPurchaseData(sanitizedData);
+		recordPurchaseData(sanitizedData, requestBody);
 
 		// Send email notification
 		sendPurchaseNotificationEmail(sanitizedData);
@@ -134,6 +148,8 @@ function validateAndSanitizeWebhookData(data) {
 	// Sanitize basic fields
 	sanitized.id = String(data.id).trim();
 	sanitized.email = String(data.email).trim();
+	sanitized.first_name = String(data.first_name || '').trim();
+	sanitized.last_name = String(data.last_name || '').trim();
 	sanitized.currency = String(data.currency).trim();
 	sanitized.price = parseFloat(data.price) || 0;
 	sanitized.date = parseInt(data.date) || 0;
@@ -170,11 +186,27 @@ function validateAndSanitizeWebhookData(data) {
 	sanitized.is_gift = Boolean(data.is_gift);
 	sanitized.ip_address = String(data.ip_address || '').trim();
 	
+	// Process checkout questions into a single string
+	sanitized.checkout_questions = '';
+	if (Array.isArray(data.checkout_questions) && data.checkout_questions.length > 0) {
+		var questionsArray = [];
+		for (var k = 0; k < data.checkout_questions.length; k++) {
+			var q = data.checkout_questions[k];
+			if (q.question && q.response) {
+				// Clean up HTML entities and formatting
+				var question = String(q.question).replace(/&nbsp;/g, ' ').replace(/<[^>]*>/g, '').trim();
+				var response = String(q.response).trim();
+				questionsArray.push('Q: ' + question + ' | A: ' + response);
+			}
+		}
+		sanitized.checkout_questions = questionsArray.join(' || ');
+	}
+	
 	return sanitized;
 }
 
 // Record purchase data in Google Sheets
-function recordPurchaseData(data) {
+function recordPurchaseData(data, rawPostData) {
 	var lock = LockService.getDocumentLock();
 	lock.waitLock(30000);
 	
@@ -188,6 +220,8 @@ function recordPurchaseData(data) {
 				'Timestamp',
 				'Transaction ID',
 				'Customer Email',
+				'First Name',
+				'Last Name',
 				'Product Name',
 				'Product ID',
 				'Product Key',
@@ -203,7 +237,9 @@ function recordPurchaseData(data) {
 				'Is Gift',
 				'IP Address',
 				'Product Link',
-				'Purchase Date'
+				'Purchase Date',
+				'Checkout Questions',
+				'Raw Post Data'
 			];
 			sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
 			
@@ -227,6 +263,8 @@ function recordPurchaseData(data) {
 				timestamp,
 				data.id,
 				data.email,
+				data.first_name,
+				data.last_name,
 				item.product_name,
 				item.product_id,
 				item.product_key,
@@ -242,7 +280,9 @@ function recordPurchaseData(data) {
 				data.is_gift ? 'Yes' : 'No',
 				data.ip_address,
 				item.product_permalink,
-				purchaseDate
+				purchaseDate,
+				data.checkout_questions,
+				rawPostData || ''
 			];
 			
 			var nextRow = sheet.getLastRow() + 1;
@@ -294,6 +334,9 @@ function formatPurchaseEmailBody(data) {
 	html += '<p><strong>Transaction ID:</strong> ' + sanitizeHtml(data.id) + '</p>';
 	html += '<p><strong>Total Amount:</strong> ' + formatPrice(data.price, data.currency) + '</p>';
 	html += '<p><strong>Customer Email:</strong> ' + sanitizeHtml(data.email) + '</p>';
+	if (data.first_name || data.last_name) {
+		html += '<p><strong>Customer Name:</strong> ' + sanitizeHtml(data.first_name + ' ' + data.last_name).trim() + '</p>';
+	}
 	html += '<p><strong>Payment Method:</strong> ' + sanitizeHtml(data.payment_type) + '</p>';
 	html += '<p><strong>Purchase Date:</strong> ' + new Date(data.date * 1000).toLocaleString("en-US", { timeZone: "America/Los_Angeles" }) + '</p>';
 	if (data.is_gift) {
@@ -317,6 +360,31 @@ function formatPurchaseEmailBody(data) {
 		html += '</div>';
 	}
 	html += '</div>';
+	
+	// Checkout Questions (if any)
+	if (data.checkout_questions) {
+		html += '<div style="background-color: #fff; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin-bottom: 20px;">';
+		html += '<h3 style="color: #343a40; margin-top: 0;">📝 Checkout Questions</h3>';
+		
+		// Split the combined string back into individual Q&A pairs
+		var questionPairs = data.checkout_questions.split(' || ');
+		for (var j = 0; j < questionPairs.length; j++) {
+			var pair = questionPairs[j];
+			if (pair.trim()) {
+				// Extract question and answer from "Q: question | A: answer" format
+				var parts = pair.split(' | A: ');
+				if (parts.length === 2) {
+					var question = parts[0].replace('Q: ', '').trim();
+					var answer = parts[1].trim();
+					html += '<div style="border-left: 4px solid #17a2b8; padding-left: 15px; margin-bottom: 15px;">';
+					html += '<p style="margin: 0 0 5px 0; font-weight: bold; color: #17a2b8;">' + sanitizeHtml(question) + '</p>';
+					html += '<p style="margin: 0; color: #495057;">' + sanitizeHtml(answer) + '</p>';
+					html += '</div>';
+				}
+			}
+		}
+		html += '</div>';
+	}
 	
 	// Financial Breakdown
 	html += '<div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 20px;">';
