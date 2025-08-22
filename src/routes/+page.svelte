@@ -163,11 +163,10 @@
 
 				<p class="mt-3">
 					I am a composer, pianist, artist, and software engineer
-					<br />
 					based in <span class="font-bold">San Francisco, CA</span>.
-				<!-- </p>
+ 				</p> 
 
-				<p class="mt-3"> -->
+				<p class="mt-3"> 
 					By day, I design and develop software for Vision products at Apple that enable groundbreaking new possibilities. By night, you'll often find me composing at the piano, or drawing.
 				</p>
 				<p class="mt-3">
