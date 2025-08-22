@@ -37,6 +37,7 @@
 		"description": "\"Orison\" for string quartet invites listeners into a deeply personal realm of contemplation and introspection, akin to a prayer whispered in solitude. Drawing on influences from the composer's Iranian heritage, the piece weaves together ornate melodies that possess a free-flowing and improvisatory quality, following the rich and expressive traditions found in traditional and folk Persian music. The music unfolds as if detached from the external world, exploring the intricate landscape of inner emotions, marked by longing and yearning, turbulence, a sense of reaching and falling, and moments of hope and optimism.",
 		"category": "Chamber",
 		"subcategory": "Quartet",
+		"image": "/assets/art/thumbnails/artwork-12.png",
 		"tags": [],
 		"length": {
 			"min": 7.5,
@@ -337,8 +338,16 @@
 			"amazonMusic": "https://music.amazon.com/albums/B08JCSGFYH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_YmKZoxE3rySjhvzc2iUtERwqA&trackAsin=B08JCFLNWZ",
 			"soundcloud": "https://soundcloud.com/sinakarachiani/carolyn?si=c2de3ef8fac743408da9ece32aef0ae7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
 		},
-		"payhip": {
-			"productId": "gku5S"
+		"score": {
+			"payhipPage": "https://payhip.com/b/gku5S",
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)",
+					"productId": "gku5S",
+					"preview": "https://drive.google.com/file/d/1F-N05tMXCofWmrtp7CtHjdn7FtrzUpKS/view?usp=sharing",
+					"price": 10.00
+				}
+			]
 		}
 	},
 	{
@@ -446,11 +455,11 @@
 	},
 	{
 		"id": "persistenceOfMemory",
-		"title": "Persistence of Memory",
+		"title": "The Persistence of Memory",
 		"for": "Piano Solo",
 		"category": "Solo",
 		"subcategory": "Piano",
-		"description": "This piece explores themes of anxiety, loneliness, and darkness, inspired by challenging experiences during early college years in Los Angeles. It captures a period of intense pressure and isolation, ultimately reflecting a journey through adversity towards hope.\n\n The piece is divided into three movements: darkness, dream, and hope. Time, or the lack thereof, is a central theme, reflecting the constant pressure to achieve and the fleeting nature of life. The Westminster tune, a familiar melody, marks key moments in the piece, symbolizing the passage of time and the evolving character of the music. The final movement, a hopeful crescendo based on the Westminster tune, ultimately collapses into a moment of uncertainty, yet concludes with a glimmer of hope resonating through the final notes.",
+		"description": "This piece is a result of a time of anxiety, loneliness, and darkness during my early twenties. It served as a cathartic exploration of my experiences and a means of coping with the challenges I faced. The darkness of the fi rst movement turns into a dream, seeking answers and balance, which then flows the last movement: a crescendo in quest of hope. Time, or the lack thereof, is a central theme, reflecting the constant pressure to make it in life and its fleeting nature. The familiar Westminster tune, marks key moments in the piece, symbolizing certain hours of the day and the passage of time.",
 		"tags": ["Piano"],
 		"length": {
 			"default": 12.5
@@ -460,6 +469,7 @@
 		"image": "",
 		"soundcloud": "",
 		"videos": ["https://www.youtube.com/embed/xsoLlCgB1rk?si=vmc1JqRktdy0x986"],
+		"image": "/assets/music/persistence_medium.png",
 		"recordings": [],
 		"movements": [
 			{
@@ -477,7 +487,25 @@
 				"duration": 3,
 				"numbered": false
 			}
-		]
+		],
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/531544188&color=%23ff5500",
+			"width": "100%",
+			"height": 180,
+			"link": "https://soundcloud.com/sinakarachiani/the-persistence-of-memory",
+			"title": "The Persistence of Memory"
+		},
+		"score": {
+			"payhipPage": "https://payhip.com/b/TVl0a",
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)",
+					"productId": "TVl0a",
+					"preview": "https://drive.google.com/file/d/1JBQ5LMzIZO_ugYhemaaItZU9RKDJNmX2/view?usp=sharing",
+					"price": 25.00
+				}
+			]
+		}
 	},
 	{
 		"id": "sunRisesAgain",

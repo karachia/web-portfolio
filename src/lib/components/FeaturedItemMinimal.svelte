@@ -17,7 +17,7 @@
 </script>
 
 <div 
-  class="group cursor-pointer py-2 sm:py-3 px-2 sm:px-3 rounded-lg hover:bg-white/10 transition-all duration-300"
+  class="group cursor-pointer py-2 px-2 rounded-lg hover:bg-white/10 transition-all duration-300"
   on:click={handleClick}
   on:keydown={(e) => e.key === 'Enter' && handleClick()}
   role="button"
@@ -47,9 +47,9 @@
       <!-- Title with inline link icon -->
       <h3 class="font-semibold text-gray-900 text-sm sm:text-sm leading-tight group-hover:text-purple-800 transition-colors duration-300">
         {title}
-        <!-- <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Icon data={externalLink} scale={0.6} class="text-purple-600" />
-        </span> -->
+        <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <Icon data={externalLink} scale={0.7} class="text-purple-600 ml-1 mr-1" />
+        </span>
       </h3>
       <p class="text-gray-600 text-xs sm:text-xs leading-relaxed group-hover:text-violet-500 transition-colors duration-300">
         {description}

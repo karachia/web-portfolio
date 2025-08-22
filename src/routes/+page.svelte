@@ -69,13 +69,13 @@
 	class="fade-in relative flex min-h-[70vh] flex-col items-center justify-center px-4 pt-16"
 >
 	<!-- Hero Content Container -->
-	<div class="w-full max-w-6xl mx-auto space-y-12">
+	<div class="w-full max-w-6xl mx-auto space-y-6 md:space-y-12">
 		<!-- Hero Row -->
 		<div class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 			<img
 				src="/assets/SK_Brand.png"
 				alt="Sina Karachiani Logo"
-				class="-mt-6 h-44 w-auto rounded drop-shadow-lg"
+				class="-mt-6 h-28 md:h-44 w-auto rounded drop-shadow-lg"
 			/>
 			<div class="flex flex-col items-center text-center sm:items-start sm:text-left">
 				<h1
@@ -84,11 +84,11 @@
 				>
 					S I N A&nbsp;&nbsp;&nbsp;K A R A C H I A N I
 				</h1>
-				<h2 class="mt-2 text-base font-light tracking-wide text-gray-600 drop-shadow-lg sm:text-lg md:text-2xl">
+				<h2 class="mt-2 text-sm font-light tracking-wide text-gray-600 drop-shadow-lg sm:text-lg md:text-2xl">
 					<!-- Composer, Artist, Pianist, Software Engineer -->
 	        Composer • Artist • Pianist • Software Engineer
 				</h2>
-				<div class="mt-4 flex space-x-4 sm:space-x-6">
+				<div class="mt-2 md:mt-4 flex space-x-4 sm:space-x-6">
 					<a
 						href="https://github.com/karachia"
 						target="_blank"
@@ -124,7 +124,7 @@
 		<!-- Latest Releases Row -->
 		<LatestReleasesMinimal />
 	</div>
-
+	<div class="mt-10 md:mt-15"></div>
 	<!-- Down chevron button -->
 	<a
 		href="#welcome"

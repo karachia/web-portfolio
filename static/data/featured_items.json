@@ -1,56 +1,20 @@
 [
     {
-        "title": "Orison for String Quartet",
-        "description": "Score and recording",
-        "image": "/assets/art/thumbnails/artwork-12.png",
-        "link": "music/orisonForStringQuartet"
+        "title": "Whirling Onward for Orchestra",
+        "description": "Recording is available on streaming services. Dance Film is available on YouTube.",
+        "image": "/assets/music/whirlingonward_small.png",
+        "link": "music/whirlingOnward"
     },
     {
-        "title": "Stranger of Kin",
-        "description": "Score and recording",
-        "image": "/assets/music/strangerofkin.png",
-        "link": "https://www.google.com"
+        "title": "Carolyn for Piano Solo",
+        "description": "Score (PDF) is available for download and recording is available on streaming services.",
+        "image": "/assets/music/carolyn_small.png",
+        "link": "music/carolyn"
     },
     {
-        "title": "Memphis Symphony:<br />Stranger of Kin",
-        "description": "Media coverage",
-        "image": "/assets/memphis.webp",
-        "link": "media"
-    },
-    {
-        "title": "Orison for String Quartet",
-        "description": "Score and recording",
-        "image": "/assets/art/thumbnails/artwork-12.png",
-        "link": "music/orisonForStringQuartet"
-    },
-    {
-        "title": "Stranger of Kin",
-        "description": "Score and recording",
-        "image": "/assets/music/strangerofkin.png",
-        "link": "https://www.google.com"
-    },
-    {
-        "title": "Memphis Symphony: Stranger of Kin",
-        "description": "Media coverage",
-        "image": "/assets/memphis.webp",
-        "link": "media"
-    },
-    {
-        "title": "Orison for String Quartet",
-        "description": "Score and recording",
-        "image": "/assets/art/thumbnails/artwork-12.png",
-        "link": "music/orisonForStringQuartet"
-    },
-    {
-        "title": "Stranger of Kin",
-        "description": "Score and recording",
-        "image": "/assets/music/strangerofkin.png",
-        "link": "https://www.google.com"
-    },
-    {
-        "title": "Memphis Symphony: Stranger of Kin",
-        "description": "Media coverage",
-        "image": "/assets/memphis.webp",
-        "link": "media"
+        "title": "Persistence of Memory for Piano Solo",
+        "description": "Score (PDF) is available for download and recording is available on SoundCloud.",
+        "image": "/assets/music/persistence_small.png",
+        "link": "music/persistenceOfMemory"
     }
 ]
