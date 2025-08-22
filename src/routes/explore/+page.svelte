@@ -101,7 +101,6 @@
       <ExploreLink
         title='Watch the dance film for "Whirling Onward..."'
         href="https://youtu.be/zbDhZ-TRa4A?si=Sn_GGlWxl2Mrsm91"
-        icon={playCircleO}
         image="/assets/music/whirlingdancefilm.png"
       />
       <ExploreLink
