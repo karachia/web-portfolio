@@ -275,7 +275,7 @@
 		},
 		"date": "2019-01-11",
 		"detailed_instrumentation": "",
-		"image": "/assets/music/whirlingonward.png",
+		"image": "/assets/music/whirlingonward_large.png",
 		"soundcloud": "",
 		"videos": ["https://www.youtube.com/embed/zbDhZ-TRa4A?si=H6nahyWuZ7YQCtdp"],
 		"recordings": {
@@ -556,7 +556,13 @@
 		"date": "2015-02-11",
 		"detailed_instrumentation": "",
 		"image": "",
-		"soundcloud": "",
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/193594468&color=%23151e68",
+			"width": "100%",
+			"height": 180,
+			"link": "https://soundcloud.com/sinakarachiani/breathing-of-night",
+			"title": "Breathing of Night"
+		},
 		"videos": [],
 		"recordings": []
 	},
