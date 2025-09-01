@@ -11,7 +11,6 @@
 	import CategoryTags from '$lib/components/CategoryTags.svelte';
 	import { goto } from '$app/navigation';
 	import Footer from '$lib/components/Footer.svelte';
-	import PayhipButton from '$lib/components/PayhipButton.svelte';
 	import ScoreModal from '$lib/components/ScoreModal.svelte';
 	import Movements from '$lib/components/Movements.svelte';
 	import { fade } from 'svelte/transition';

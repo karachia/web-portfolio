@@ -16,7 +16,7 @@
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 
-	// Function to handle custom checkout with overlay
+	// Function to handle custom checkout
 	function handleCustomCheckout() {
 		if (typeof window !== 'undefined' && (window as any).Payhip) {
 			(window as any).Payhip.Checkout.open({
