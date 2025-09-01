@@ -1,5 +1,17 @@
 [
     {
+        "title": "Orison for String Quartet",
+        "description": "Recording and downloadable PDF score is now available.",
+        "image": "/assets/music/orison_small.png",
+        "link": "music/orisonForStringQuartet"
+    },
+    {
+        "title": "Stranger of Kin for Mixed-Quartet",
+        "description": "Recording and downloadable PDF score is now available.",
+        "image": "/assets/music/stranger_of_kin_small.png",
+        "link": "music/StrangerOfKinForMixedQuartet"
+    },
+    {
         "title": "Whirling Onward for Orchestra",
         "description": "Recording is available on streaming services. Dance Film is available on YouTube.",
         "image": "/assets/music/whirlingonward_small.png",
@@ -7,13 +19,13 @@
     },
     {
         "title": "Carolyn for Piano Solo",
-        "description": "Score (PDF) is available for download and recording is available on streaming services.",
+        "description": "Recording on streaming platforms and downloadable PDF score is now available.",
         "image": "/assets/music/carolyn_small.png",
         "link": "music/carolyn"
     },
     {
         "title": "Persistence of Memory for Piano Solo",
-        "description": "Score (PDF) is available for download and recording is available on SoundCloud.",
+        "description": "Recording and downloadable PDF score is now available.",
         "image": "/assets/music/persistence_small.png",
         "link": "music/persistenceOfMemory"
     }

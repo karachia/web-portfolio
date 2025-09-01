@@ -45,7 +45,25 @@
 			"default": 7.5
 		},
 		"date": "2025-05-12",
-		"detailed_instrumentation": "2 Violins, Viola, Cello"
+		"detailed_instrumentation": "2 Violins, Viola, Cello",
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2162692143&color=%23000000",
+			"width": "100%",
+			"height": 180,
+			"link": "https://soundcloud.com/sinakarachiani/orison-for-string-quartet",
+			"title": "Orison for String Quartet"
+		},
+		"score": {
+			"payhipPage": "https://payhip.com/b/4hmKI", 
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)",
+					"productId": "4hmKI",
+					"preview": "https://drive.google.com/file/d/1kcv8T4X8Un0v9LnhaOcM-pofGlF7K1wx/view?usp=share_link",
+					"price": 50.00
+				}
+			]
+		}
 	},
 	{
 		"id": "StrangerOfKinForOrchestra",
@@ -62,7 +80,7 @@
 			"max": 11
 		},
 		"date": "2025-03-20",
-		"image": "/assets/music/strangerofkin.png",
+		"image": "/assets/music/stranger_of_kin_medium.png",
 		"otherVersions": [
 			"StrangerOfKinForChamberOrchestra",
 			"StrangerOfKinForMixedEnsemble",
@@ -84,7 +102,7 @@
 			"max": 11
 		},
 		"date": "2024-11-20",
-		"image": "/assets/music/strangerofkin.png",
+		"image": "/assets/music/stranger_of_kin_medium.png",
 		"otherVersions": [
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForMixedEnsemble",
@@ -107,7 +125,7 @@
 		},
 		"detailed_instrumentation": "Flute, Bb Clarinet (doubling Bass), Alto Saxophone, Violin, Viola, Cello, Piano, 2 Percussions",
 		"date": "2024-09-20",
-		"image": "/assets/music/strangerofkin.png",
+		"image": "/assets/music/stranger_of_kin_medium.png",
 		"otherVersions": [
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForChamberOrchestra",
@@ -130,19 +148,37 @@
 			"max": 7.5
 		},
 		"date": "2024-06-20",
-		"image": "/assets/music/strangerofkin.png",
+		"image": "/assets/music/stranger_of_kin_medium.png",
 		"otherVersions": [
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForChamberOrchestra",
 			"StrangerOfKinForMixedEnsemble"
-		]
+		],
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2162693694&color=%23000000",
+			"width": "100%",
+			"height": 180,
+			"link": "https://soundcloud.com/sinakarachiani/orison-for-string-quartet",
+			"title": "Stranger of Kin for Mixed-Quartet"
+		},
+		"score": {
+			"payhipPage": "https://payhip.com/b/I3ESR", 
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)",
+					"productId": "I3ESR",
+					"preview": "https://drive.google.com/file/d/1yMQ-R6sYj8-RFTY0N2vvNMak4tDwJhmx/view?usp=share_link",
+					"price": 40.00
+				}
+			]
+		}
 	},
 	{
 		"id": "aulosInWonderland",
 		"title": "Aulos in Wonderland",
 		"for": "Orchestra",
 		"summary": "Capriccio, a Period Composition for Orchestra",
-		"description": "Growing up in Iran, I had limited exposure to Western classical music. The music I encountered was primarily Iranian pop or traditional music, often heard on TV and radio. By chance, I discovered Tchaikovsky’s vibrant ballet scores, which ignited my passion for orchestral music. This marked the beginning of my journey into Western classical music, where I found inspiration in composers like Tchaikovsky and Mendelssohn. Inspired by the playful spirit of Tchaikovsky and the melodic richness of Mendelssohn, \"Aulos in Wonderland\" is a period composition - my homage to these two composers - that captures the simple joys, excitement, and boundless imagination of childhood. The music portrays an evocative journey through a whimsical land, reminiscent of classic fairy tales. The air thrums with the lilting melodies of the Aulos, an ancient Greek flute, as nymphs and fauns dance and frolic.",
+		"description": "Growing up in Iran, I had limited exposure to Western classical music. The music I encountered was primarily Iranian pop or traditional music, often heard on TV and radio. By chance, I discovered Tchaikovsky’s vibrant ballet scores, which ignited my passion for orchestral music. This marked the beginning of my journey into Western classical music, where I found inspiration in composers like Tchaikovsky and Mendelssohn.\n\nInspired by the playful spirit of Tchaikovsky and the melodic richness of Mendelssohn, \"Aulos in Wonderland\" is a period composition - my homage to these two composers - that captures the simple joys, excitement, and boundless imagination of childhood. The music portrays an evocative journey through a whimsical land, reminiscent of classic fairy tales. The air thrums with the lilting melodies of the Aulos, an ancient Greek flute, as nymphs and fauns dance and frolic.",
 		"category": "Large Ensemble",
 		"subcategory": "Orchestra",
 		"tags": ["Orchestra"],
@@ -154,10 +190,10 @@
 		"detailed_instrumentation": "",
 		"image": "/assets/music/aulosinwonderland_sq.png",
 		"soundcloud": {
-			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1834948383&color=%23ff5500",
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2162691318&color=%23252525",
 			"width": "100%",
 			"height": 180,
-			"link": "https://soundcloud.com/sinakarachiani/aulos-in-wonderland",
+			"link": "https://soundcloud.com/sinakarachiani/aulos-in-wonderland-full",
 			"title": "Aulos in Wonderland"
 		}
 	},
