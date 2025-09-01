@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { fade, scale } from 'svelte/transition';
+	import { fade, scale, slide } from 'svelte/transition';
 	import PayhipButton from './PayhipButton.svelte';
 	import Icon from 'svelte-awesome';
 	import eyeIcon from 'svelte-awesome/icons/eye';
@@ -24,8 +24,13 @@
 	
 	// Detect if user is on Safari
 	let isSafari = false;
+	let safariNoticeExpanded = false;
 	if (typeof window !== 'undefined') {
 		isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+	}
+	
+	function toggleSafariNotice() {
+		safariNoticeExpanded = !safariNoticeExpanded;
 	}
 	
 	function closeModal() {
@@ -113,32 +118,60 @@
 					<div class="flex justify-center mt-2">
 						<h3 class="text-lg font-semibold text-gray-900">{selectedScore.name} - {selectedScore.price === 0 ? 'Free' : `$${selectedScore.price.toFixed(2)}`}</h3>
 					</div>
-					<p class="text-gray-500 text-sm text-center mt-2">Check-out experience is powered by <span class="font-semibold">Payhip</span> & payments are processed securely by <span class="font-semibold">PayPal</span>. <br /> If the transaction fails, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.  
-						<!-- instead or use <span class="font-semibold">Chrome</span> browser</p> -->
-						<!-- as there are some issues browsers such as Safari <br/>On Safari, you may also temporarily disable <span class="font-semibold">Safari &gt; Settings &gt; Privacy &gt; Prevent cross-site tracking</span></p> -->
+					<p class="text-gray-500 text-sm text-center mt-2">Check-out experience is powered by <span class="font-semibold">Payhip</span> & payments are processed securely by <span class="font-semibold">PayPal</span>. <br /> If the transaction fails, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.</p>
+					<!-- instead or use <span class="font-semibold">Chrome</span> browser</p> -->
+					<!-- as there are some issues browsers such as Safari <br/>On Safari, you may also temporarily disable <span class="font-semibold">Safari &gt; Settings &gt; Privacy &gt; Prevent cross-site tracking</span></p> -->
+					
 					<!-- Safari compatibility note -->
 					{#if isSafari}
-						<div class="mt-6 mb-2 p-4 bg-amber-50 border border-amber-200 rounded-xl text-left">
-							<div class="flex items-start">
-								<div class="flex-shrink-0">
-									<svg class="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
-										<path fill-rule="evenodd" d="M8.485 3.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 3.495zM10 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 6zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-									</svg>
+						<div class="mt-6 mb-2">
+							<!-- Collapsed state -->
+							<button 
+								on:click={toggleSafariNotice}
+								class="w-full p-3 bg-amber-50 border border-amber-200 rounded-xl text-left hover:bg-amber-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-amber-300"
+								aria-expanded={safariNoticeExpanded}
+							>
+								<div class="flex items-center justify-between">
+									<div class="flex items-center">
+										<div class="flex-shrink-0">
+											<svg class="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+												<path fill-rule="evenodd" d="M8.485 3.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 3.495zM10 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 6zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+											</svg>
+										</div>
+										<div class="ml-3">
+											<span class="text-xs font-medium text-amber-800">
+												Safari User Notice: click here if transaction fails
+											</span>
+										</div>
+									</div>
+									<div class="flex-shrink-0">
+										<svg 
+											class="h-4 w-4 text-amber-600 transform transition-transform duration-200 {safariNoticeExpanded ? 'rotate-90' : ''}" 
+											viewBox="0 0 20 20" 
+											fill="currentColor"
+										>
+											<path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+										</svg>
+									</div>
 								</div>
-								<div class="ml-3">
-									<h3 class="text-sm font-medium text-amber-800">
-										Safari User Notice
-									</h3>
-									<div class="mt-2 text-xs text-amber-700">
-										<p>Safari's privacy settings may block the embedded checkout. If the purchase doesn't work, you can try one of the following:</p>
-										<ul class="mt-2 list-disc list-inside space-y-0.5">
+							</button>
+							
+							<!-- Expanded state -->
+							{#if safariNoticeExpanded}
+								<div 
+									class="p-4 bg-amber-50 border border-amber-200 rounded-xl border-t-0 rounded-t-none"
+									transition:slide={{ duration: 200 }}
+								>
+									<div class="text-xs text-amber-700">
+										<p class="mb-3">Safari's privacy settings may block the embedded checkout. If the purchase doesn't work, you can try one of the following:</p>
+										<ul class="list-disc list-inside space-y-0.5">
 											<li>Use <a href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer" class="underline font-medium">direct PayHip store link</a></li>
 											<li>Use Chrome or Firefox browser</li>
 											<li>Temporarily disable: Safari → Settings → Privacy → Uncheck "Prevent cross-site tracking"</li>
 										</ul>
 									</div>
 								</div>
-							</div>
+							{/if}
 						</div>
 					{/if}
 				</div>
