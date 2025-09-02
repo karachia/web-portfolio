@@ -46,6 +46,7 @@
 		},
 		"date": "2025-05-12",
 		"detailed_instrumentation": "2 Violins, Viola, Cello",
+		"videos": ["https://www.youtube.com/embed/OSNETvVimig?si=Ss4tCKblQ1LB_0D2"],
 		"soundcloud": {
 			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2162692143&color=%23000000",
 			"width": "100%",
@@ -484,7 +485,7 @@
 		},
 		"date": "2017-03-11",
 		"detailed_instrumentation": "",
-		"image": "",
+		"image": "/assets/music/wandereroflonelystreets.png",
 		"soundcloud": "",
 		"videos": [],
 		"recordings": []
@@ -502,7 +503,6 @@
 		},
 		"date": "2016-11-11",
 		"detailed_instrumentation": "",
-		"image": "",
 		"soundcloud": "",
 		"videos": ["https://www.youtube.com/embed/xsoLlCgB1rk?si=vmc1JqRktdy0x986"],
 		"image": "/assets/music/persistence_medium.png",
