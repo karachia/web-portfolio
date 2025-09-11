@@ -140,7 +140,7 @@
 										</div>
 										<div class="ml-3">
 											<span class="text-xs font-medium text-amber-800">
-												Safari User Notice: click here if transaction fails
+												Safari Users: click here if transaction fails
 											</span>
 										</div>
 									</div>

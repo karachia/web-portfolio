@@ -4,6 +4,7 @@
   import MusicStreamingLinks from '$lib/components/MusicStreamingLinks.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import github from 'svelte-awesome/icons/github';
+  import youtube from 'svelte-awesome/icons/youtube';
   import instagram from 'svelte-awesome/icons/instagram';
   import soundcloud from 'svelte-awesome/icons/soundcloud';
   import linkedin from 'svelte-awesome/icons/linkedin';
@@ -15,6 +16,7 @@
   let musicData: any[] = [];
   let whirlingOnward: any = null;
   let carolyn: any = null;
+  let orison: any = null;
 
   onMount(async () => {
     const res = await fetch('/data/music.json');
@@ -25,6 +27,10 @@
 
     carolyn = musicData.find(
       (item) => item.id === 'carolyn' || item.title?.toLowerCase().includes('carolyn')
+    );
+
+    orison = musicData.find(
+      (item) => item.id === 'orisonForStringQuartet' || item.title?.toLowerCase().includes('orison')
     );
   });
 
@@ -64,11 +70,14 @@
         Composer • Artist • Pianist • Software Engineer
       </h2>
       <div class="flex space-x-5 mb-0">
-        <a href="https://github.com/karachia" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
-          <Icon data={github} scale={1.3} />
+        <a href="https://www.youtube.com/@SinaKarachianiMusic/" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
+          <Icon data={youtube} scale={1.3} />
         </a>
         <a href="https://instagram.com/sina.karachiani.music" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
           <Icon data={instagram} scale={1.3} />
+        </a>
+        <a href="https://github.com/karachia" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
+          <Icon data={github} scale={1.3} />
         </a>
         <a href="https://www.linkedin.com/in/sina-karachiani-5b9b8593/" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
           <Icon data={linkedin} scale={1.3} />
@@ -83,7 +92,11 @@
     </div>
 
     <div class="w-full max-w-lg space-y-4 relative z-[2] mt-0 mx-auto px-4 mb-36">
-     
+      <ExploreLink
+        title='Dance Film for "Whirling Onward..."'
+        href="https://youtu.be/zbDhZ-TRa4A?si=Sn_GGlWxl2Mrsm91"
+        image="/assets/music/whirlingdancefilm.png"
+      />
       <ExploreLink
         title='Stream "Whirling, Onward..." for Orchestra'
         modalContent={MusicStreamingLinks}
@@ -92,17 +105,18 @@
         image="/assets/music/whirlingonward.png"
       />
       <ExploreLink
+        title='Score Video for "Orison" for String Quartet'
+        href="https://www.youtube.com/watch?v=OSNETvVimig"
+        image="/assets/music/orison_small.png"
+      />
+      <ExploreLink
         title='Stream "Carolyn" for Piano Solo'
         modalContent={MusicStreamingLinks}
         modalProps={carolyn ? { recordings: carolyn.recordings, title: carolyn.title } : { recordings: {}, title: 'Carolyn' }}
         icon={music}
         image="/assets/music/carolyn.png"
       />
-      <ExploreLink
-        title='Watch the dance film for "Whirling Onward..."'
-        href="https://youtu.be/zbDhZ-TRa4A?si=Sn_GGlWxl2Mrsm91"
-        image="/assets/music/whirlingdancefilm.png"
-      />
+
       <ExploreLink
       title="Website (SinaKarachiani.com)"
       href="/"
