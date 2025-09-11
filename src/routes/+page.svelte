@@ -76,7 +76,7 @@
 			<img
 				src="/assets/SK_Brand.png"
 				alt="Sina Karachiani Logo"
-				class="-mt-30 md:-mt-6 h-24 md:h-44 w-auto rounded drop-shadow-lg"
+				class="-mt-12 md:-mt-6 h-24 md:h-44 w-auto rounded drop-shadow-lg"
 			/>
 			<div class="flex flex-col items-center text-center sm:items-start sm:text-left">
 				<h1
@@ -135,7 +135,7 @@
 		<!-- Latest Releases Row -->
 		<LatestReleasesMinimal />
 	</div>
-	<div class="mt-7 md:mt-15"></div>
+	<div class="mt-9 md:mt-15"></div>
 	<!-- Down chevron button -->
 	<a
 		href="#welcome"
