@@ -91,7 +91,8 @@
 			"url": "https://static1.squarespace.com/static/62560d51a8c6693ad47609a9/t/68dac6d267df56156348e49b/1759168217170/Stranger+of+Kin+Excerpt+-+Short.mp3/original/Stranger+of+Kin+Excerpt+-+Short.mp3",
 			"title": "Stranger of Kin for Orchestra - Excerpt",
 			"subtitle": "performed by the Memphis Symphony Orchestra",
-			"description": "Listen to an excerpt from the premiere.",
+			"description": "Listen to the excerpt from the premiere and click the link to read the spotlight article on the Memphis Symphony Orchestra website.",
+			"shortDescription": "Click the link to read the spotlight article on the MSO's website.",
 			"image": "/assets/music/stranger_of_kin_medium.png",
 			"image2": "/assets/memphis.webp",
 			"link": "https://memphissymphony.org/composer-hightlight"
@@ -117,7 +118,27 @@
 			"StrangerOfKinForOrchestra",
 			"StrangerOfKinForMixedEnsemble",
 			"StrangerOfKinForMixedQuartet"
-		]
+		],
+		"customRecording": {
+			"url": "https://static1.squarespace.com/static/62560d51a8c6693ad47609a9/t/68dac6d267df56156348e49b/1759168217170/Stranger+of+Kin+Excerpt+-+Short.mp3/original/Stranger+of+Kin+Excerpt+-+Short.mp3",
+			"title": "Stranger of Kin for Orchestra - Excerpt",
+			"subtitle": "performed by the Memphis Symphony Orchestra",
+			"description": "Listen to the excerpt from the premiere.",
+			"shortDescription": "Click the link to read the spotlight article on the MSO's website.",
+			"image": "/assets/music/stranger_of_kin_medium.png",
+			"image2": "/assets/memphis.webp",
+			"link": "https://memphissymphony.org/composer-hightlight"
+		},
+		"customSection": {
+			"sectionTitle": "Listen",
+			"link": "https://memphissymphony.org/composer-hightlight",
+			"bannerImage": "xyz",
+			"description": "Listen to an excerpt from the premiere and click the link to read the spotlight article on the Memphis Symphony Orchestra website.",
+			"images": [
+				"/assets/memphis.webp",
+				"/assets/music/stranger_of_kin_medium.png"
+			]
+		}
 	},
 	{
 		"id": "StrangerOfKinForMixedEnsemble",

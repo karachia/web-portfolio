@@ -297,7 +297,14 @@
 								{#if musicItem.recordings && musicItem.recordings.preview}
 									<!-- Streaming Preview -->
 									<StreamingEmbed item={musicItem} />
-								{:else if musicItem.soundcloud && musicItem.soundcloud.url}
+								{/if}
+
+								<!-- Custom Recording -->
+								{#if musicItem.customRecording && musicItem.customRecording.url}
+									<CustomAudioPlayer recording={musicItem.customRecording} />
+								{/if}
+
+								{#if musicItem.soundcloud && musicItem.soundcloud.url }
 									<!-- SoundCloud -->
 									<SoundCloudEmbed
 										trackUrl={musicItem.soundcloud.url}
@@ -307,10 +314,7 @@
 									/>
 								{/if}
 
-								<!-- Custom Recording -->
-								{#if musicItem.customRecording && musicItem.customRecording.url}
-									<CustomAudioPlayer recording={musicItem.customRecording} />
-								{/if}
+								
 							</div>
 						{/if}
 

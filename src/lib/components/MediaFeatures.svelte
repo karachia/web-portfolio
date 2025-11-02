@@ -15,7 +15,7 @@
   // Check what media features are available
   $: hasRecording = (item.recordings && item.recordings.preview) || hasValidItems(item.recordings);
   $: hasVideo = hasValidItems(item.videos);
-  $: hasAudio = isValidString(item.soundcloud) || (item.soundcloud && item.soundcloud.url);
+  $: hasAudio = isValidString(item.soundcloud) || (item.soundcloud && item.soundcloud.url) || (item.customRecording && item.customRecording.url);
 </script>
 
 <div class="flex items-center space-x-3">

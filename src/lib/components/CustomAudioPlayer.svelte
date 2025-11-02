@@ -171,6 +171,13 @@
 								<p class="mt-0 text-sm md:text-base text-zinc-600 italic">{recording.subtitle}</p>
 							{/if}
 						</div>
+						<!-- Small screen description: show shortDescription if available, otherwise description -->
+						{#if recording.shortDescription || recording.description}
+							<p class="sm:hidden text-xs text-zinc-500 pt-4 leading-relaxed">
+								{recording.shortDescription || recording.description}
+							</p>
+						{/if}
+						<!-- Large screen description: always show full description -->
 						{#if recording.description}
 							<p class="hidden sm:block text-xs md:text-sm text-zinc-500 pt-2 leading-relaxed">{recording.description}</p>
 						{/if}
