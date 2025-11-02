@@ -69,7 +69,7 @@
 	$: progress = duration ? (currentTime / duration) * 100 : 0;
 </script>
 
-<div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 my-8">
+<div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 my-8">
 	<audio
 		bind:this={audio}
 		src={recording.url}
@@ -78,39 +78,82 @@
 		on:ended={() => (playing = false)}
 	></audio>
 
-	<div class="flex gap-4 md:gap-6 items-start flex-col md:flex-row">
+	<div class="flex gap-4 items-stretch sm:items-start flex-col sm:flex-row">
 		{#if recording.image}
-			<div class="flex-shrink-0 w-full md:w-[120px] h-auto md:h-[120px] max-w-[200px] md:max-w-none mx-auto md:mx-0 rounded-xl overflow-hidden shadow-md">
+			<!-- Image on left side for sm+ screens -->
+			<div class="hidden sm:block flex-shrink-0 self-start w-[120px] h-[120px] rounded-xl overflow-hidden shadow-md">
 				<img src={recording.image} alt={recording.title} class="w-full h-full object-cover" />
 			</div>
 		{/if}
 
 		<!-- Right side content -->
-		<div class="flex-1 flex flex-col gap-4">
+		<div class="flex-1 flex flex-col gap-3 sm:gap-4 min-w-0">
 			<!-- Top row: Play button and Text content -->
-			<div class="flex gap-4 items-start">
-				<!-- Play button -->
-				<div class="flex justify-center md:justify-start">
+			<div class="flex gap-3 sm:gap-4 items-start">
+				<!-- Play button - visible on sm+ screens only -->
+				<div class="hidden sm:block flex-shrink-0">
 					<button class="play-button-large" on:click={togglePlay} aria-label={playing ? 'Pause' : 'Play'}>
 						{#if playing}
-							<Icon data={pause} scale={1.8} />
+							<span class="icon-wrapper">
+								<Icon data={pause} scale={1.5} />
+							</span>
 						{:else}
-							<span class="play-icon-adjust">
-								<Icon data={play} scale={1.8} />
+							<span class="play-icon-adjust icon-wrapper">
+								<Icon data={play} scale={1.5} />
 							</span>
 						{/if}
 					</button>
 				</div>
 
 				<!-- Text content -->
-				<div class="flex-1 flex justify-between items-start gap-4">
-					<div class="flex-1">
-						<h3 class="m-0 text-lg font-semibold text-zinc-800 leading-snug">{recording.title}</h3>
-						{#if recording.subtitle}
-							<p class="mt-0 text-base text-zinc-600 italic">{recording.subtitle}</p>
-						{/if}
+				<div class="flex-1 flex justify-between items-start gap-3 sm:gap-4 min-w-0">
+					<div class="flex-1 min-w-0 text-left">
+						<!-- Small screen: play button + text -->
+						<div class="sm:hidden flex items-start gap-2">
+							<button class="play-button-small flex-shrink-0" on:click={togglePlay} aria-label={playing ? 'Pause' : 'Play'}>
+								{#if playing}
+									<span class="icon-wrapper-small">
+										<Icon data={pause} scale={1.5} />
+									</span>
+								{:else}
+									<span class="play-icon-adjust-small icon-wrapper-small">
+										<Icon data={play} scale={1.5} />
+									</span>
+								{/if}
+							</button>
+							<div class="flex-1">
+								<h3 class="m-0 text-base md:text-lg font-semibold text-zinc-800 leading-snug">
+									{recording.title}
+									{#if recording.link}
+										<a
+											href={recording.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="inline-flex items-center justify-center w-5 h-5 text-zinc-600 hover:text-zinc-900 transition-colors duration-200 align-middle ml-1"
+											title="Open link"
+										>
+											<Icon data={externalLink} scale={0.8} />
+										</a>
+									{/if}
+								</h3>
+								{#if recording.subtitle}
+									<p class="mt-0 text-sm md:text-base text-zinc-600 italic">
+										{recording.subtitle}
+									</p>
+								{/if}
+							</div>
+						</div>
+						<!-- Large screen: text only -->
+						<div class="hidden sm:block">
+							<h3 class="m-0 text-base md:text-lg font-semibold text-zinc-800 leading-snug">
+								{recording.title}
+							</h3>
+							{#if recording.subtitle}
+								<p class="mt-0 text-sm md:text-base text-zinc-600 italic">{recording.subtitle}</p>
+							{/if}
+						</div>
 						{#if recording.description}
-							<p class="text-sm text-zinc-500 pt-2 leading-relaxed">{recording.description}</p>
+							<p class="hidden sm:block text-xs md:text-sm text-zinc-500 pt-2 leading-relaxed">{recording.description}</p>
 						{/if}
 					</div>
 					{#if recording.link}
@@ -118,7 +161,7 @@
 							href={recording.link}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg bg-black/4 text-zinc-700 hover:bg-black/10 hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+							class="hidden sm:flex flex-shrink-0 items-center justify-center w-7 h-7 rounded-lg bg-black/4 text-zinc-700 hover:bg-black/10 hover:text-black hover:-translate-y-0.5 transition-all duration-200"
 							title="Open link"
 						>
 							<Icon data={externalLink} scale={1.0} />
@@ -127,9 +170,14 @@
 				</div>
 			</div>
 
-			<!-- Timeline controls -->
-			<div class="flex items-center gap-4">
-				<span class="text-[0.85rem] text-zinc-600 tabular-nums min-w-[40px] text-center">{formatTime(currentTime)}</span>
+			<!-- Timeline controls - Small screens -->
+			<div class="sm:hidden flex flex-col gap-2">
+				<!-- Timestamps row -->
+				<div class="flex items-center justify-between px-1">
+					<span class="text-xs text-zinc-600 tabular-nums">{formatTime(currentTime)}</span>
+					<span class="text-xs text-zinc-600 tabular-nums">{formatTime(duration)}</span>
+				</div>
+				<!-- Timeline -->
 				<div
 					class="timeline"
 					on:click={handleSeek}
@@ -146,7 +194,28 @@
 					<div class="timeline-progress" style="width: {progress}%"></div>
 					<div class="timeline-handle" style="left: {progress}%"></div>
 				</div>
-				<span class="text-[0.85rem] text-zinc-600 tabular-nums min-w-[40px] text-center">{formatTime(duration)}</span>
+			</div>
+
+			<!-- Timeline controls - Larger screens -->
+			<div class="hidden sm:flex items-center gap-3">
+				<span class="text-xs sm:text-[0.85rem] text-zinc-600 tabular-nums min-w-[35px] text-left">{formatTime(currentTime)}</span>
+				<div
+					class="timeline"
+					on:click={handleSeek}
+					on:keydown={handleKeydown}
+					on:mousedown={handleSeekStart}
+					on:mouseup={handleSeekEnd}
+					role="slider"
+					tabindex="0"
+					aria-label="Seek"
+					aria-valuemin="0"
+					aria-valuemax={duration}
+					aria-valuenow={currentTime}
+				>
+					<div class="timeline-progress" style="width: {progress}%"></div>
+					<div class="timeline-handle" style="left: {progress}%"></div>
+				</div>
+				<span class="text-xs sm:text-[0.85rem] text-zinc-600 tabular-nums min-w-[35px] text-right">{formatTime(duration)}</span>
 			</div>
 		</div>
 	</div>
@@ -155,8 +224,8 @@
 <style>
 	.play-button-large {
 		flex-shrink: 0;
-		width: 64px;
-		height: 64px;
+		width: 48px;
+		height: 48px;
 		border-radius: 50%;
 		border: none;
 		background: rgba(0, 0, 0, 0.9);
@@ -169,9 +238,50 @@
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	}
 
-	.play-icon-adjust {
+	@media (min-width: 640px) {
+		.play-button-large {
+			width: 56px;
+			height: 56px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.play-button-large {
+			width: 64px;
+			height: 64px;
+		}
+	}
+
+	.icon-wrapper {
 		display: inline-flex;
-		margin-left: 3px;
+	}
+
+	@media (min-width: 640px) {
+		.icon-wrapper {
+			transform: scale(1.07);
+		}
+	}
+
+	@media (min-width: 768px) {
+		.icon-wrapper {
+			transform: scale(1.2);
+		}
+	}
+
+	.play-icon-adjust {
+		margin-left: 2px;
+	}
+
+	@media (min-width: 640px) {
+		.play-icon-adjust {
+			margin-left: 2.5px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.play-icon-adjust {
+			margin-left: 3px;
+		}
 	}
 
 	.play-button-large:hover {
@@ -182,6 +292,40 @@
 
 	.play-button-large:active {
 		transform: scale(0.98);
+	}
+
+	.play-button-small {
+		flex-shrink: 0;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		border: none;
+		background: rgba(0, 0, 0, 0.9);
+		color: white;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	.play-button-small:hover {
+		transform: scale(1.05);
+		background: rgba(0, 0, 0, 1.0);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+	}
+
+	.play-button-small:active {
+		transform: scale(0.98);
+	}
+
+	.icon-wrapper-small {
+		display: inline-flex;
+	}
+
+	.play-icon-adjust-small {
+		margin-left: 3px;
 	}
 
 	.timeline {

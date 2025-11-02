@@ -93,6 +93,7 @@
 			"subtitle": "performed by the Memphis Symphony Orchestra",
 			"description": "Listen to an excerpt from the premiere.",
 			"image": "/assets/music/stranger_of_kin_medium.png",
+			"image2": "/assets/memphis.webp",
 			"link": "https://memphissymphony.org/composer-hightlight"
 		}
 	},
