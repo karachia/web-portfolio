@@ -1,7 +1,7 @@
 [
     {
         "title": "Spotlight: Stranger of Kin for Orchestra",
-        "description": "Read about and listen to excerpt from the premiere by the Memphis Symphony Orchestra.",
+        "description": "Read about and listen to the excerpt from the premiere by the Memphis Symphony Orchestra.",
         "image": "/assets/mso.webp",
         "link": "https://memphissymphony.org/composer-hightlight"
     },
@@ -12,10 +12,10 @@
         "link": "music/orisonForStringQuartet"
     },
     {
-        "title": "Stranger of Kin for Mixed-Quartet",
-        "description": "Recording and downloadable PDF score now available.",
+        "title": "Highlight: Stranger of Kin for Orchestra",
+        "description": "A deeply personal reflection on Alzheimer's disease and memory loss (audio excerpt available).",
         "image": "/assets/music/stranger_of_kin_small.png",
-        "link": "music/StrangerOfKinForMixedQuartet"
+        "link": "music/StrangerOfKinForOrchestra"
     },
     {
         "title": "Whirling Onward for Orchestra",

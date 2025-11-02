@@ -97,6 +97,19 @@
         href="https://youtu.be/zbDhZ-TRa4A?si=Sn_GGlWxl2Mrsm91"
         image="/assets/music/whirlingdancefilm.png"
       />
+
+      <ExploreLink
+        title='Score Video for "Orison" for String Quartet'
+        href="https://www.youtube.com/watch?v=OSNETvVimig"
+        image="/assets/music/orison_small.png"
+      />
+
+      <ExploreLink
+        title='Stranger of Kin for Orchestra"'
+        href="https://sinakarachiani.com/music/StrangerOfKinForOrchestra"
+        image="/assets/mso.webp"
+      />
+
       <ExploreLink
         title='Stream "Whirling, Onward..." for Orchestra'
         modalContent={MusicStreamingLinks}
@@ -104,11 +117,7 @@
         icon={music}
         image="/assets/music/whirlingonward.png"
       />
-      <ExploreLink
-        title='Score Video for "Orison" for String Quartet'
-        href="https://www.youtube.com/watch?v=OSNETvVimig"
-        image="/assets/music/orison_small.png"
-      />
+
       <ExploreLink
         title='Stream "Carolyn" for Piano Solo'
         modalContent={MusicStreamingLinks}
