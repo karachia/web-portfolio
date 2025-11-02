@@ -94,7 +94,6 @@
 			"description": "Listen to the excerpt from the premiere and click the link to read the spotlight article on the Memphis Symphony Orchestra website.",
 			"shortDescription": "Click the link to read the spotlight article on the MSO's website.",
 			"image": "/assets/music/stranger_of_kin_medium.png",
-			"image2": "/assets/memphis.webp",
 			"link": "https://memphissymphony.org/composer-hightlight"
 		},
 		"customSections": [
@@ -153,7 +152,6 @@
 			"description": "Listen to the excerpt from the premiere.",
 			"shortDescription": "Click the link to read the spotlight article on the MSO's website.",
 			"image": "/assets/music/stranger_of_kin_medium.png",
-			"image2": "/assets/memphis.webp",
 			"link": "https://memphissymphony.org/composer-hightlight"
 		},
 		"customSections": [
