@@ -326,8 +326,12 @@
 							</div>
 						{/if}
 
-						<!-- Custom Section -->
-						<CustomSection customSection={musicItem.customSection} />
+						<!-- Custom Sections -->
+						{#if musicItem.customSections || musicItem.customSections.length > 0}
+							{#each musicItem.customSections as section}
+								<CustomSection customSection={section} />
+							{/each}
+						{/if}
 
 						<!-- If there is no content bsides a description, show a spacer -->
 						{#if isValidString(musicItem.description) && (!musicItem.videos || musicItem.videos.length === 0) && (!musicItem.recordings || !musicItem.recordings.preview) && (!musicItem.soundcloud || !musicItem.soundcloud.url) && (!musicItem.customSection)}

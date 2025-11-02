@@ -1,5 +1,11 @@
 [
     {
+        "title": "Spotlight: Stranger of Kin for Orchestra",
+        "description": "Read about and listen to excerpt from the premiere by the Memphis Symphony Orchestra.",
+        "image": "/assets/mso.webp",
+        "link": "https://memphissymphony.org/composer-hightlight"
+    },
+    {
         "title": "Orison for String Quartet",
         "description": "Score Video, Recording, and downloadable PDF score now available.",
         "image": "/assets/music/orison_small.png",
