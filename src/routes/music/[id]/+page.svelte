@@ -14,6 +14,7 @@
 	import ScoreModal from '$lib/components/ScoreModal.svelte';
 	import Movements from '$lib/components/Movements.svelte';
 	import CustomAudioPlayer from '$lib/components/CustomAudioPlayer.svelte';
+	import CustomSection from '$lib/components/CustomSection.svelte';
 	import { fade } from 'svelte/transition';
 
 	let musicItem: any = null;
@@ -285,7 +286,6 @@
 								{/if}
 							</div>
 						{/if}
-						
 
 						<!-- Listen Section -->
 						{#if (musicItem.recordings && musicItem.recordings.preview) || (musicItem.soundcloud && musicItem.soundcloud.url) || (musicItem.customRecording && musicItem.customRecording.url)}
@@ -313,8 +313,6 @@
 										trackTitle={musicItem.soundcloud.title || musicItem.title}
 									/>
 								{/if}
-
-								
 							</div>
 						{/if}
 
@@ -328,8 +326,11 @@
 							</div>
 						{/if}
 
+						<!-- Custom Section -->
+						<CustomSection customSection={musicItem.customSection} />
+
 						<!-- If there is no content bsides a description, show a spacer -->
-						{#if isValidString(musicItem.description) && (!musicItem.videos || musicItem.videos.length === 0) && (!musicItem.recordings || !musicItem.recordings.preview) && (!musicItem.soundcloud || !musicItem.soundcloud.url)}
+						{#if isValidString(musicItem.description) && (!musicItem.videos || musicItem.videos.length === 0) && (!musicItem.recordings || !musicItem.recordings.preview) && (!musicItem.soundcloud || !musicItem.soundcloud.url) && (!musicItem.customSection)}
 							<div class="mt-16">   </div>
 						{/if}
 

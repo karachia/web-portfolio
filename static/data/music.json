@@ -129,16 +129,33 @@
 			"image2": "/assets/memphis.webp",
 			"link": "https://memphissymphony.org/composer-hightlight"
 		},
-		"customSection": {
-			"sectionTitle": "Listen",
-			"link": "https://memphissymphony.org/composer-hightlight",
-			"bannerImage": "xyz",
-			"description": "Listen to an excerpt from the premiere and click the link to read the spotlight article on the Memphis Symphony Orchestra website.",
-			"images": [
-				"/assets/memphis.webp",
-				"/assets/music/stranger_of_kin_medium.png"
-			]
-		}
+		"customSection": [
+			{
+				"title": "Spotlight",
+				"link": "https://memphissymphony.org/composer-hightlight",
+				"linkText": "Read the Full Article",
+				"bannerImage": "/assets/mso.webp",
+				"description": "<h2 class='mb-3'><strong>Memphis Symphony Orchestra</strong></h2>&nbsp<i>Stranger of Kin was premiered by the Memphis Symphony Orchestra under the baton of Kyle Dickson as part of the inaugural Memphis Composers Institute. This powerful work explores the complex emotions surrounding a loved one's struggle with Alzheimer's disease, mirroring the disorienting nature of memory loss in a cyclical structure. Read the full composer highlight on the Memphis Symphony Orchestra website.<i>",
+				"images": [
+					"/assets/memphisComposerInstitue/1.jpeg",
+					"/assets/memphisComposerInstitue/2.jpeg",
+					"/assets/memphisComposerInstitue/3.jpeg",
+					"/assets/memphisComposerInstitue/5.jpeg"
+				]
+			},
+			{
+				"link": "https://memphissymphony.org/composer-hightlight",
+				"linkText": "Read the Full Article",
+				"bannerImage": "/assets/mso.webp",
+				"description": "<h2 class='mb-3'><strong>Memphis Symphony Orchestra</strong></h2>&nbsp<i>Stranger of Kin was premiered by the Memphis Symphony Orchestra under the baton of Kyle Dickson as part of the inaugural Memphis Composers Institute. This powerful work explores the complex emotions surrounding a loved one's struggle with Alzheimer's disease, mirroring the disorienting nature of memory loss in a cyclical structure. Read the full composer highlight on the Memphis Symphony Orchestra website.<i>",
+				"images": [
+					"/assets/memphisComposerInstitue/1.jpeg",
+					"/assets/memphisComposerInstitue/2.jpeg",
+					"/assets/memphisComposerInstitue/3.jpeg",
+					"/assets/memphisComposerInstitue/5.jpeg"
+				]
+			}
+		]
 	},
 	{
 		"id": "StrangerOfKinForMixedEnsemble",
