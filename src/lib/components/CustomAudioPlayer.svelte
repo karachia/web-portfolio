@@ -69,7 +69,7 @@
 	$: progress = duration ? (currentTime / duration) * 100 : 0;
 </script>
 
-<div class="custom-audio-player">
+<div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 my-8">
 	<audio
 		bind:this={audio}
 		src={recording.url}
@@ -78,203 +78,110 @@
 		on:ended={() => (playing = false)}
 	></audio>
 
-	<div class="player-content">
+	<div class="flex gap-4 md:gap-6 items-start flex-col md:flex-row">
 		{#if recording.image}
-			<div class="album-art">
-				<img src={recording.image} alt={recording.title} />
+			<div class="flex-shrink-0 w-full md:w-[120px] h-auto md:h-[120px] max-w-[200px] md:max-w-none mx-auto md:mx-0 rounded-xl overflow-hidden shadow-md">
+				<img src={recording.image} alt={recording.title} class="w-full h-full object-cover" />
 			</div>
 		{/if}
 
-		<div class="player-info">
-			<div class="info-header">
-				<div class="text-content">
-					<h3 class="track-title">{recording.title}</h3>
-					{#if recording.subtitle}
-						<p class="track-subtitle">{recording.subtitle}</p>
-					{/if}
-					{#if recording.description}
-						<p class="text-sm text-zinc-500 pt-4">{recording.description}</p>
+		<!-- Right side content -->
+		<div class="flex-1 flex flex-col gap-4">
+			<!-- Top row: Play button and Text content -->
+			<div class="flex gap-4 items-start">
+				<!-- Play button -->
+				<div class="flex justify-center md:justify-start">
+					<button class="play-button-large" on:click={togglePlay} aria-label={playing ? 'Pause' : 'Play'}>
+						{#if playing}
+							<Icon data={pause} scale={1.8} />
+						{:else}
+							<span class="play-icon-adjust">
+								<Icon data={play} scale={1.8} />
+							</span>
+						{/if}
+					</button>
+				</div>
+
+				<!-- Text content -->
+				<div class="flex-1 flex justify-between items-start gap-4">
+					<div class="flex-1">
+						<h3 class="m-0 text-lg font-semibold text-zinc-800 leading-snug">{recording.title}</h3>
+						{#if recording.subtitle}
+							<p class="mt-0 text-base text-zinc-600 italic">{recording.subtitle}</p>
+						{/if}
+						{#if recording.description}
+							<p class="text-sm text-zinc-500 pt-2 leading-relaxed">{recording.description}</p>
+						{/if}
+					</div>
+					{#if recording.link}
+						<a
+							href={recording.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg bg-black/4 text-zinc-700 hover:bg-black/10 hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+							title="Open link"
+						>
+							<Icon data={externalLink} scale={1.0} />
+						</a>
 					{/if}
 				</div>
-				{#if recording.link}
-					<a
-						href={recording.link}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="external-link"
-						title="Open link"
-					>
-						<Icon data={externalLink} scale={1.2} />
-					</a>
-				{/if}
 			</div>
 
-			<div class="player-controls">
-				<button class="play-button" on:click={togglePlay} aria-label={playing ? 'Pause' : 'Play'}>
-					{#if playing}
-						<Icon data={pause} scale={1.3} />
-					{:else}
-						<Icon data={play} scale={1.3} />
-					{/if}
-				</button>
-
-				<div class="timeline-container">
-					<span class="time-display">{formatTime(currentTime)}</span>
-					<div
-						class="timeline"
-						on:click={handleSeek}
-						on:keydown={handleKeydown}
-						on:mousedown={handleSeekStart}
-						on:mouseup={handleSeekEnd}
-						role="slider"
-						tabindex="0"
-						aria-label="Seek"
-						aria-valuemin="0"
-						aria-valuemax={duration}
-						aria-valuenow={currentTime}
-					>
-						<div class="timeline-progress" style="width: {progress}%"></div>
-						<div class="timeline-handle" style="left: {progress}%"></div>
-					</div>
-					<span class="time-display">{formatTime(duration)}</span>
+			<!-- Timeline controls -->
+			<div class="flex items-center gap-4">
+				<span class="text-[0.85rem] text-zinc-600 tabular-nums min-w-[40px] text-center">{formatTime(currentTime)}</span>
+				<div
+					class="timeline"
+					on:click={handleSeek}
+					on:keydown={handleKeydown}
+					on:mousedown={handleSeekStart}
+					on:mouseup={handleSeekEnd}
+					role="slider"
+					tabindex="0"
+					aria-label="Seek"
+					aria-valuemin="0"
+					aria-valuemax={duration}
+					aria-valuenow={currentTime}
+				>
+					<div class="timeline-progress" style="width: {progress}%"></div>
+					<div class="timeline-handle" style="left: {progress}%"></div>
 				</div>
+				<span class="text-[0.85rem] text-zinc-600 tabular-nums min-w-[40px] text-center">{formatTime(duration)}</span>
 			</div>
 		</div>
 	</div>
 </div>
 
 <style>
-	.custom-audio-player {
-		background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
-		border-radius: 16px;
-		padding: 2rem;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-		margin: 2rem 0;
-		transition: box-shadow 0.3s ease;
-	}
-
-	.custom-audio-player:hover {
-		box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
-	}
-
-	.player-content {
-		display: flex;
-		gap: 2rem;
-		align-items: flex-start;
-	}
-
-	.album-art {
+	.play-button-large {
 		flex-shrink: 0;
-		width: 120px;
-		height: 120px;
-		border-radius: 12px;
-		overflow: hidden;
-		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-	}
-
-	.album-art img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.player-info {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-	}
-
-	.info-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		gap: 1rem;
-	}
-
-	.text-content {
-		flex: 1;
-	}
-
-	.track-title {
-		margin: 0;
-		font-size: 1.25rem;
-		font-weight: 600;
-		color: #1a1a1a;
-		line-height: 1.3;
-	}
-
-	.track-subtitle {
-		margin: 0.5rem 0 0 0;
-		font-size: 0.95rem;
-		color: #666;
-		font-style: italic;
-	}
-
-	.external-link {
-		flex-shrink: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 36px;
-		height: 36px;
-		border-radius: 8px;
-		background: rgba(0, 0, 0, 0.05);
-		color: #444;
-		transition: all 0.2s ease;
-		text-decoration: none;
-	}
-
-	.external-link:hover {
-		background: rgba(0, 0, 0, 0.1);
-		color: #000;
-		transform: translateY(-2px);
-	}
-
-	.player-controls {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-
-	.play-button {
-		flex-shrink: 0;
-		width: 48px;
-		height: 48px;
+		width: 64px;
+		height: 64px;
 		border-radius: 50%;
 		border: none;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: rgba(0, 0, 0, 0.9);
 		color: white;
 		cursor: pointer;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		transition: all 0.3s ease;
-		box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	}
 
-	.play-button:hover {
+	.play-icon-adjust {
+		display: inline-flex;
+		margin-left: 3px;
+	}
+
+	.play-button-large:hover {
 		transform: scale(1.05);
-		box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+		background: rgba(0, 0, 0, 1.0);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 	}
 
-	.play-button:active {
+	.play-button-large:active {
 		transform: scale(0.98);
-	}
-
-	.timeline-container {
-		flex: 1;
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-
-	.time-display {
-		font-size: 0.85rem;
-		color: #666;
-		font-variant-numeric: tabular-nums;
-		min-width: 40px;
-		text-align: center;
 	}
 
 	.timeline {
@@ -293,7 +200,7 @@
 
 	.timeline-progress {
 		height: 100%;
-		background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
 		border-radius: 3px;
 		transition: width 0.1s ease;
 	}
@@ -305,7 +212,7 @@
 		width: 14px;
 		height: 14px;
 		background: white;
-		border: 2px solid #667eea;
+		border: 2px solid rgba(0, 0, 0, 0.7);
 		border-radius: 50%;
 		opacity: 0;
 		transition: opacity 0.2s ease;
@@ -314,47 +221,6 @@
 
 	.timeline:hover .timeline-handle {
 		opacity: 1;
-	}
-
-	@media (max-width: 768px) {
-		.custom-audio-player {
-			padding: 1.5rem;
-		}
-
-		.player-content {
-			flex-direction: column;
-			gap: 1.5rem;
-		}
-
-		.album-art {
-			width: 100%;
-			height: auto;
-			aspect-ratio: 1;
-			max-width: 200px;
-			margin: 0 auto;
-		}
-
-		.track-title {
-			font-size: 1.1rem;
-		}
-
-		.track-subtitle {
-			font-size: 0.85rem;
-		}
-
-		.player-controls {
-			flex-direction: column;
-			align-items: stretch;
-			gap: 1rem;
-		}
-
-		.play-button {
-			align-self: center;
-		}
-
-		.timeline-container {
-			width: 100%;
-		}
 	}
 </style>
 
