@@ -86,7 +86,16 @@
 			"StrangerOfKinForChamberOrchestra",
 			"StrangerOfKinForMixedEnsemble",
 			"StrangerOfKinForMixedQuartet"
-		]
+		],
+		"customRecording": {
+			"url": "https://static1.squarespace.com/static/62560d51a8c6693ad47609a9/t/68dac6d267df56156348e49b/1759168217170/Stranger+of+Kin+Excerpt+-+Short.mp3/original/Stranger+of+Kin+Excerpt+-+Short.mp3",
+			"title": "Stranger of Kin for Orchestra - Excerpt",
+			"subtitle": "performed by the Memphis Symphony Orchestra",
+			"description": "Listen to an excerpt from the premiere performance by the Memphis Symphony Orchestra",
+			"artist": "Sina Karachiani performed by Memphis Smphony Orchestra",
+			"image": "/assets/music/stranger_of_kin_medium.png",
+			"link": "https://memphissymphony.org/composer-hightlight"
+		}
 	},
 	{
 		"id": "StrangerOfKinForChamberOrchestra",

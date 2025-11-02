@@ -37,6 +37,14 @@
 			"amazonMusic": "https://amazon.com/music/player/albums/B093ZLG8ZD?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5FVmKNH5FaSQOFCOoIbNulZNl",
 			"soundcloud": "https://soundcloud.com/sinakarachiani/sets/whirling-onward?si=f6c2383b255942a7ae2eecd613bd8740&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
 		},
+		"customRecording": {
+			"url": "https://static1.squarespace.com/static/62560d51a8c6693ad47609a9/t/68dac6d267df56156348e49b/1759168217170/Stranger+of+Kin+Excerpt+-+Short.mp3/original/Stranger+of+Kin+Excerpt+-+Short.mp3",
+			"title": "Stranger of Kin for Orchestra - Excerpt",
+			"subtitle": "Listen to the excerpt from the premiere performance by the Memphis Symphony Orchestra",
+			"artist": "Sina Karachiani performed by Memphis Smphony Orchestra",
+			"image": "/assets/music/stranger_of_kin_medium.png",
+			"link": "https://memphissymphony.org/composer-hightlight"
+		},
 		"score": {
 			"payhipPage": "https://payhip.com/b/gku5S",
 			"scoreOptions": [

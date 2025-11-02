@@ -13,6 +13,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import ScoreModal from '$lib/components/ScoreModal.svelte';
 	import Movements from '$lib/components/Movements.svelte';
+	import CustomAudioPlayer from '$lib/components/CustomAudioPlayer.svelte';
 	import { fade } from 'svelte/transition';
 
 	let musicItem: any = null;
@@ -287,11 +288,12 @@
 						
 
 						<!-- Listen Section -->
-						{#if (musicItem.recordings && musicItem.recordings.preview) || (musicItem.soundcloud && musicItem.soundcloud.url)}
+						{#if (musicItem.recordings && musicItem.recordings.preview) || (musicItem.soundcloud && musicItem.soundcloud.url) || (musicItem.customRecording && musicItem.customRecording.url)}
 							<div id="recording-section" class="mt-8 mb-6">
 								<div id="audio-section"></div>
 								<h3 class="mb-4 text-xl font-bold text-zinc-700">Listen</h3>
 
+								<!-- If there is official recordings , do not should soundcloud. -->
 								{#if musicItem.recordings && musicItem.recordings.preview}
 									<!-- Streaming Preview -->
 									<StreamingEmbed item={musicItem} />
@@ -303,6 +305,11 @@
 										height={musicItem.soundcloud.height || 166}
 										trackTitle={musicItem.soundcloud.title || musicItem.title}
 									/>
+								{/if}
+
+								<!-- Custom Recording -->
+								{#if musicItem.customRecording && musicItem.customRecording.url}
+									<CustomAudioPlayer recording={musicItem.customRecording} />
 								{/if}
 							</div>
 						{/if}
