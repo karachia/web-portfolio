@@ -11,6 +11,8 @@
 	let currentTime = 0;
 	let duration = 0;
 	let seeking = false;
+	let dragging = false;
+	let timelineElement: HTMLElement | null = null;
 
 	function togglePlay() {
 		if (playing) {
@@ -22,7 +24,7 @@
 	}
 
 	function handleTimeUpdate() {
-		if (!seeking) {
+		if (!seeking && !dragging) {
 			currentTime = audio.currentTime;
 		}
 	}
@@ -32,20 +34,37 @@
 	}
 
 	function handleSeek(e: MouseEvent) {
-		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+		if (!timelineElement) return;
+		const rect = timelineElement.getBoundingClientRect();
 		const x = e.clientX - rect.left;
-		const percentage = x / rect.width;
+		const percentage = Math.max(0, Math.min(1, x / rect.width));
 		audio.currentTime = percentage * duration;
 		currentTime = audio.currentTime;
 	}
 
-	function handleSeekStart() {
+	function handleSeekStart(e: MouseEvent) {
 		seeking = true;
+		dragging = true;
+		timelineElement = e.currentTarget as HTMLElement;
+		handleSeek(e);
+		
+		window.addEventListener('mousemove', handleDrag);
+		window.addEventListener('mouseup', handleSeekEnd);
 	}
 
-	function handleSeekEnd(e: MouseEvent) {
+	function handleDrag(e: MouseEvent) {
+		if (dragging && timelineElement) {
+			handleSeek(e);
+		}
+	}
+
+	function handleSeekEnd() {
 		seeking = false;
-		handleSeek(e);
+		dragging = false;
+		timelineElement = null;
+		
+		window.removeEventListener('mousemove', handleDrag);
+		window.removeEventListener('mouseup', handleSeekEnd);
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -180,10 +199,8 @@
 				<!-- Timeline -->
 				<div
 					class="timeline"
-					on:click={handleSeek}
 					on:keydown={handleKeydown}
 					on:mousedown={handleSeekStart}
-					on:mouseup={handleSeekEnd}
 					role="slider"
 					tabindex="0"
 					aria-label="Seek"
@@ -201,10 +218,8 @@
 				<span class="text-xs sm:text-[0.85rem] text-zinc-600 tabular-nums min-w-[35px] text-left">{formatTime(currentTime)}</span>
 				<div
 					class="timeline"
-					on:click={handleSeek}
 					on:keydown={handleKeydown}
 					on:mousedown={handleSeekStart}
-					on:mouseup={handleSeekEnd}
 					role="slider"
 					tabindex="0"
 					aria-label="Seek"
@@ -334,8 +349,13 @@
 		background: rgba(0, 0, 0, 0.1);
 		border-radius: 3px;
 		position: relative;
-		cursor: pointer;
+		cursor: grab;
 		transition: height 0.2s ease;
+		user-select: none;
+	}
+
+	.timeline:active {
+		cursor: grabbing;
 	}
 
 	.timeline:hover {
