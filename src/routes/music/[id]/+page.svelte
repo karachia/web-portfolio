@@ -327,7 +327,7 @@
 						{/if}
 
 						<!-- Custom Sections -->
-						{#if musicItem.customSections || musicItem.customSections.length > 0}
+						{#if musicItem.customSections && musicItem.customSections.length > 0}
 							{#each musicItem.customSections as section}
 								<CustomSection customSection={section} />
 							{/each}
