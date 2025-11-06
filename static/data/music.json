@@ -2,7 +2,7 @@
 	{
 		"id": "transients",
 		"title": "Transients",
-		"for": "Piano Solo",
+		"for": "Solo Piano",
 		"category": "Solo",
 		"subcategory": "Piano",
 		"description": "Transients is a three-movement piece for solo piano that is inspired by <strong>\"Shaykh Sanan and the Christian Maiden\"</strong>, a Persian mystical poem written by the Persian Sufi poet Attar.",
@@ -11,7 +11,7 @@
 			"default": 10
 		},
 		"date": "2025-06-12",
-		"detailed_instrumentation": "Piano Solo (optional improvised Tonbak - Persian hand drum)",
+		"detailed_instrumentation": "Solo Piano (optional improvised Tonbak - Persian hand drum)",
 		"movements": [
 			{
 				"name": "I. The Mystic",
@@ -422,11 +422,11 @@
 	{
 		"id": "carolyn",
 		"title": "Carolyn",
-		"for": "Piano Solo",
+		"for": "Solo Piano",
 		"dedication": "In memory of Dr. Carolyn Bremer",
 		"category": "Solo",
 		"subcategory": "Piano",
-		"description": "I wrote this piece in memory of Dr. Carolyn Bremer, composer, and director of Bob Cole Conservatory of Music at CSU Long Beach, who passed away in 2018 after years of struggling with an autoimmune disease. She was one of the kindest and caring people I have ever met. Her legacy, which is her music and the students whom she mentored, will live on to celebrate her life. She will be missed dearly.",
+		"description": "I wrote this piece in memory of Dr. Carolyn Bremer, composer, teacher, and director of Bob Cole Conservatory of Music at CSU Long Beach, who passed away in 2018 after years of struggling with an autoimmune disease. She was one of the kindest and most caring people I have ever met. Her legacy, which is her music and the students whom she mentored, will live on to celebrate her life. She will be missed dearly.",
 		"tags": ["Piano"],
 		"length": {
 			"default": 5.5
@@ -435,7 +435,7 @@
 		"detailed_instrumentation": "",
 		"image": "/assets/music/carolyn.png",
 		"soundcloud": "",
-		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI?si=jMhezp8BxJLLg0K-"],
+		"videos": ["https://www.youtube.com/embed/j8Gl8GBnBWI?si=jMhezp8BxJLLg0K-", "https://www.youtube.com/embed/_nDSGgHhAjY?si=nMPSyhvSJ957PaGi"],
 		"recordings": {
 			"preview": "https://open.spotify.com/embed/track/3msZZf2N0fzpsr7alLwvwj?utm_source=generator",
 			"previewWidth": "100%",
@@ -565,7 +565,7 @@
 	{
 		"id": "persistenceOfMemory",
 		"title": "The Persistence of Memory",
-		"for": "Piano Solo",
+		"for": "Solo Piano",
 		"category": "Solo",
 		"subcategory": "Piano",
 		"description": "This piece is a result of a time of anxiety, loneliness, and darkness during my early twenties. It served as a cathartic exploration of my experiences and a means of coping with the challenges I faced. The darkness of the first movement turns into a dream, seeking answers and balance, which then flows into the last movement: a crescendo in quest of hope. Time, or the lack thereof, is a central theme, reflecting the constant pressure to make it in life and its fleeting nature. The familiar Westminster tune, marks key moments in the piece, symbolizing certain hours of the day and the passage of time.",
