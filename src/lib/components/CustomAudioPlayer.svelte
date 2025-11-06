@@ -241,6 +241,14 @@
 			</div>
 		</div>
 	</div>
+
+	{#if recording.legalNote}
+		<div class="border-t border-gray-200 mt-4 pt-1 -mb-3">
+			<p class="text-[0.65rem] md:text-xs text-zinc-500 leading-relaxed text-left">
+				{@html recording.legalNote}
+			</p>
+		</div>
+	{/if}
 </div>
 
 <style>
