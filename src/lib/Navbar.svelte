@@ -187,6 +187,7 @@ function closeMusicDropdown() {
 }
 
 nav {
-  /* Remove default box-shadow, handled by Tailwind */
+  /* Account for iOS safe area at top */
+  padding-top: env(safe-area-inset-top);
 }
 </style> 

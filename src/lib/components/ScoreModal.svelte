@@ -90,7 +90,7 @@
 {#if isOpen}
 	<!-- Backdrop -->
 	<div 
-		class="fixed inset-0 bg-black/85 flex items-center z-50 justify-center p-4"
+		class="modal-backdrop fixed inset-0 bg-black/85 flex items-center z-50 justify-center p-4"
 		on:click={handleBackdropClick}
 		in:fade={{ duration: 200 }}
 	>
@@ -275,5 +275,12 @@
 <style>
 	span.line {
 		display: inline-block;
+	}
+
+	.modal-backdrop {
+		padding-top: env(safe-area-inset-top);
+		padding-bottom: env(safe-area-inset-bottom);
+		padding-left: env(safe-area-inset-left);
+		padding-right: env(safe-area-inset-right);
 	}
 </style>

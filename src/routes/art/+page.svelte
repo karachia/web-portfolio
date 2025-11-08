@@ -150,7 +150,7 @@
 
   <!-- Modal -->
   {#if showModal && selectedArtwork}
-    <div class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm p-4" on:click={closeModal}>
+    <div class="modal-backdrop fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm p-4" on:click={closeModal}>
       <!-- Absolute close button -->
       <button 
         class="fixed top-6 right-6 z-50 text-white hover:text-amber-300 transition-colors p-3" 
@@ -212,4 +212,13 @@
   {/if}
 
   <Footer />
-</div> 
+</div>
+
+<style>
+  .modal-backdrop {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+</style> 
