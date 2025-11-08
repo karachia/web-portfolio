@@ -37,6 +37,15 @@
     mounted = true;
   }, 100);
 
+  // Prevent background scrolling when modal is open
+  $: if (typeof document !== 'undefined') {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
   function openModal(item: any) {
     selected = item;
     showModal = true;

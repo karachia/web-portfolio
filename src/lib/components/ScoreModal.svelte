@@ -21,6 +21,15 @@
 	let openIframeProductId: string | null = null;
 	let selectedScore: any = null;
 	let scrollableContentElement: HTMLElement | null = null;
+
+	// Prevent background scrolling when modal is open
+	$: if (typeof document !== 'undefined') {
+		if (isOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}
 	
 	// Detect if user is on Safari
 	let isSafari = false;
@@ -92,7 +101,7 @@
 		>
 			<!-- Header -->
 			<div class="flex items-center justify-between p-6 border-gray-200 border-b flex-shrink-0">
-				<h2 class="text-2xl font-semibold text-zinc-800">
+				<h2 class="text-lg md:text-xl font-semibold text-zinc-800">
 					{pieceTitle}{pieceFor ? ` for ${pieceFor}` : ''}
 
 				</h2>
@@ -118,7 +127,7 @@
 					<div class="flex justify-center mt-2">
 						<h3 class="text-lg font-semibold text-gray-900">{selectedScore.name} - {selectedScore.price === 0 ? 'Free' : `$${selectedScore.price.toFixed(2)}`}</h3>
 					</div>
-					<p class="text-gray-500 text-sm text-center mt-2">Check-out experience is powered by <span class="font-semibold">Payhip</span> & payments are processed securely by <span class="font-semibold">PayPal</span>. <br /> If the transaction fails, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.</p>
+					<p class="text-gray-500 text-xs md:text-sm text-center mt-2">Checkout experience is powered by <span class="font-semibold">Payhip</span> & payments are processed securely by <span class="font-semibold">PayPal</span>. <br /> If the transaction fails, visit my <a class="underline text-blue-500" href={scoreData.payhipPage} target="_blank" rel="noopener noreferrer">Payhip store</a> instead.</p>
 					<!-- instead or use <span class="font-semibold">Chrome</span> browser</p> -->
 					<!-- as there are some issues browsers such as Safari <br/>On Safari, you may also temporarily disable <span class="font-semibold">Safari &gt; Settings &gt; Privacy &gt; Prevent cross-site tracking</span></p> -->
 					
@@ -138,9 +147,12 @@
 												<path fill-rule="evenodd" d="M8.485 3.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 3.495zM10 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 6zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
 											</svg>
 										</div>
-										<div class="ml-3">
-											<span class="text-xs font-medium text-amber-800">
-												Safari Users: click here if transaction fails
+										<div class="ml-3 text-xs font-medium text-amber-800">
+											<span class="line">
+												Safari Users: 
+											</span>
+											<span class="line">
+												click here if transaction fails
 											</span>
 										</div>
 									</div>
@@ -181,7 +193,7 @@
 			<div class="flex-1 overflow-y-auto" bind:this={scrollableContentElement}>
 				<div class="p-6">
 				{#if selectedScore === null}
-					<p class="text-md text-gray-600 mb-6">
+					<p class="text-sm text-gray-600 mb-6">
 						Access the {scoreLabel} in PDF format. Print and shipping is <b>NOT</b> available.
 					</p>
 					
@@ -222,8 +234,8 @@
                                                     theme="none"
                                                     method="inline"
                                                     iframeTarget="payhip-iframe"
-                                                    customTitle={`${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''} - ${score.name}`}
-                                                    customMessage={`${score.price === 0 ? `Download` : `Purchase`} the ${score.name} ${scoreLabel} for ${pieceTitle}${pieceFor ? ` for ${pieceFor}` : ''}`}
+                                                    customTitle={`${pieceTitle} - ${score.name}`}
+                                                    customMessage={`${pieceFor ? ` for ${pieceFor}` : ''}`}
                                                     on:inline={() => handlePurchaseClick(score)}
                                                 />
                                             {:else}
@@ -259,3 +271,9 @@
 		</div>
 	</div>
 {/if} 
+
+<style>
+	span.line {
+		display: inline-block;
+	}
+</style>

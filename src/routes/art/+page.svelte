@@ -22,6 +22,15 @@
     mounted = true;
   });
 
+  // Prevent background scrolling when modal is open
+  $: if (typeof document !== 'undefined') {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
   function handleCommissionClick() {
     // TODO: Link to future contact form
     goto('/contact');
