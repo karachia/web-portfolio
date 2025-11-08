@@ -188,6 +188,6 @@ function closeMusicDropdown() {
 
 nav {
   /* Account for iOS safe area at top */
-  padding-top: env(safe-area-inset-top);
+  padding-top: calc(env(safe-area-inset-top) * 0.82);
 }
 </style> 
