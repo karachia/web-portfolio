@@ -217,7 +217,7 @@
 
   <!-- Modal -->
   {#if showModal && selected}
-    <div class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" on:click={closeModal}>
+    <div class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 sm:px-8" on:click={closeModal}>
       <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full md:w-[38rem] p-4 md:p-8 relative text-center sm:text-left" on:click|stopPropagation>
         <!-- Close button -->
         <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-700" on:click={closeModal} aria-label="Close modal">
@@ -246,9 +246,9 @@
 
 <style>
   .modal-backdrop {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
+    /* Only apply safe area insets for top/bottom to extend backdrop behind system UI */
+    /* Left/right padding is handled by Tailwind classes for proper modal spacing */
+    padding-top: calc(env(safe-area-inset-top) + 1rem);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
   }
 </style> 

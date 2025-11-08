@@ -90,7 +90,7 @@
 {#if isOpen}
 	<!-- Backdrop -->
 	<div 
-		class="modal-backdrop fixed inset-0 bg-black/85 flex items-center z-50 justify-center p-4"
+		class="modal-backdrop fixed inset-0 bg-black/85 flex items-center z-50 justify-center px-4 sm:px-8"
 		on:click={handleBackdropClick}
 		in:fade={{ duration: 200 }}
 	>
@@ -278,9 +278,9 @@
 	}
 
 	.modal-backdrop {
-		padding-top: env(safe-area-inset-top);
-		padding-bottom: env(safe-area-inset-bottom);
-		padding-left: env(safe-area-inset-left);
-		padding-right: env(safe-area-inset-right);
+		/* Only apply safe area insets for top/bottom to extend backdrop behind system UI */
+		/* Left/right padding is handled by Tailwind classes for proper modal spacing */
+		padding-top: calc(env(safe-area-inset-top) + 1rem);
+		padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
 	}
 </style>
