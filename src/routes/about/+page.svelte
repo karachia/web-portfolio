@@ -46,12 +46,12 @@
 			out:fade
 		>
 			<h2
-				class="mb-8 text-center text-3xl font-bold text-gray-900"
+				class="mb-8 text-center text-2xl md:text-3xl font-bold text-gray-900"
 				in:fade={{ duration: 900, delay: 600 }}
 			>
 				Biography
 			</h2>
-			<div class="text-justify text-lg text-gray-600" in:fade={{ duration: 800, delay: 800 }}>
+			<div class="text-justify text-base md:text-lg text-gray-600" in:fade={{ duration: 800, delay: 800 }}>
 				<p class="mb-4">
 					<span class="font-bold text-black">Sina Karachiani (b. 1996, Esfahan, Iran)</span>
 					is a San Francisco-based Iranian-American composer, pianist, and artist. His artistic practice is rooted in storytelling, exploring the full spectrum of human emotion while embracing vulnerability. His compositions often investigate intimate concepts of identity, self-discovery, and mental health. Drawing inspiration from his upbringing in Esfahan, Iran, his music fuses Western classical traditions with Persian folk and traditional music, creating a rich cultural dialogue and a unique musical voice known for its intricate flowing melodies and colorful orchestration.
