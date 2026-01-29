@@ -11,14 +11,17 @@
 			"min": 7,
 			"max": 8
 		},
+		"otherVersions": [
+			"sonataContrabassPiano"
+		],
 		"date": "2026-01-28",
 		"origional_date": "2017-07-05",
 		"detailed_instrumentation": "Double Bass, Piano",
 		"soundcloud": {
-			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2256179282%3Fsecret_token%3Ds-eB9bETpysdy&color=%23050000",
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2256187025&color=%23000000",
 			"width": "100%",
 			"height": 180,
-			"link": "https://soundcloud.com/sinakarachiani/for-ava/s-eB9bETpysdy",
+			"link": "https://soundcloud.com/sinakarachiani/ii-for-ava-2",
 			"title": "For Ava for Double Bass & Piano"
 		},
 		"score": {
@@ -771,10 +774,12 @@
 			"min": 20,
 			"max": 24
 		},
+		"otherVersions": [
+			"ForAva"
+		],
 		"date": "2014-04-11",
 		"detailed_instrumentation": "Double Bass, Piano",
 		"image": "",
-		"soundcloud": "",
 		"videos": [],
 		"recordings": [],
 		"movements": [
@@ -793,7 +798,14 @@
 				"duration": 6,
 				"numbered": false
 			}
-		]
+		],
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2182495592&color=%230f0101",
+			"width": "100%",
+			"height": 340,
+			"link": "https://soundcloud.com/sinakarachiani/sets/sonata-for-double-bass-and-piano",
+			"title": "Sonata for Double Bass and Piano"
+		}
 	},
 	{
 		"id": "trashcanLives",
