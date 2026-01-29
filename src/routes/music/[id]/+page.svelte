@@ -182,7 +182,12 @@
 
 							<!-- Length and Date -->
 							<p class="text-md mt-2 text-zinc-600">
-								{formatDuration(musicItem.length)} &nbsp;//&nbsp; {formatDate(musicItem.date)}
+								{formatDuration(musicItem.length)} &nbsp;//&nbsp; 
+								{#if musicItem.origional_date} 
+									{formatDate(musicItem.origional_date)} (Revised {formatDate(musicItem.date)})
+								{:else}
+									{formatDate(musicItem.date)}
+								{/if}
 							</p>
 
 							<!-- Instrumentation -->

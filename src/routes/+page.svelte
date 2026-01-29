@@ -87,7 +87,7 @@
 				</h1>
 				<h2 class="mt-2 text-sm font-light tracking-wide text-gray-600 drop-shadow-lg sm:text-lg md:text-2xl">
 					<!-- Composer, Artist, Pianist, Software Engineer -->
-	        Composer • Artist • Pianist • Software Engineer
+	        Composer • Artist • Pianist • Engineer
 				</h2>
 				<div class="mt-2 md:mt-4 flex space-x-4 sm:space-x-6">
 					<a

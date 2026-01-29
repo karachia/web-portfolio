@@ -1,5 +1,39 @@
 [
 	{
+		"id": "ForAva",
+		"title": "For Ava",
+		"for": "Double Bass & Piano",
+		"description": "\"For Ava\" was originally conceived as the second movement of my Sonata for Double Bass and Piano, one of my earliest compositions. While it remains part of the larger work, I always felt the movement possessed a distinct voice that could stand on its own. Composed years after the rest of the sonata, it represents a more evolved chapter of my early writing. Because this music has a special place in my heart, I chose to revisit it as a standalone work. I have titled it For Ava, dedicated to Ava May Jensen, the newborn daughter of my dear friend and collaborator Tim Jensen—the bassist for whom the sonata was written and who premiered the original work.",
+		"category": "Chamber",
+		"subcategory": "Duo",
+		"tags": ["Contrabass", "Piano"],
+		"length": {
+			"min": 7,
+			"max": 8
+		},
+		"date": "2026-01-28",
+		"origional_date": "2017-07-05",
+		"detailed_instrumentation": "Double Bass, Piano",
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2256179282%3Fsecret_token%3Ds-eB9bETpysdy&color=%23050000",
+			"width": "100%",
+			"height": 180,
+			"link": "https://soundcloud.com/sinakarachiani/for-ava/s-eB9bETpysdy",
+			"title": "For Ava for Double Bass & Piano"
+		},
+		"score": {
+			"payhipPage": "https://payhip.com/b/4hmKI", 
+			"scoreOptions": [
+				{
+					"name": "Score and Part (PDF)",
+					"productId": "m3JWr",
+					"preview": "https://drive.google.com/file/d/1ufiupPvf5GhWsCSdtNEyL5Xpja-TooPh/view?usp=sharing",
+					"price": 20.00
+				}
+			]
+		}
+	},
+	{
 		"id": "transients",
 		"title": "Transients",
 		"for": "Solo Piano",
@@ -507,7 +541,7 @@
 			"default": 5.5
 		},
 		"date": "2017-11-11",
-		"detailed_instrumentation": "",
+		"detailed_instrumentation": "Flute, Oboe, Clarinet, Bassoon",
 		"image": "",
 		"soundcloud": "",
 		"videos": ["https://www.youtube.com/embed/piN8LccY_iI?si=gNnU8O-8hGwZ65VA"],
@@ -732,13 +766,13 @@
 		"title": "Sonata for Contrabass & Piano",
 		"category": "Chamber",
 		"subcategory": "Duo",
-		"tags": ["Contrabass", "Piano"],
+		"tags": ["Contrabass", "Piano", "Sonata"],
 		"length": {
 			"min": 20,
 			"max": 24
 		},
 		"date": "2014-04-11",
-		"detailed_instrumentation": "",
+		"detailed_instrumentation": "Double Bass, Piano",
 		"image": "",
 		"soundcloud": "",
 		"videos": [],
