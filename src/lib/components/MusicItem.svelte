@@ -24,7 +24,13 @@
         </span> -->
 		<div class="text-right">
 			<div class="text-sm text-zinc-500">{formatDuration(item.length)}</div>
-			<div class="text-sm text-zinc-500">{formatDate(item.date)}</div>
+			<div class="text-sm text-zinc-500">
+				{#if item.origional_date} 
+					{formatDate(item.origional_date)} <br> Revised {formatDate(item.date)}
+				{:else}
+					{formatDate(item.date)}
+				{/if}
+			</div>
 			<div class="mt-2 flex justify-end">
 				<MediaFeatures item={item} />
 			</div>
