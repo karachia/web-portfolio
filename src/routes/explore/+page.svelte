@@ -67,7 +67,7 @@
         S I N A &nbsp; &nbsp; K A R A C H I A N I
       </h1>
       <h2 class="text-base font-light text-gray-600 mb-3 text-center">
-        Composer • Artist • Pianist • Software Engineer
+        Composer • Artist • Pianist • Engineer
       </h2>
       <div class="flex space-x-5 mb-0">
         <a href="https://www.youtube.com/@SinaKarachianiMusic/" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
@@ -76,9 +76,9 @@
         <a href="https://instagram.com/sina.karachiani.music" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
           <Icon data={instagram} scale={1.3} />
         </a>
-        <a href="https://github.com/karachia" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
+        <!-- <a href="https://github.com/karachia" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
           <Icon data={github} scale={1.3} />
-        </a>
+        </a> -->
         <a href="https://www.linkedin.com/in/sina-karachiani-5b9b8593/" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors">
           <Icon data={linkedin} scale={1.3} />
         </a>

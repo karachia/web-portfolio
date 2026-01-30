@@ -6,6 +6,7 @@
 	import linkedin from 'svelte-awesome/icons/linkedin';
 	import instagram from 'svelte-awesome/icons/instagram';
 	import soundcloud from 'svelte-awesome/icons/soundcloud';
+	import youtube from 'svelte-awesome/icons/youtube';
 </script>
 
 <footer class="bg-zinc-900 text-white py-8 relative z-[2]">
@@ -20,8 +21,11 @@
 			
 			<!-- Social media links - middle on mobile, right on desktop -->
 			<div class="flex items-center space-x-4">
-				<a href="https://github.com/karachia" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
+				<!-- <a href="https://github.com/karachia" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
 					<Icon data={github} scale={1.25}/>
+				</a> -->
+				<a href="https://www.youtube.com/@SinaKarachianiMusic/" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
+					<Icon data={youtube} scale={1.25}/>
 				</a>
 				<a href="https://www.linkedin.com/in/sina-karachiani-5b9b8593/" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
 					<Icon data={linkedin} scale={1.25}/>
@@ -30,7 +34,7 @@
 					<Icon data={instagram} scale={1.25}/>
 				</a>
 				<a href="https://soundcloud.com/sinakarachiani/" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
-					<Icon data={soundcloud} scale={1.5}/>
+					<Icon data={soundcloud} scale={1.4}/>
 				</a>
 			</div>
 			

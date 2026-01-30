@@ -5,6 +5,7 @@
 		"for": "Double Bass & Piano",
 		"description": "\"For Ava\" was originally conceived as the second movement of my Sonata for Double Bass and Piano, one of my earliest compositions. While it remains part of the larger work, I always felt the movement possessed a distinct voice that could stand on its own. Composed years after the rest of the sonata, it represents a more evolved chapter of my early writing. Because this music has a special place in my heart, I chose to revisit it as a standalone work. I have titled it For Ava, dedicated to Ava May Jensen, the newborn daughter of my dear friend and collaborator Tim Jensen—the bassist for whom the sonata was written and who premiered the original work.",
 		"category": "Chamber",
+		"image": "/assets/music/bass_clef.png",
 		"subcategory": "Duo",
 		"tags": ["Contrabass", "Piano"],
 		"length": {
@@ -675,7 +676,7 @@
 	{
 		"id": "groveRunner",
 		"title": "The Grove Runner",
-		"for": "Clarinet in A, 2 Bb Trumpets, Trombone, & Piano",
+		"for": "Mixed Quintet",
 		"category": "Chamber",
 		"subcategory": "Quintet",
 		"tags": ["Clarinet", "Trumpet", "Trombone", "Piano"],
@@ -683,7 +684,7 @@
 			"default": 6
 		},
 		"date": "2016-01-11",
-		"detailed_instrumentation": "",
+		"detailed_instrumentation": "Clarinet in A, 2 Bb Trumpets, Trombone, Piano",
 		"image": "",
 		"soundcloud": "",
 		"videos": [],
@@ -719,12 +720,12 @@
 		"for": "Brass Quintet",
 		"category": "Chamber",
 		"subcategory": "Quintet",
-		"tags": ["Brass"],
+		"tags": ["Brass", "Trumpet", "Trombone", "Horn", "French", "French Horn", "Tuba"],
 		"length": {
 			"default": 6
 		},
 		"date": "2015-01-11",
-		"detailed_instrumentation": "",
+		"detailed_instrumentation": "2 Trumpets, French Horn, Trombone, Tuba",
 		"image": "",
 		"soundcloud": "",
 		"videos": [],
@@ -779,7 +780,7 @@
 		],
 		"date": "2014-04-11",
 		"detailed_instrumentation": "Double Bass, Piano",
-		"image": "",
+		"image": "/assets/music/bass_clef.png",
 		"videos": [],
 		"recordings": [],
 		"movements": [

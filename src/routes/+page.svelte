@@ -106,13 +106,13 @@
 						<Icon data={instagram} scale={1.2} class="sm:scale-150" />
 					</a>
 					
-					<a
+					<!-- <a
 						href="https://github.com/karachia"
 						target="_blank"
 						class="text-gray-600 transition-colors hover:text-gray-900"
 					>
 						<Icon data={github} scale={1.2} class="sm:scale-150" />
-					</a>
+					</a> -->
 					<a
 						href="https://www.linkedin.com/in/sina-karachiani-5b9b8593/"
 						target="_blank"
@@ -126,7 +126,7 @@
 						target="_blank"
 						class="text-gray-600 transition-colors hover:text-gray-900 md:ml-2"
 					>
-						<Icon data={soundcloud} scale={1.5} class="sm:scale-200" />
+						<Icon data={soundcloud} scale={1.3} class="sm:scale-200" />
 					</a>
 				</div>
 			</div>
