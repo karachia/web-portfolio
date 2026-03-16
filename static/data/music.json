@@ -41,28 +41,41 @@
 		"id": "transients",
 		"title": "Transients",
 		"for": "Solo Piano",
+		"image": "/assets/music/Transients.png",
 		"category": "Solo",
 		"subcategory": "Piano",
-		"description": "Transients is a three-movement piece for solo piano that is inspired by <strong>\"Shaykh Sanan and the Christian Maiden\"</strong>, a Persian mystical poem written by the Persian Sufi poet Attar.",
+		"description": "Transients is a suite of three short piano pieces inspired by the story of <strong>\"Shaykh Sanan and the Christian Maiden\"</strong> from Attar’s 12th-century poem and masterpiece, Mantiq al-Tayr (The Conference of the Birds). The music traces the psychological and spiritual disintegration of a venerable holy man who abandons his faith for a fated obsession. <strong>Fevered Passion</strong> captures the hazy, meandering longing of this initial encounter, leading into the dark stillness of <strong>Quandary</strong>, which reflects the internal struggle of a devastating choice. Finally, <strong>Journey</strong> moves with the inevitability of fate, evoking a transient spiritual passage across an expansive desert landscape.",
 		"tags": ["Piano"],
 		"length": {
-			"default": 10
+			"min": 10,
+			"max": 12
 		},
-		"date": "2025-06-12",
+		"date": "2026-03-12",
 		"detailed_instrumentation": "Solo Piano (optional improvised Tonbak - Persian hand drum)",
+		"score": {
+			"payhipPage": "https://payhip.com/b/PfIqJ", 
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)",
+					"productId": "PfIqJ",
+					"preview": "https://drive.google.com/file/d/1HU5kFmmGwl1Rk1PJDhICa9zK9JLqpp1l/view?usp=share_link",
+					"price": 20.00
+				}
+			]
+		},
 		"movements": [
 			{
-				"name": "I. The Mystic",
-				"duration": 2,
+				"name": "I. Fevered Passion",
+				"duration": 5,
 				"numbered": false
 			},
 			{
-				"name": "II. The Dream",
-				"duration": 3.5,
+				"name": "II. Quandary",
+				"duration": 1.5,
 				"numbered": false
 			},
 			{
-				"name": "III. The Journey",
+				"name": "III. Journey",
 				"duration": 4,
 				"numbered": false
 			}
