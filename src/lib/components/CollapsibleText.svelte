@@ -103,7 +103,7 @@
 <div 
   bind:this={container}
   style="white-space: pre-line;"
-  class="text-zinc-700 italic transition-all duration-300 ease-out {shouldTruncate && showButton ? 'cursor-pointer hover:bg-gray-50 hover:shadow-sm rounded px-2 py-1 -mx-2 -my-1' : ''}"
+  class="collapsible-text text-zinc-700 italic transition-all duration-300 ease-out {shouldTruncate && showButton ? 'cursor-pointer hover:bg-gray-50 hover:shadow-sm rounded px-2 py-1 -mx-2 -my-1' : ''}"
   on:click={shouldTruncate && showButton ? toggleExpanded : undefined}
   on:mousedown={shouldTruncate && showButton ? handleMouseDown : undefined}
   on:mousemove={shouldTruncate && showButton ? handleMouseMove : undefined}
@@ -126,4 +126,12 @@
       {isExpanded ? 'Click to show less' : 'Click to read more'}
     </button>
   {/if}
-</div> 
+</div>
+
+<style>
+  /* {@html} nodes aren't scoped; dir=rtl alone loses to inherited text-align from parents */
+  :global(.collapsible-text [dir="rtl"]) {
+    direction: rtl;
+    text-align: right;
+  }
+</style>

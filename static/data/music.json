@@ -1,5 +1,47 @@
 [
 	{
+		"id": "ihateandilove",
+		"title": "I Hate and I Love",
+		"for": "Viola & Piano",
+		"category": "Chamber",
+		"subcategory": "Quartet",
+		"description": "<b>I Hate, and I Love</b> reflects on the complex human capacity to hold conflicting emotions simultaneously—associating both affection and animosity with the same person, place, or idea. The piece processes this duality through a combination of sarcastic, dark humor, and an overarching sense of dance-like nostalgia, moving fluidly between bitter wit and fond remembrance.",
+		"length": {
+			"default": 5
+		},
+		"date": "2026-06-28",
+		"detailed_instrumentation": "2 Violins, Viola, Cello",
+		"score": {
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)"
+				}
+			]
+		}
+	},
+	{
+		"id": "saharnazforviolaandpiano",
+		"title": "Saharnaz",
+		"for": "Viola & Piano",
+		"category": "Chamber",
+		"description": "<p>Meaning \"The Grace of Dawn\" or \"Glorious Morning\" in Farsi, <b>Saharnaz</b> is dedicated to my sister of the same name and to the youth of Iran who continue to demand a better future. <br><br>Written following the violent regime crackdowns of early 2026, resulting in the death of tens of thousands of people, and the war that ensued, the piece reflects on these events through the eyes of my sister—living through the fear, isolation, and endurance firsthand on the ground while bravely holding onto the hope for a brighter tomorrow. It is an exploration of personal agony giving way to collective strength, honoring those who hold onto hope in the darkest circumstances.<br><br>The work is structurally and emotionally guided by the following poem, which I wrote as a reflection on these events:</p><br><br><div dir=\"rtl\" style=\"text-align: right;\"><b>سحرناز</b><br><br>در ستیغِ سهمگین کوهی سیه فام و تار و بلند،<br>دربندِ دیوی پست و بی‌شاخ و دُمم.<br><br>تنها هم‌دمم، پژواکِ فریادهایم،<br>و عصایم، قلبِ سُربی و خون‌آلودم.<br><br> از زجر، امید رُست و از غم، آرزو،<br>و از سالیانِ اشکانم، گلستانی در دلِ سنگیِ کوه،<br>که از حیرت، برآمد شاخی سِتُرگ بر سرِ غول!<br><br> بنگر! که تا سپیده نمانده و کابوس رو به زوال است،<br> شب می‌شکند… سحری ناز در راه است.</div><br><br>Translation:<br><br><b>Saharnaz<br>(The Grace of Dawn)</b><br><br>On the fearsome crest of a tall mountain, pitch-black and dark,<br>The prisoner of a base demon I am—one without tail or tusk.<br><br>The echo of my cries is my only confidant,<br> And my staff is my leaden and blood-stained heart.<br><br>From agony, hope sprouted; and from grief, desire; <br>And from the rainfall of my sorrows, a vast garden bloomed in the mountain’s stone heart; <br>Such that in sheer wonder, a massive horn broke from the demon’s brow!<br><br>Behold! For little remains until the dawn.<br>The nightmare is fading, and the night is breaking… a glorious morning, it will become.<br><br>",
+		"subcategory": "Duo",
+		"tags": ["Viola", "Piano"],
+		"length": {
+			"min": 9,
+			"max": 10.5
+		},
+		"date": "2026-05-28",
+		"detailed_instrumentation": "viola, Piano",
+		"score": {
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)"
+				}
+			]
+		}
+	},
+	{
 		"id": "ForAva",
 		"title": "For Ava",
 		"for": "Double Bass & Piano",
@@ -89,7 +131,7 @@
 		"category": "Chamber",
 		"subcategory": "Quartet",
 		"image": "/assets/art/thumbnails/artwork-12.png",
-		"tags": [],
+		"tags": ["string quartet", "quartet", "viola", "violin", "cello"],
 		"length": {
 			"min": 7.5,
 			"max": 10,
