@@ -9,6 +9,7 @@
 		"length": {
 			"default": 5
 		},
+		"image": "/assets/music/I_hate_and_I_love_medium.png",
 		"tags": ["string quartet", "quartet", "viola", "violin", "cello"],
 		"date": "2026-06-28",
 		"detailed_instrumentation": "2 Violins, Viola, Cello",
