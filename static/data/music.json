@@ -30,6 +30,7 @@
 		"subcategory": "Duo",
 		"tags": ["Viola", "Piano", "Duo"],
 		"image": "/assets/music/saharnaz_medium.png",
+		"videos": ["https://www.youtube.com/embed/rPqLWNCM4f8?si=6WE_wVR31GzTmuvD"],
 		"length": {
 			"min": 9,
 			"max": 10.5
