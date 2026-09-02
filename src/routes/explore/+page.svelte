@@ -93,6 +93,12 @@
 
     <div class="w-full max-w-lg space-y-4 relative z-[2] mt-0 mx-auto px-4 mb-36">
       <ExploreLink
+        title='Saharnaz (سحرناز) recording on YouTube'
+        href="https://youtu.be/rPqLWNCM4f8?list=RDrPqLWNCM4f8"
+        image="/assets/music/saharnaz_small.png"
+      />
+
+      <ExploreLink
         title='Dance Film for "Whirling Onward..."'
         href="https://youtu.be/zbDhZ-TRa4A?si=Sn_GGlWxl2Mrsm91"
         image="/assets/music/whirlingdancefilm.png"
