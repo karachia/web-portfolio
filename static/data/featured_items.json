@@ -1,13 +1,13 @@
 [
     {
         "title": "Saharnaz for Viola & Piano",
-        "description": "Video Recording now available.",
+        "description": "Video Recording and score now available.",
         "image": "/assets/music/saharnaz_small.png",
         "link": "music/saharnazforviolaandpiano"
     },
     {
         "title": "For Ava for Double Bass & Piano",
-        "description": "Recording and downloadable PDF score now available.",
+        "description": "Recording and score now available.",
         "image": "/assets/music/bass_clef_small.png",
         "link": "music/ForAva"
     },
@@ -19,7 +19,7 @@
     },
     {
         "title": "Orison for String Quartet",
-        "description": "Score Video, Recording, and downloadable PDF score now available.",
+        "description": "Score Video, Recording, and score now available.",
         "image": "/assets/music/orison_small.png",
         "link": "music/orisonForStringQuartet"
     },
@@ -37,13 +37,13 @@
     },
     {
         "title": "Carolyn for Solo Piano",
-        "description": "Recording on streaming platforms and downloadable PDF score is now available.",
+        "description": "Recording on streaming platforms and score is now available.",
         "image": "/assets/music/carolyn_small.png",
         "link": "music/carolyn"
     },
     {
         "title": "Persistence of Memory for Solo Piano",
-        "description": "Recording and downloadable PDF score is now available.",
+        "description": "Recording and score is now available.",
         "image": "/assets/music/persistence_small.png",
         "link": "music/persistenceOfMemory"
     }
