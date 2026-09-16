@@ -766,20 +766,41 @@
 	{
 		"id": "sunRisesAgain",
 		"title": "And the Sun Rises Again",
-		"for": "Brass Ensemble",
-		"dedication": "Commissioned by Mr. Jake Marsh for His Conducting Recital",
+		"for": "Brass Ensemble & Percussion",
+		"dedication": "Commissioned by Mr. Jake Marsh",
 		"category": "Large Ensemble",
 		"subcategory": "Brass Ensemble",
-		"tags": ["Brass"],
+		"description": "Commissioned by Mr. Jake Marsh, this piece for brass ensemble and percussion takes its inspiration from the song \"Falling Slowly,\" the centerpiece of the musical Once. By interweaving motifs from the original song with new musical ideas, the work explores the full sonic spectrum of the ensemble—bridging the quiet intimacy of the ballad with the rich, powerful warmth of the brass.",
+		"tags": ["Brass", "Percussion"],
 		"length": {
 			"default": 7
 		},
 		"date": "2016-03-11",
-		"detailed_instrumentation": "",
+		"detailed_instrumentation": "4 Horns, 4 Trumpets, 4 Trombones, Tuba, Timpani, Percussion",
 		"image": "",
-		"soundcloud": "",
 		"videos": [],
-		"recordings": []
+		"recordings": [],
+		"soundcloud": {
+			"url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2401272342&color=%23ff5500",
+			"width": "100%",
+			"height": 180,
+			"link": "https://soundcloud.com/sinakarachiani/and-the-sun-rises-again-2016",
+			"title": "And the Sun Rises Again"
+		},
+		"score": {
+			"payhipPage": "https://payhip.com/b/Gf7mj", 
+			"scoreOptions": [
+				{
+					"name": "Score (PDF)",
+					"productId": "Gf7mj",
+					"price": 60.00
+				},
+				{
+					"name": "Score and Parts (PDF)",
+					"price": 210.00
+				}
+			]
+		}
 	},
 	{
 		"id": "groveRunner",
